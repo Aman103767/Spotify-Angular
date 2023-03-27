@@ -1,0 +1,26 @@
+
+<div class="product-container" *ngIf = "order$ | async as order">
+    <h2>Order Details</h2>
+    <p>Order ID: {{order.orderId}}</p>
+    <p>Order Date: {{order.orderDate}}</p>
+    <h4>Address</h4>
+    <p>Building No  {{order.address.buildingNo}}</p>
+    <p>City: {{order.address.city}}</p>
+    <p>State: {{order.address.state}}</p>
+    <p>Country: {{order.address.country}}</p>
+    <p>Pincode: {{order.address.pincode}}</p>
+    <h3>Products</h3>
+    <div class="product" *ngFor="let product of order.products">
+      <div class="product-image">
+        <img src="{{product.imagePath}}" alt="Product Image">
+      </div>
+      <div class="product-details"> 
+        <p class="product-manufacturer">Manufacturer: {{product.manufacturer}}</p>
+        <p class="product-dimension">Dimension: {{product.dimension}}</p>
+        <p class="product-price">Price: {{product.price}}</p>
+        <p class="product-price">Quantity: {{product.quantity}}</p>
+      </div>
+    </div>
+    <h4>Order Status: Order Confirmed</h4>
+  </div>
+ <hr>

@@ -1,0 +1,20 @@
+<div class = "col-md-4 offset-md-10">
+    <h3>Login Customer</h3>
+    
+    <form action = ""(ngSubmit) = "onSubmit()">
+
+        <div class = "from-group">
+            <label for = "">User Name</label>
+            <input type = "text" class = "form-control" id = "username"
+            [(ngModel)] = "loginForm.username" name = "username">
+        </div>
+        <div class = "from-group">
+            <label for = "">Password</label>
+            <input type = "text" class = "form-control" id = "password"
+            [(ngModel)] = "loginForm.password" name = "password">
+        </div>
+        <button class="btn btn-success" type="submit" style="margin-top: 20px;">Login</button>
+        <button class="btn btn-success" routerLink="/customer" style="margin-left : 20px ;margin-top: 20px;" >Sign Up</button>
+    </form>
+    
+</div>
