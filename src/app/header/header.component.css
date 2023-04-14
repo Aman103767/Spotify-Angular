@@ -1,0 +1,72 @@
+body {
+    background-color: #EEEEEE;
+    margin:0px;
+}
+
+.smalltext{
+    font-size: 12px; 
+}
+.navtext{
+    font-size: 14px; 
+    margin-top: -3px;
+}
+.fontHeight{
+    line-height: 1;
+    font-size:14px; 
+}
+.fontAdj{
+    font-size:15px;
+    font-weight: 600;
+}
+.marginBothSide{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.textWhite{
+    color : white;
+}
+.carCustom{
+    position: relative;
+}
+.big-container{
+    width: 97.5%;
+    display: grid;
+    border: 1px solid red;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    
+    gap:20px;
+    /* position: absolute;
+    top:46%;
+    left:15px; */
+   
+  
+  }
+
+.sub-container{
+width: 100%;
+display: grid;
+border: 1px solid red;
+grid-template-columns: 1fr 1fr ;
+
+margin: auto;
+}
+
+.container{
+    border: 1px solid red;
+    height: 380px;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+}
+.child-div{
+    border: 1px solid red;
+    height: 122px;
+    margin:auto;
+    width: 122px;
+}
+.p-text{
+    font-size: 12px;
+    color : gray;
+}
+

@@ -1,0 +1,337 @@
+<!-- <nav class = "navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+              <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+            </button>
+            <a routerLink="/products" class="navbar-brand">E-HostBooks</a>
+          </div>
+          <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/products" >Products</a></li>
+                <li><a routerLink ="/createProduct" >Create Product</a></li>
+                <li><a routerLink ="/customer" >Customer</a></li>
+                <li><a routerLink ="/customerList" >Customer List</a></li>
+                <li><a routerLink ="/productList" >Product List</a></li>
+                <li><a routerLink ="/cart" >Cart</a></li>
+                <li><a routerLink = "/orders">Orders</a></li>
+                <li><a routerLink = "/" *ngIf="loginAuth()">Login</a></li>
+                
+               
+               
+            </ul>
+            <ul class = "nav navbar-nav navbar-right">
+            <li class = 'dropdown' appDropdown>
+                <a herf = "#" class = "dropdown-toggle" role = "button" >Manage <span class = "caret"></span></a>
+                <ul class = "dropdown-menu">
+                    <li><a (click)="logout()">Logout</a></li>
+                </ul>
+            </li>    
+            </ul>
+        </div>
+    </div>
+</nav> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid" style = "border : 1px solid red">
+      <a class="navbar-brand" href="#" style="display: flex;align-items: center;" >
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="companylogo-1" alt="" width="40" height="36" class="d-inline-block align-text-top"><span>indGo</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        
+       
+          
+       
+        
+      
+        <div class="navbar-nav me-auto" style="display: flex; justify-content:space-between;width : 100%" >
+            <div class = "nav-item textWhite">
+                <div class = "smalltext" style="border : 1px solid red; height:35px ;margin-top: 3px;">Hello
+                    <i class="bi bi-geo-alt-fill"></i>
+                <h6 class = "navtext">Select your address</h6></div>
+                
+            </div>
+            <div>
+            <form class="d-flex" style = "border: 1px solid red">
+                <input class="form-control me-2 flex-fill" style="width:750px;" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary bi bi-search" type="submit"></button>
+           
+            </form>
+        </div>
+          
+           
+            <div  style="width : 150px; height: 35px">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fontHeight textWhite" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      
+                            <span>Hello, sign in</span><br><span class = "fontAdj">Account &amp; Details</span>
+                        
+                        <!-- <div style = "display: flex;">
+                            <span style="font-size: 12px;">Hello, sign in</span>
+                            <h6 style="font-size : 14px; margin-right: 40px;">Account & List</h6>
+                         </div>  -->
+                        
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class = "fontHeight textWhite" style="margin-top: 8px;" >
+                <span>Returns</span><br><span class = "fontAdj">&amp; Orders</span>
+            </div>
+            <div >
+                <a class="navbar-brand" href="#" >
+                    <img src="https://i.ibb.co/m9wthNm/image-1.png" alt="image-1" alt="" width="40" height="34" class="d-inline-block align-text-top"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <span class = "textWhite" style="margin-left: -20px;margin-top: 20px;">Cart</span>
+                </div>
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/products" >Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink ="/createProduct" >Create Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink ="/customer" >Customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink ="/customerList" >Customer List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink ="/productList" >Product List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink ="/cart" >Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink = "/orders">Orders</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a  class="nav-link" routerLink = "/" *ngIf="loginAuth()">Login</a>
+          </li> -->
+        </div>
+       
+      </div>
+    </div>
+  </nav>
+  <body>
+  <div id="carouselExampleControls" class="carousel slide carCustom" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class = "fade"src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61aURrton0L._SX3000_.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61A4NBjILrL._SX3000_.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/51ovs76vmtL._SX3000_.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class = "big-container">
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Up to 70% off | Styles for men</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-2-186-116._SY116_CB636110853_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+      <div>
+        <img src = "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg">
+      </div>
+
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+    <div class = "container">
+      <header style = "padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+       <div class="sub-container">
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src = "https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class = "p-text">Air conditioners</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class = "p-text">Refrigerators</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class = "p-text">Microwaves</p></div>
+          <div class = "child-div">
+            <img style = "width: 100%; height: auto"src ="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class = "p-text">Washing machines</p></div>
+       </div>
+    </div>
+
+
+  </div>
+</body>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="card-group">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  
