@@ -15,7 +15,7 @@ body {
     font-size:14px; 
 }
 .fontAdj{
-    font-size:15px;
+    font-size:14px;
     font-weight: 600;
 }
 .marginBothSide{
@@ -70,3 +70,43 @@ margin: auto;
     color : gray;
 }
 
+.card-img{
+    height : 184px;
+    width: 140px;
+}
+.slide-container{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    grid-template-rows: auto;
+    gap : 20px;
+    border: 1px solid blue;
+    margin:auto; 
+}
+.sub-slide-container{
+    border:1px solid red;
+    height: auto;
+    width: auto;
+
+}
+.img-box{
+    height: 200px;
+    width:  240px;
+    border: 1px solid red;
+    display:flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #FFFFFF;
+
+}
+.holding-sliding{
+    border: 1px solid red;
+    height:367px;
+    width:1460px;
+    margin:auto;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+
+}
