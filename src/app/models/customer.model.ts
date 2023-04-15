@@ -8,6 +8,9 @@ export class Customer {
    password : string;
    username : string;
    address : Address;
+<<<<<<< HEAD
    role : string;
+=======
+>>>>>>> main
   
 }

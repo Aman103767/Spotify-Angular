@@ -5,6 +5,10 @@ import { FetchCustomerListComponent } from '../customer/fetch-customer-list/fetc
 import { ProductService } from '../products/product.service';
 import { ProductComponent } from '../products/product/product.component';
 import { ProductsComponent } from '../products/products.component';
+<<<<<<< HEAD
+=======
+import { CookieService } from "ngx-cookie-service";
+>>>>>>> main
 import { Router } from '@angular/router';
 @Injectable()
 @Component({
@@ -21,7 +25,11 @@ export class HeaderComponent  implements OnInit{
   }
   collapsed = true;
   constructor(private productsComponent: ProductsComponent,private fetchCust : FetchCustomerListComponent,private productService : ProductService
+<<<<<<< HEAD
     ,public fordetailsCart : FordetailsAddtocartComponent,public cart : CartComponent,private router : Router){
+=======
+    ,public fordetailsCart : FordetailsAddtocartComponent,public cart : CartComponent,private cookieService : CookieService,private router : Router){
+>>>>>>> main
 
   }
   customerId : number;
@@ -31,10 +39,24 @@ export class HeaderComponent  implements OnInit{
     this.cart.getAllProductFromCart(this.customerId);
   }
  logout(){
+<<<<<<< HEAD
  
  }
  loginAuth(){
  
+=======
+  this.cookieService.set('JSESSIONID',"");
+  this.router.navigate(['/']);
+ console.log("logout");
+
+ }
+ loginAuth(){
+ const session =  this.cookieService.get('JSESSIONID')
+  if(session != undefined && session.length>0 ){
+  return false;
+  }
+  else return true;
+>>>>>>> main
  }
 
 
