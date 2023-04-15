@@ -1,11 +1,6 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-<<<<<<< HEAD
-
-=======
-import { CookieService } from "ngx-cookie-service";
->>>>>>> main
 
 @Injectable()
 @Component({
@@ -15,7 +10,6 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class AuthInterceptorComponent implements HttpInterceptor{
  
-<<<<<<< HEAD
 constructor(){}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("Inside inter")
@@ -52,23 +46,3 @@ constructor(){}
 
 }
   }
-=======
-
-  constructor(private cookieService :CookieService){
-
-  }
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-     const sessionId = this.cookieService.get('JSESSIONID');
-     if(sessionId){
-      const authRequest = request.clone({
-          withCredentials: true,
-          headers : request.headers.set('Cookie',`JSESSIONID=${sessionId}`).set('Access-Control-Allow-Origin', '*')
-      })
-      return next.handle(authRequest);
-     }else{
-      return next.handle(request);
-     }
-  }
-}
->>>>>>> main

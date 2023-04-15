@@ -25,19 +25,12 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
-=======
-              "src/styles.css",
-              "./node_modules/Bootstrap/dist/css/bootstrap.min.css"
-            ],
-            "scripts": []
->>>>>>> main
           },
           "configurations": {
             "production": {
@@ -97,10 +90,7 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
-=======
->>>>>>> main
               "src/styles.css"
             ],
             "scripts": []

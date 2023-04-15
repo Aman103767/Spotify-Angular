@@ -11,28 +11,16 @@ import { Customer } from '../models/customer.model';
 export class CustomerComponent {
   title = 'E-Commerce';
   loadedPosts = [];
-<<<<<<< HEAD
   isAdmin  = false;
   customer : Customer = new Customer();
-=======
-
->>>>>>> main
 
   constructor(private http: HttpClient,private router: Router) {}
 
   
-<<<<<<< HEAD
   onCreatePost(cust : Customer) {
    
     this.http.post('http://localhost:8888/Customer/create',cust).subscribe(response => {
       console.log(response);
-=======
-  onCreatePost(postData: { name: string; email: string ; mobileNumber : String; password : String}) {
-   
-    this.http.post('http://localhost:8888/Customer/create',postData).subscribe(response => {
-      console.log(response);
-    console.log(postData);
->>>>>>> main
     this.goToCustomerList();
   
   });
@@ -40,7 +28,6 @@ export class CustomerComponent {
     goToCustomerList(){
    this.router.navigate(['/customerList']);
  }
-<<<<<<< HEAD
  asAdmin(event){
   console.log(event);
  }
@@ -54,8 +41,4 @@ if(event.submitter.innerText === 'Admin'){
   this.onCreatePost(this.customer);
 }
  }
-=======
-
-
->>>>>>> main
 }

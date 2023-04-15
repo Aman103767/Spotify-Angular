@@ -14,10 +14,7 @@ import { Pagination } from "../models/pagination.model";
 import { PaginationDTO } from "../models/paginationDto";
 
 import { Product } from "../models/product.model";
-<<<<<<< HEAD
 import { JwtResponse } from "../models/jwtReponse.model";
-=======
->>>>>>> main
 
 @Injectable() 
 export class ProductService {
@@ -100,16 +97,11 @@ login(loginForm: LoginForm){
 
   return this.http.post<any>('http://localhost:8888/login',loginForm);
 }
-<<<<<<< HEAD
 // currentUser(): Observable<Customer> {
 //   return this.http.get<Customer>('http://localhost:8888/current-user');
 // }
 currentUser(jwtResponse : JwtResponse): Observable<Customer>{
   return this.http.post<Customer>('http://localhost:8888/current-user',jwtResponse);
-=======
-currentUser(): Observable<Customer> {
-  return this.http.get<Customer>('http://localhost:8888/current-user');
->>>>>>> main
 }
 logout(): Observable<string>{
   return this.http.get<string>('http://localhost:8888/logout');
