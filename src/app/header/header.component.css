@@ -27,6 +27,7 @@ body {
 }
 .carCustom{
     position: relative;
+    margin-top:64px;
 }
 .big-container{
     width: 97.5%;
@@ -36,11 +37,26 @@ body {
     grid-template-rows: auto;
     
     gap:20px;
+    margin: auto;
     /* position: absolute;
     top:46%;
     left:15px; */
+    margin-top: 50px;
    
   
+  }
+  .slider-above{
+    width: 97.5%;
+    display: grid;
+    border: 1px solid red;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    
+    gap:20px;
+    margin: auto;
+    position: absolute;
+    top:46%;
+    left:19px;
   }
 
 .sub-container{
@@ -110,3 +126,17 @@ margin: auto;
     margin-top:20px;
 
 }
+.nav-css {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    
+  }
+  
+  /* .content {
+    padding-top: 80px;
+  } */
+
