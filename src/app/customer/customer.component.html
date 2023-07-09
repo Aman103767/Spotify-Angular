@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 <div class = "col-md-4 offset-md-10">
   <h3>Update Customer</h3>
   <form action = ""(ngSubmit) = "onSubmit($event)">
@@ -26,4 +30,65 @@
       <button class="btn btn-success" type="submit">User</button>
       <button class="btn btn-success" type="submit">Admin</button>
   </form>
+<<<<<<< HEAD
+=======
+=======
+<div class="container">
+    <h2  style="text-align: center;">Sign In</h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+      <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
+        <div class="form-group">
+          <label for="title">User Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            required
+            ngModel
+            name="username"
+          />
+          <label for="title">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            required
+            ngModel
+            name="email"
+          />
+          <label for="title">Mobile Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mobileNumber"
+            required
+            ngModel
+            name="mobileNumber"
+          />
+          <label for="title">Password</label>
+          <input
+            type="text"
+            class="form-control"
+            id="password"
+            required
+            ngModel
+            name="password"
+          />
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!postForm.valid"
+        >
+          Send Post
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 </div>

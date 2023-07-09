@@ -3,6 +3,10 @@ import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { Orders } from 'src/app/models/order.model';
 import { ProductService } from 'src/app/products/product.service';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+<<<<<<< HEAD
+import { CartProduct } from 'src/app/models/cartProduct.model';
+=======
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 Injectable()
 @Component({
   selector: 'app-order',
@@ -12,6 +16,27 @@ Injectable()
 export class OrderComponent implements OnInit {
   @Input() order : Orders;
   id : number;
+<<<<<<< HEAD
+
+  products : CartProduct [] = [
+
+    {
+  id : 12,
+  
+      productId : 1,
+      imagePath: 
+        "https://m.media-amazon.com/images/I/61bK6PMOC3L._SX679_.jpg",
+      productName: "Apple iPhone 14 (128 GB) - Blue",
+      price : 89900,
+      quantity: 50,
+  dimension : 23,
+  manufacturer: "NOkia",
+  discountPercentage: 5
+
+  }
+  ]
+=======
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   ngOnInit(){
 
   }

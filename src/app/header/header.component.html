@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 <!-- <nav class = "navbar navbar-default">
+=======
+<<<<<<< HEAD
+<!-- <nav class = "navbar navbar-default">
+=======
+<nav class = "navbar navbar-default">
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
@@ -18,7 +26,15 @@
                 <li><a routerLink = "/" *ngIf="loginAuth()">Login</a></li>
                 
                
+<<<<<<< HEAD
                
+=======
+<<<<<<< HEAD
+               
+=======
+                <!-- <li><a href = "#" >Shopping List</a></li>   -->
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
             </ul>
             <ul class = "nav navbar-nav navbar-right">
             <li class = 'dropdown' appDropdown>
@@ -30,37 +46,77 @@
             </ul>
         </div>
     </div>
+<<<<<<< HEAD
+</nav> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<body>
+
+<nav class="navbar navbar-expand-lg nav-css" [ngClass] = "{'nav-container': normalTheme}">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="display: flex;align-items: center;">
+      <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="companylogo-1" alt=""
+        width="40" height="36" class="d-inline-block align-text-top"><span style="color: gray">indGo</span></a>
+=======
+<<<<<<< HEAD
 </nav> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-css">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid" style="border : 1px solid red">
     <a class="navbar-brand" href="#" style="display: flex;align-items: center;">
       <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="companylogo-1" alt=""
         width="40" height="36" class="d-inline-block align-text-top"><span>indGo</span></a>
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+<<<<<<< HEAD
+      <div class="navbar-nav me-auto" style="display: flex;width : 100%; align-items: center;">
+        <div class="nav-item textWhite">
+          <div class="smalltext margin-left-right" style="height:35px ;">Hello
+=======
       <div class="navbar-nav me-auto"
         style="display: flex; justify-content:space-between;width : 100%; align-items: center;">
         <div class="nav-item textWhite">
           <div class="smalltext" style="border : 1px solid red; height:35px ;">Hello
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
             <i class="bi bi-geo-alt-fill"></i>
             <h6 class="navtext">Select your address</h6>
           </div>
 
         </div>
+<<<<<<< HEAD
+
+
+        <div class="margin-left-right" style="flex: 1 1 auto; ">
+          <form class="d-flex" style="width: auto;">
+            <input class="form-control me-2 flex-fill op" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline bi bi-search s-color" type="submit"></button>
+=======
         <div>
           <form class="d-flex" style="border: 1px solid red">
             <input class="form-control me-2 flex-fill" style="width:880px;" type="search" placeholder="Search"
               aria-label="Search">
             <button class="btn btn-outline-secondary bi bi-search" type="submit"></button>
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 
           </form>
         </div>
 
+<<<<<<< HEAD
+        <div class="shift-right">
+          <div class="margin-left-right ">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle fontHeight textWhite" href="#" id="navbarDarkDropdownMenuLink"
+                  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                  <span>Hello, sign in</span><br><span class="fontAdj">Account &amp; Details</span>
+
+                  <!-- <div style = "display: flex;">
+=======
 
         <div style="width : 140px; height: 35px; border: 1px solid red; display : flex ; align-items: center;">
           <ul class="navbar-nav">
@@ -71,10 +127,40 @@
                 <span>Hello, sign in</span><br><span class="fontAdj">Account &amp; Details</span>
 
                 <!-- <div style = "display: flex;">
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
                             <span style="font-size: 12px;">Hello, sign in</span>
                             <h6 style="font-size : 14px; margin-right: 40px;">Account & List</h6>
                          </div>  -->
 
+<<<<<<< HEAD
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="fontHeight textWhite margin-left-right">
+            <span>Returns</span><br><span class="fontAdj">&amp; Orders</span>
+          </div>
+          <div class="margin-left-right" style="cursor : pointer;" routerLink = "/cart">
+            
+            <a class="navbar-brand cartImg"  >
+              <img src="https://i.ibb.co/m9wthNm/image-1.png" alt="image-1" alt=""
+                width="30" height="auto" class="d-inline-block align-text-top">
+            
+            </a>
+            <div class = "cartProducts">{{cartProducts}}</div>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <span class="textWhite fontAdj" style="margin-left: -20px">Cart</span>
+          </div>
+          <!-- <li class="nav-item">
+=======
               </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -98,6 +184,7 @@
           <span class="textWhite fontAdj" style="margin-left: -20px">Cart</span>
         </div>
         <!-- <li class="nav-item">
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
             <a class="nav-link" routerLink="/products" >Products</a>
           </li>
           <li class="nav-item">
@@ -118,14 +205,24 @@
           <li class="nav-item">
             <a class="nav-link" routerLink = "/orders">Orders</a>
           </li> -->
+<<<<<<< HEAD
+          <!-- <li class="nav-item">
+            <a  class="nav-link" routerLink = "/" *ngIf="loginAuth()">Login</a>
+          </li> -->
+        </div>
+=======
         <!-- <li class="nav-item">
             <a  class="nav-link" routerLink = "/" *ngIf="loginAuth()">Login</a>
           </li> -->
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
       </div>
 
     </div>
   </div>
 </nav>
+<<<<<<< HEAD
+</body>
+=======
 
 <body>
   <div id="carouselExampleControls" class="carousel slide carCustom" data-bs-ride="carousel">
@@ -144,18 +241,16 @@
           class="d-block w-100" alt="...">
       </div>
     </div>
-    <button class="carousel-control-prev" style="bottom:40%" type="button" data-bs-target="#carouselExampleControls"
-      data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" style="bottom:40%" type="button" data-bs-target="#carouselExampleControls"
-      data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <div class="slider-above">
+  <div class="big-container">
     <div class="container">
       <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
       <div class="sub-container">
@@ -181,8 +276,6 @@
         </div>
       </div>
     </div>
-
-
     <div class="container">
       <header style="padding: 10px; font-weight: 600;">Up to 70% off | Styles for men</header>
       <div class="sub-container">
@@ -233,7 +326,6 @@
         </div>
       </div>
     </div>
-
     <div class="container">
       <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
       <div class="sub-container">
@@ -259,8 +351,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="big-container m-adj">
     <div class="container">
       <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
       <div>
@@ -344,240 +434,94 @@
         </div>
       </div>
     </div>
+
+
   </div>
 
-  <div class="holding-sliding">
-    <div>
-      <h1 style="font-size:27px ; font-weight: 600; margin-top: -40px; margin-bottom:20px;">Today’s Deals</h1>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="slide-container">
-              <div class="sub-slide-container">
-                <div class="img-box">
-                  <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
-                    class="card-img" alt="...">
-                </div>
-                <div>
-                  <h5 class="card-title">Card title</h5>
-                </div>
-
-              </div>
-              <div class="sub-slide-container">
-                <div class="img-box">
-                  <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
-                    class="card-img" alt="...">
-                </div>
-                <div>
-                  <h5 class="card-title">Card title</h5>
-                </div>
-
-              </div>
-              <div class="sub-slide-container">
-                <div class="img-box">
-                  <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
-                    class="card-img" alt="...">
-                </div>
-                <div>
-                  <h5 class="card-title">Card title</h5>
-                </div>
-              </div>
-              <div class="sub-slide-container">
-                <div class="img-box">
-                  <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
-                    class="card-img" alt="...">
-                </div>
-                <div>
-                  <h5 class="card-title">Card title</h5>
-                </div>
-              </div>
-              <div class="sub-slide-container">
-                <div class="img-box">
-                  <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
-                    class="card-img" alt="...">
-                </div>
-                <div>
-                  <h5 class="card-title">Card title</h5>
-                </div>
-              </div>
+<div class = "holding-sliding">
+  <div>
+  <h1 style = "font-size:27px ; font-weight: 600; margin-top: -40px; margin-bottom:20px;">Today’s Deals</h1>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="slide-container">
+          <div class="sub-slide-container">
+            <div class = "img-box">
+              <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
+                class="card-img" alt="...">
             </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
+            <div>
+              <h5 class="card-title">Card title</h5>
             </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
+
+          </div>
+          <div class="sub-slide-container">
+            <div class="img-box">
+              <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
+                class="card-img" alt="...">
+            </div>
+            <div>
+              <h5 class="card-title">Card title</h5>
+            </div>
+
+          </div>
+          <div class="sub-slide-container">
+            <div class="img-box">
+              <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
+                class="card-img" alt="...">
+            </div>
+            <div>
+              <h5 class="card-title">Card title</h5>
             </div>
           </div>
+          <div class="sub-slide-container">
+            <div class="img-box">
+              <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
+                class="card-img" alt="...">
+            </div>
+            <div>
+              <h5 class="card-title">Card title</h5>
+            </div>
+          </div>
+          <div class="sub-slide-container">
+            <div class="img-box">
+              <img src="https://m.media-amazon.com/images/I/41kg-+XWoxL._AC_SY200_.jpg" style="border:1px solid red"
+                class="card-img" alt="...">
+            </div>
+            <div>
+              <h5 class="card-title">Card title</h5>
+            </div>
         </div>
-        <button class="carousel-control-prev adj-left" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next adj-right" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
       </div>
     </div>
   </div>
-  <div class="big-container">
-    <div class="container">
-      <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-      <div>
-        <img
-          src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg">
-      </div>
-
-    </div>
-    <div class="container">
-      <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-      <div class="sub-container">
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-          <p class="p-text">Air conditioners</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-          <p class="p-text">Refrigerators</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-          <p class="p-text">Microwaves</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-          <p class="p-text">Washing machines</p>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-      <div class="sub-container">
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-          <p class="p-text">Air conditioners</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-          <p class="p-text">Refrigerators</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-          <p class="p-text">Microwaves</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-          <p class="p-text">Washing machines</p>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-      <div class="sub-container">
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-          <p class="p-text">Air conditioners</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-          <p class="p-text">Refrigerators</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-          <p class="p-text">Microwaves</p>
-        </div>
-        <div class="child-div">
-          <img style="width: 100%; height: auto"
-            src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-          <p class="p-text">Washing machines</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- here footer will start -->
-  <section>Footer Example 4</section>
-<footer class="footer-distributed">
-
-			<div class="footer-left">
-
-				<h3>Company<span>logo</span></h3>
-
-				<p class="footer-links">
-					<a href="#" class="link-1">Home</a>
-					
-					<a href="#">Blog</a>
-				
-					<a href="#">Pricing</a>
-				
-					<a href="#">About</a>
-					
-					<a href="#">Faq</a>
-					
-					<a href="#">Contact</a>
-				</p>
-
-				<p class="footer-company-name">Company Name © 2015</p>
-			</div>
-
-			<div class="footer-center">
-
-				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-				</div>
-
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>+1.555.555.5555</p>
-				</div>
-
-				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@company.com</a></p>
-				</div>
-
-			</div>
-
-			<div class="footer-right">
-
-				<p class="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
-
-				<div class="footer-icons">
-
-					<a href="#"><i class="bi bi-facebook"></i></a>
-					<a href="#"><i class="bi bi-twitter"></i></a>
-					<a href="#"><i class="bi bi-linkedin"></i></a>
-					<a href="#"><i class="bi bi-github"></i></a>
-
-				</div>
-
-			</div>
-
-		</footer>
-
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div>
 </body>
+=======
+</nav>
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555

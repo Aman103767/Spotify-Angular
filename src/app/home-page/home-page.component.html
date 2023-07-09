@@ -1,0 +1,515 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<body>
+<app-header [normalTheme] = "normalTheme"></app-header>
+<button class = "btn btn-primary" style = "position: absolute; top: 
+  100px;z-index: 100;right: 3px; border-radius: 0% 50% 0% 50%;"
+  (click) = "getAndSetTheme(); setTheme(!getAndSetTheme())">
+  Theme {{getAndSetTheme()}}</button>
+
+    <div id="carouselExampleControls" class="carousel slide carCustom" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img 
+            src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61aURrton0L._SX3000_.jpg"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61A4NBjILrL._SX3000_.jpg"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/51ovs76vmtL._SX3000_.jpg"
+            class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" style="bottom:40%" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" style="bottom:40%" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="slider-above">
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container ">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Up to 70% off | Styles for men</header>
+        <div class="sub-container ">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-2-186-116._SY116_CB636110853_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="big-container m-adj">
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div>
+          <img style="width:100%;"
+            src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg">
+        </div>
+  
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="cont glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+      <h4 class="text-start mb-5 fw-bold" >Top Deal's</h4>
+      <div class="row" style="margin-top: -30px;">
+        <div class="col">
+          <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="slide-container">
+                  <div class="col-md-3 ">
+                    <div class="card glass-bac" style="height: 250px; width: 230px;">
+                      <div class = "img-box"> 
+                      <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                        alt="Product 1">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="slide-container">
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                      <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                        alt="Product 1">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="slide-container">
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                      <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                        alt="Product 1">
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="card" style="height: 250px; width: 230px;">
+                      <div class = "img-box">
+                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
+                          alt="Product 1">
+                        </div>
+                      <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+              <a class="carousel-control-prev arr-adj-left" href="#product-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next arr-adj-right" href="#product-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="big-container">
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div>
+          <img
+            src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg">
+        </div>
+  
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+            <p class="p-text">Air conditioners</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            <p class="p-text">Refrigerators</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            <p class="p-text">Microwaves</p>
+          </div>
+          <div class="child-div">
+            <img style="width: 100%; height: auto"
+              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            <p class="p-text">Washing machines</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+    <app-footer></app-footer>
+  
+    
+

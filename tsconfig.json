@@ -22,7 +22,12 @@
     "lib": [
       "ES2022",
       "dom"
+<<<<<<< HEAD
+    ],
+    "allowSyntheticDefaultImports": true,
+=======
     ]
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

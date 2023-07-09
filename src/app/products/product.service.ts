@@ -14,7 +14,15 @@ import { Pagination } from "../models/pagination.model";
 import { PaginationDTO } from "../models/paginationDto";
 
 import { Product } from "../models/product.model";
+<<<<<<< HEAD
 import { JwtResponse } from "../models/jwtReponse.model";
+import { AuthAddress } from "../models/AuthAddress.model";
+=======
+<<<<<<< HEAD
+import { JwtResponse } from "../models/jwtReponse.model";
+=======
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 
 @Injectable() 
 export class ProductService {
@@ -97,11 +105,22 @@ login(loginForm: LoginForm){
 
   return this.http.post<any>('http://localhost:8888/login',loginForm);
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 // currentUser(): Observable<Customer> {
 //   return this.http.get<Customer>('http://localhost:8888/current-user');
 // }
 currentUser(jwtResponse : JwtResponse): Observable<Customer>{
   return this.http.post<Customer>('http://localhost:8888/current-user',jwtResponse);
+<<<<<<< HEAD
+=======
+=======
+currentUser(): Observable<Customer> {
+  return this.http.get<Customer>('http://localhost:8888/current-user');
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 }
 logout(): Observable<string>{
   return this.http.get<string>('http://localhost:8888/logout');
@@ -109,6 +128,24 @@ logout(): Observable<string>{
 checkCurrentUser(): Observable<Customer>{
   return this.http.get<Customer>('http://localhost:8888/current-user');
 }
+<<<<<<< HEAD
+addAddresss(authAddress : AuthAddress) : Observable<Object>{
+  return this.http.post('http://localhost:8888/address/add',authAddress,{responseType: 'text'});
+}
+getAllAdddress(customerId) : Observable<Address []>{
+  return this.http.get<Address []>(`http://localhost:8888/address/getAllAddress/${customerId}`);
+} 
+getAddressById(addressId) : Observable<Address>{
+  return this.http.get<Address>(`http://localhost:8888/address/getById/${addressId}`);
+}
+deleteAddressById(customerId,addressId) : Observable<Object>{
+  return this.http.delete(`http://localhost:8888/address/deleteById/${customerId}/${addressId}`,{responseType: 'text'});
+}
+setDefaultAddress(customerId, addressId) : Observable<Object>{
+  return this.http.get(`http://localhost:8888/address/setDefault/${customerId}/${addressId}`,{responseType: 'text'});
+}
+=======
 
 
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 }

@@ -25,12 +25,32 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+=======
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
             "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+=======
+              "src/styles.css",
+              "./node_modules/Bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": []
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
           },
           "configurations": {
             "production": {
@@ -90,7 +110,14 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+<<<<<<< HEAD
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> main
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
               "src/styles.css"
             ],
             "scripts": []
@@ -98,5 +125,11 @@
         }
       }
     }
+<<<<<<< HEAD
+  },
+  "cli": {
+    "analytics": false
+=======
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   }
 }

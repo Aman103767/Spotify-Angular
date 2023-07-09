@@ -1,3 +1,77 @@
+<<<<<<< HEAD
+<app-header></app-header>
+<div class="container">
+    <div class="heading">
+        <h3>Your Addresses</h3>
+    </div>
+    <div class="container">
+        <div class="box point" routerLink="add">
+            <div class="address-label">
+                <div class="in-add">
+                    <span class="bi bi-plus custom-icon"></span>
+                    <h4 class="fw">Add address</h4>
+                </div>
+            </div>
+        </div>
+        <div class="box" *ngFor="let address of customerAddresses">
+            <div class="address-info" *ngIf = "address.setDefault === true">
+                <div class="default-div">
+                    <span class="default">Default: </span>
+                    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
+                        alt="companylogo-1" alt="" width="30" height="26" class="d-inline-block align-text-top"><span
+                        style="color: gray">indGo</span>
+                </div>
+                <hr>
+                <div class="pad">
+                    <span class="name">{{address?.name}}</span><br>
+                    <span>Flat no - {{address?.buildingNo}}</span><br>
+                    <span>{{address?.address}}</span><br>
+                    <span>{{address?.city}}, {{address?.state}} {{address?.pincode}}</span><br>
+                    <span>{{address?.country}}</span><br>
+                    <span>Phone number: {{address.mobileNumber}}</span><br>
+                </div>
+                <!-- <h2>{{ address.label }}</h2>
+                <p>{{ address.address }}</p> -->
+                <div class="actions">
+                    <div class="edit">
+                        <span routerLink="edit/{{address.addressId}}">Edit</span>
+                    </div>
+                    <span style="color:rgb(71, 71, 71)">|</span>
+                    <div class="remove">
+                        <span (click)="remove(address.addressId)">Remove</span>
+                    </div>
+                </div>
+            </div>
+            <div class="address-info"*ngIf = "address.setDefault === false">
+                <div class="pad pading">
+                    <span class="name">{{address?.name}}</span><br>
+                    <span>Flat no - {{address?.buildingNo}}</span><br>
+                    <span>{{address?.address}}</span><br>
+                    <span>{{address?.city}}, {{address?.state}} {{address?.pincode}}</span><br>
+                    <span>{{address?.country}}</span><br>
+                    <span>Phone number: {{address.mobileNumber}}</span><br>
+                </div>
+                <!-- <h2>{{ address.label }}</h2>
+                <p>{{ address.address }}</p> -->
+                <div class="actions">
+                    <div class="edit">
+                        <span routerLink="edit/{{address.addressId}}">Edit</span>
+                        {{address.setDefault}}
+                    </div>
+                    <span style="color:rgb(71, 71, 71)">|</span>
+                    <div class="remove">
+                        <span (click)="remove(address.addressId)">Remove</span>
+                    </div>
+                    <span style="color:rgb(71, 71, 71)">|</span>
+                    <div class="default">
+                        <span (click)="setDefault(address.addressId)">Set as Default</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+=======
 <div class = "col-md-4 offset-md-10">
     <h3>Update Address</h3>
     <form >
@@ -30,4 +104,5 @@
 
         <button class="btn btn-success" type="button"  style="margin: 10px" (click)="onSubmit()">Submit</button>
     </form>
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 </div>

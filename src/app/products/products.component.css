@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+/* 
+=======
 
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 .container{
     display: grid;
     grid-template-rows: repeat();
@@ -27,4 +31,26 @@
 .disabled{
   pointer-events: none;
   opacity: 0.6;
+<<<<<<< HEAD
+} */
+body{
+  margin:0px;
+  padding: 0px;
+
+}
+.big-container{
+  width: 97.5%;
+  display: flex;
+  margin-top: 4px;
+  margin:auto;
+  justify-content: space-between;
+}
+.side-div{
+  border: 1px solid red;
+  width: 20%;
+}
+.pro-container{
+  width:77%;
+=======
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 }

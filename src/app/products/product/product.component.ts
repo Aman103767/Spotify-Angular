@@ -16,14 +16,30 @@ export class ProductComponent {
 @Input() product : Content;
 id : number;
 customerId : number;
+<<<<<<< HEAD
+    avgRate  = { singleStars : 4,
+                 halfStars : 1,
+                 emptyStar: 1
+                  };
 constructor(private localStor : LocalStorageService, public productService: ProductService,private router : ActivatedRoute,private fordetialsCart: FordetailsAddtocartComponent){
 
 }
+getRoundedUpSingleStars(): number {
+  return Math.ceil(this.avgRate.singleStars);
+}
+=======
+constructor(private localStor : LocalStorageService, public productService: ProductService,private router : ActivatedRoute,private fordetialsCart: FordetailsAddtocartComponent){
+
+}
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 onSelected(){
 
   this.productService.productSelected.emit(this.product);
 
 }
+<<<<<<< HEAD
+
+=======
 addToCart(productId: number){
   this.id = this.router.snapshot.params['id'];
   const value = localStorage.getItem('customerId');
@@ -37,6 +53,7 @@ addToCart(productId: number){
   
   });
  }
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 
 
   

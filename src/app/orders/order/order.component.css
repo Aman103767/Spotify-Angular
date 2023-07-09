@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+/* body {
+=======
 body {
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -40,4 +44,114 @@ body {
 .product-price {
   font-size: 1.2rem;
   font-weight: bold;
+<<<<<<< HEAD
+} */
+
+.order {
+  width: 70%;
+  border: 1px solid red;
+  height: 1000px;
+  margin : auto;
+  border-radius: 10px;  
 }
+.header {
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between  ;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #f9f8f8;
+  padding: 10px;
+}
+.items{
+  display: flex;
+  border: 1px solid red;
+  width: 50%;
+  justify-content: space-between;
+}
+.f14{
+  font-size: 14px;
+}
+.f13{
+  font-size: 13px;
+}
+.f12{
+  font-size: 12px;
+}
+.line-hight-header{
+  line-height: 1.2;
+}
+.view-color{
+  color: #007185;
+  text-decoration: none;
+}
+.view-color:hover{
+ text-decoration: underline;
+ cursor: pointer;
+}
+.middle{
+  border: 1px solid red;
+  padding: 10px;
+}
+.products{
+  display: flex;
+  padding: 10px 10px 10px 0px;
+  justify-content: space-between;
+  border: 1px solid red;
+  
+}
+.img_box{
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+}
+.img_box > img{
+  width: 100%;
+}
+.text_box{
+  border: 1px solid red;
+  line-height: 1.2;
+  padding: 10px;
+}
+.product-name{
+  color: #007185;
+}
+.btnn{
+  height: 30px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  background-color: rgb(255, 217, 4); 
+  padding: 10px;
+  margin-top: 5px;
+}
+.btnn:hover{
+  background-color: rgb(255, 217, 4); 
+}
+.buttons{
+  border: 1px solid red;
+  width: 30%;
+
+  
+}
+.btn1{
+  height: 30px;
+  display: block;
+  margin: auto;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  width:200px;
+  margin-bottom: 10px ;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  
+}
+.img-text{
+  display: flex;
+  gap: 10px;
+}
+=======
+}
+>>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
