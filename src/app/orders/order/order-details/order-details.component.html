@@ -29,7 +29,7 @@
 
   <h3>Order Details</h3>
   <div class = "head">
-    <span>Ordered on 28 May 2022</span>
+    <span>{{order?.orderDate | date:'dd MMM yyyy'}}</span>
     <span style = "margin-left : 10px; margin-right: 10px; color : rgb(200, 200, 200)">|</span>
     <span>Order# 403-3414164-4353919</span>
   </div>
@@ -37,12 +37,11 @@
     <div class = "shipping">
       <h6>Shipping Address</h6>
       <div class = "address f14">
-        <span>Gunjan sharma</span><br>
-        <span>House No -80 Indra Nagar, Chauhan</span><br>
-        <span>Pyau, Thatipur</span><br>
-        <span>Indra Nagar</span><br>
-        <span>GWALIOR, MADHYA PRADESH 474011</span><br>
-        <span>India</span><br>
+        <span>{{order?.address?.name}}</span><br>
+        <span>{{order?.address?.address}}</span><br>
+        <span *ngIf = "order?.address?.buildingNo">Building No {{order?.address?.buildingNo}}</span><br *ngIf = "order?.address?.buildingNo">
+        <span>{{order?.address?.city}}, {{order?.address?.state}} {{order?.address?.pincode}}</span><br>
+        <span>{{order?.address?.country}}</span><br>
       </div>
       
     </div>
@@ -61,19 +60,19 @@
       <table style="width: 100%">
         <tr>
           <td align="left">Item(s) Subtotal:</td>
-          <td align="right">$1,143.00</td>
+          <td align="right">₹{{order?.totalAmount}}</td>
         </tr>
         <tr>
           <td align="left">Shipping:</td>
-          <td align="right">$0.00</td>
+          <td align="right">₹0.00</td>
         </tr>
         <tr>
           <td align="left">Total:</td>
-          <td align="right">$1,143.00</td>
+          <td align="right">₹{{order.totalAmount}}</td>
         </tr>
         <tr>
           <td align="left" class ="bolder">Grand Total:</td>
-          <td align="right">$1,143.00</td>
+          <td align="right">₹{{order.totalAmount}}</td>
         </tr>
       </table>
       
@@ -85,17 +84,17 @@
     <div class="delivered-data">
       <h6>Delivered 21-Mar-2023</h6>
     </div>
-    <div class="products">
+    <div *ngFor = "let product of order?.products" class="products">
       <div class="img-text">
         <div class="img_box">
-          <img src="https://m.media-amazon.com/images/I/41mDAtPMDKL._SY180_.jpg">
+          <img src="{{product.imagePath}}">
         </div>
         <div class="text_box f14">
-          <span class="product-name">OnePlus Nord CE 2 Lite 5G (Black Dusk, 6GB RAM, 128GB Storage)</span><br>
+          <span class="product-name">{{product.productName}}</span><br>
           <span class = "f12">Sold by: <span class = "product-name">Prime Expresso</span></span><br>
           <span class="f13">Return window closed on 30-Jul-2022</span><br>
           <!-- <p-button class = "btn" label="Buy It Again" style = "height: 10px;" styleClass="p-button-raised p-button-warning"></p-button> -->
-          <span class = "f13">$1,143.00</span>
+          <span class = "f13">₹{{product.price}}</span>
           <button class="btn btnn">Buy It Again</button>
         </div>
       </div>

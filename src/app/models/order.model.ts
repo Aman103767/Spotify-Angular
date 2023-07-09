@@ -9,5 +9,6 @@ export class Orders{
     products : ProductDto [] = [];
     address : Address;
     orderStatus : string;
+    totalAmount : number;
     
 }

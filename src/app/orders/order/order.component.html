@@ -17,20 +17,20 @@
     <div class="items">
       <div class="headerItem1 line-hight-header">
         <span class="f12">ORDER PLACED </span><br>
-        <span class="f14">22 November 2022</span>
+        <span class="f14">{{order?.orderDate | date:'dd MMM yyyy'}}</span>
       </div>
       <div class="total line-hight-header">
         <span class="f12">TOTAL </span><br>
-        <span class="f14">239.00</span>
+        <span class="f14">{{order?.totalAmount}}</span>
       </div>
       <div class="ship line-hight-header">
         <span class="f12">Ship To </span><br>
-        <span class="f14">Gunjan sharma </span>
+        <span class="f14">{{order?.customer?.username}} </span>
       </div>
     </div>
     <div class="invoiceId line-hight-header">
       <span class="f12">ORDER # 408-0618997-2858709 </span><br>
-      <a class="f14 view-color">View order details</a>
+      <a class="f14 view-color" routerLink = "/orders/{{order?.orderId}}">View order details</a>
     </div>
 
 
@@ -40,13 +40,13 @@
     <div class="delivered-data">
       <h6>Delivered 21-Mar-2023</h6>
     </div>
-    <div class="products">
+    <div *ngFor = "let product of order?.products" class="products">
       <div class="img-text">
         <div class="img_box">
-          <img src="https://m.media-amazon.com/images/I/41mDAtPMDKL._SY180_.jpg">
+          <img src="{{product.imagePath}}">
         </div>
         <div class="text_box f14">
-          <span class="product-name">OnePlus Nord CE 2 Lite 5G (Black Dusk, 6GB RAM, 128GB Storage)</span><br>
+          <span class="product-name">{{product?.productName}}</span><br>
           <span class="f13">Return window closed on 30-Jul-2022</span><br>
           <!-- <p-button class = "btn" label="Buy It Again" style = "height: 10px;" styleClass="p-button-raised p-button-warning"></p-button> -->
           <button class="btn btnn">Buy It Again</button>

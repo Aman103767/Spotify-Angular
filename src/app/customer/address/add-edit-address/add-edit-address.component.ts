@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthAddress } from 'src/app/models/AuthAddress.model';
 import { Address } from 'src/app/models/address.model';
 import { ProductService } from 'src/app/products/product.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-add-edit-address',
@@ -20,7 +21,7 @@ export class AddEditAddressComponent implements OnInit{
       this.address = response;
     })
   }
-  constructor(private productService : ProductService,private router: ActivatedRoute){
+  constructor(private productService : ProductService,private router: ActivatedRoute, private location: Location,private routeer: Router){
 
   }
   addAddress(){
@@ -32,6 +33,7 @@ export class AddEditAddressComponent implements OnInit{
   auth.address = this.address;
   this.productService.addAddresss(auth).subscribe(data=>{
   });
+  this.location.back();
 }
 
 

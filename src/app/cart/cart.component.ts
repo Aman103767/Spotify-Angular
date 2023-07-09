@@ -4,6 +4,7 @@ import { CartProduct } from '../models/cartProduct.model';
 import { Product } from '../models/product.model';
 import { ProductService } from '../products/product.service';
 import { Address } from '../models/address.model';
+import { error } from 'jquery';
 @Injectable()
 @Component({
   selector: 'app-cart',
@@ -42,7 +43,7 @@ export class CartComponent implements OnInit{
   getAllAddress(){
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
-    this.productService.getAllAdddress(this.customerId).subscribe(response =>{
+    this.productService.getAllAddress(this.customerId).subscribe(response =>{
       this.address = response.filter(address => address.setDefault == true)[0];
     })
   }
@@ -115,12 +116,29 @@ getProduct(id,product: CartProduct){
   })
 }
 
-order(){
-  this.visible = true;
+addresses(){
+
   const value = localStorage.getItem('customerId');
   this.customerId = JSON.parse(value);
+  this.productService.getAllAddress(this.customerId).subscribe(response => {
+    if(response?.length> 0){
+      this.visible = true;
+    }else {
+      this.router.navigateByUrl("['address/add']")
+    }
+  },
+  error => this.router.navigateByUrl("address/add"))
+
 }
 showDialog() {
   this.visible = true;
 }
+order(){
+  const value = localStorage.getItem('customerId');
+  this.customerId = JSON.parse(value);
+  this.productService.Order(this.customerId).subscribe(response =>{
+    console.log(response,"responseOrder");
+  })
+}
+
 }

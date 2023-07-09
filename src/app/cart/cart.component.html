@@ -145,7 +145,7 @@
             <span style="padding : 10px; font-weight: 400;">{{totalWithDiscount | currency:'':''}} </span>
           </div>
         </div>
-        <button type="button" style="width: 100%; margin-top: 20px  ;"(click) = "order()" class="btn btn-success">Order Now</button>
+        <button type="button" style="width: 100%; margin-top: 20px;"(click) = "addresses()" class="btn btn-success">Order Now</button>
 
         <div id="acceptpay">
           <img
@@ -182,7 +182,7 @@
   <ng-template pTemplate="footer">
     <div class="custom-dialog-footer">
       <button type="button" class="p-button p-button-primary" routerLink = "/address">Change Address</button>
-      <button type="button" class="p-button p-button-success">Processed</button>
+      <button type="button" class="p-button p-button-success" (click) = "order()">Processed</button>
     </div>
   </ng-template>
 </p-dialog>

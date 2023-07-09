@@ -81,8 +81,8 @@ deleteProductFromCart(productId: number,customerId: number) : Observable<Object>
 getAllOrder(customerId : number): Observable<Orders []>{
   return this.http.get<Orders []>(`http://localhost:8888/Customer/getAllOrdersByCustomer/${customerId}`);
 }
-Order(customerId:number,address : Address): Observable<Object>{
-  return this.http.post(`http://localhost:8888/order/orderProduct/${customerId}`,address);
+Order(customerId:number): Observable<Object>{
+  return this.http.get(`http://localhost:8888/order/orderProduct/${customerId}`);
 }
 getOrderById(orderId : number) : Observable<Orders>{
   return this.http.get<Orders>(`http://localhost:8888/order/getOrderById/${orderId}`)
@@ -113,7 +113,7 @@ checkCurrentUser(): Observable<Customer>{
 addAddresss(authAddress : AuthAddress) : Observable<Object>{
   return this.http.post('http://localhost:8888/address/add',authAddress,{responseType: 'text'});
 }
-getAllAdddress(customerId) : Observable<Address []>{
+getAllAddress(customerId) : Observable<Address []>{
   return this.http.get<Address []>(`http://localhost:8888/address/getAllAddress/${customerId}`);
 } 
 getAddressById(addressId) : Observable<Address>{

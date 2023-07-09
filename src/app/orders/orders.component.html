@@ -11,5 +11,5 @@
   -->
 <app-header></app-header>
 <body>
-  <app-order></app-order>
+  <app-order *ngFor = "let order of orders" [order] ="order"></app-order>
 </body>

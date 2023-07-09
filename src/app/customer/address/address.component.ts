@@ -22,7 +22,7 @@ export class AddressComponent implements OnInit {
     this.customerAddresses = [];
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
-    this.productService.getAllAdddress(this.customerId).subscribe(response =>{
+    this.productService.getAllAddress(this.customerId).subscribe(response =>{
       let defaultAddress = null;
 
       for (const element of response) {
