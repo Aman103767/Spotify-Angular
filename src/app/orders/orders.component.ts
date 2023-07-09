@@ -2,12 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../models/customer.model';
 import { Orders } from '../models/order.model';
 import { ProductService } from '../products/product.service';
-<<<<<<< HEAD
 import { ProductDto } from '../models/productDto.model';
 import { Address } from '../models/address.model';
 import { CartProduct } from '../models/cartProduct.model';
-=======
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 
 @Component({
   selector: 'app-orders',
@@ -15,7 +12,6 @@ import { CartProduct } from '../models/cartProduct.model';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit{
-<<<<<<< HEAD
 orders : Orders [] 
 // = [{
 //   orderId : 1,
@@ -46,10 +42,6 @@ manufacturer: "NOkia",
 discountPercentage : 5
 }
 ]
-=======
-orders : Orders [] = [];
-customerId : number;
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 constructor(private productService : ProductService){
 
 }

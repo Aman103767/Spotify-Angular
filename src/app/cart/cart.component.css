@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /* body {
-=======
-body {
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     width: 80%;
@@ -71,7 +67,6 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-<<<<<<< HEAD
   } */
 
   * {
@@ -347,6 +342,3 @@ body {
   margin-top: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
-=======
-  }
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555

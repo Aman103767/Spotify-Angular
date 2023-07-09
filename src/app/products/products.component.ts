@@ -6,25 +6,17 @@ import { Pagination } from '../models/pagination.model';
 import { PaginationDTO } from '../models/paginationDto';
 
 import { ProductService } from './product.service';
-<<<<<<< HEAD
 import { ThemeService } from '../theme/theme-service';
 import { LocalStorageService } from '../shared/localstor.service';
-=======
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 Injectable()
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-<<<<<<< HEAD
   styleUrls: ['./products.component.css','../theme/normal-theme.css'],
-=======
-  styleUrls: ['./products.component.css'],
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   
 })
 export class ProductsComponent implements OnInit {
   field : string;
-<<<<<<< HEAD
    products : Content []
   //  = [
   //   {
@@ -40,9 +32,6 @@ export class ProductsComponent implements OnInit {
   //   category : undefined
   // }
   // ];
-=======
-  products : Content [] = [];
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   name : string;
   pageNumber : number = 0;
   direction: boolean =false;
@@ -52,24 +41,15 @@ export class ProductsComponent implements OnInit {
   
   currentPage$ = this.currentPageSubject.asObservable();
   paginationDto : PaginationDTO = new PaginationDTO();
-<<<<<<< HEAD
   normalTheme = false;
 
  constructor(public productService : ProductService,public  themeService : ThemeService, localStroage : LocalStorageService){
-=======
-
- constructor(public productService : ProductService){
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
 
  }
 
  
  ngOnInit(): void {
-<<<<<<< HEAD
   this.pagination.totalPages= 10;
-=======
-  // this.pagination.totalPages= 10;
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
   this.field = "productName"
   this.paginationDto.pageNumber = 0;
   this.paginationDto.pageSize = 8;
@@ -81,7 +61,6 @@ export class ProductsComponent implements OnInit {
      console.log(this.pagination);
     this.currentPageSubject.next(data.pageable.pageNumber);
      })
-<<<<<<< HEAD
   
   let theme = localStorage.getItem('Theme');
   if(theme=== 'true'){
@@ -91,9 +70,6 @@ export class ProductsComponent implements OnInit {
   }
   
 }
-=======
- }
->>>>>>> eb2d27557ec0a8ac5e2b4815807a1d55f6d09555
  goToPage(name? : string , pageNumber : number = 0) {
    this.paginationDto.pageNumber = pageNumber;
    if(this.pageSize <1)
