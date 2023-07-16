@@ -43,6 +43,8 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { AddEditAddressComponent } from './customer/address/add-edit-address/add-edit-address.component';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReviewComponent } from './products/review/review.component';
+import { RatingModule } from 'primeng/rating';
 
 
 
@@ -67,7 +69,8 @@ const appRoutes: Routes = [
   { path: 'orders/:id', component: OrderDetailsComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'address/add', component: AddEditAddressComponent },
-  { path: 'address/edit/:id', component: AddEditAddressComponent }
+  { path: 'address/edit/:id', component: AddEditAddressComponent },
+  { path: 'review', component: ReviewComponent}, 
 
 ];
 
@@ -86,9 +89,10 @@ const appRoutes: Routes = [
     ProductListComponent, UpdateProductComponent,
     FordetailsAddtocartComponent,
     OrderComponent, OrdersComponent, AddressComponent, OrderDetailsComponent,
-    DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent],
+    DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent],
   imports: [BrowserModule, FormsModule, TooltipModule, CommonModule, NgxImageZoomModule,
-    HttpClientModule, RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule
+    HttpClientModule,FormsModule,RatingModule,
+    RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule
   ],
   providers: [AuthGuard, DatePipe, ThemeService, ThemeSelectorComponent, ProductService, CartComponent, FordetailsAddtocartComponent, OrderDetailsComponent, ProductsComponent, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorComponent, multi: true }],
   bootstrap: [AppComponent]

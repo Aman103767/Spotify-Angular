@@ -16,6 +16,7 @@ import { PaginationDTO } from "../models/paginationDto";
 import { Product } from "../models/product.model";
 import { JwtResponse } from "../models/jwtReponse.model";
 import { AuthAddress } from "../models/AuthAddress.model";
+import { Review } from "../models/review.model";
 
 @Injectable() 
 export class ProductService {
@@ -124,5 +125,11 @@ deleteAddressById(customerId,addressId) : Observable<Object>{
 }
 setDefaultAddress(customerId, addressId) : Observable<Object>{
   return this.http.get(`http://localhost:8888/address/setDefault/${customerId}/${addressId}`,{responseType: 'text'});
+}
+addReviewToAdmin(customerId, productId, review : Review) : Observable<Object>{
+  return this.http.post(`http://localhost:8888/Customer/review/${customerId}/${productId}`,review);
+}
+addReviewToProduct(customerId, productId, review : Review) : Observable<Object>{
+  return this.http.post(`http://localhost:8888/product/review/${customerId}/${productId}`,review);
 }
 }
