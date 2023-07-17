@@ -132,4 +132,7 @@ addReviewToAdmin(customerId, productId, review : Review) : Observable<Object>{
 addReviewToProduct(customerId, productId, review : Review) : Observable<Object>{
   return this.http.post(`http://localhost:8888/product/review/${customerId}/${productId}`,review);
 }
+getReviewOfProduct(customerId, productId): Observable<Review>{
+  return this.http.get<Review>(`http://localhost:8888/product/review/${customerId}/${productId}`);
+}
 }
