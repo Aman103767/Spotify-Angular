@@ -1,11 +1,11 @@
 <app-header></app-header>
 <div class = "container">
 <h4 class = "heading">Create Review</h4>
-<div style="display: flex">
+<div style="display: flex; gap: 15px">
     <div class = "img-card">
-    <img src = "https://m.media-amazon.com/images/I/312qcEWM+ML._SR240,240_.jpg">
+    <img [src] = "product.imagePath">
     </div>
-    <p style="margin-top: 5px;">Foora G Base PVC Professional Flute Right Hand Bansuri 8 Hole Best For Beginners multi-colore</p>
+    <p style="margin-top: 5px;">{{product.productName}}</p>
 </div>
 <hr>
 <h5>Overall rating</h5>

@@ -126,13 +126,22 @@ deleteAddressById(customerId,addressId) : Observable<Object>{
 setDefaultAddress(customerId, addressId) : Observable<Object>{
   return this.http.get(`http://localhost:8888/address/setDefault/${customerId}/${addressId}`,{responseType: 'text'});
 }
-addReviewToAdmin(customerId, productId, review : Review) : Observable<Object>{
-  return this.http.post(`http://localhost:8888/Customer/review/${customerId}/${productId}`,review);
+addReviewToAdmin(customerId, productId, orderId, review : Review) : Observable<Object>{
+  return this.http.post(`http://localhost:8888/Customer/review/${customerId}/${productId}/${orderId}`,review);
 }
-addReviewToProduct(customerId, productId, review : Review) : Observable<Object>{
-  return this.http.post(`http://localhost:8888/product/review/${customerId}/${productId}`,review);
+addReviewToProduct(customerId, productId, orderId, review : Review) : Observable<Object>{
+  return this.http.post(`http://localhost:8888/product/review/${customerId}/${productId}/${orderId}`,review);
 }
-getReviewOfProduct(customerId, productId): Observable<Review>{
-  return this.http.get<Review>(`http://localhost:8888/product/review/${customerId}/${productId}`);
+getReviewOfProduct(customerId, productId, orderId): Observable<Review>{
+  return this.http.get<Review>(`http://localhost:8888/product/review/${customerId}/${productId}/${orderId}`);
+}
+getReviewOfAdmin(customerId, productId, orderId): Observable<Review>{
+  return this.http.get<Review>(`http://localhost:8888/Customer/review/${customerId}/${productId}/${orderId}`);
+}
+getAllReviews(productId): Observable<Review[]>{
+  return this.http.get<Review[]>(`http://localhost:8888/product/getAllReview/${productId}`)
+}
+addHelpfullCount(reviewId, customerId): Observable<Review>{
+  return this.http.get<Review>(`http://localhost:8888/product/addReviewCount/${reviewId}/${customerId}`);
 }
 }

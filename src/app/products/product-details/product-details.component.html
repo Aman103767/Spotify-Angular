@@ -497,8 +497,8 @@
     
     <div class="review">
       <h4 style="font-size: 19px;">Top reviews from India</h4>
-      <div class = "review-detais">
-        <span>User</span>
+      <div class = "review-detais" *ngFor = "let review of reviews">
+        <span>{{review.customer.username}}</span>
         <div class="ratings">
           <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
             <ng-container *ngIf="i <= avgRate.singleStars">
@@ -511,25 +511,27 @@
               <i class="bi bi-star golden "></i>
             </ng-container>
           </ng-container>
-          <span style = 'margin-left : 10px;'>Title</span>
+          <span style = 'margin-left : 10px;'>{{review.headline}}</span>
         </div>
-        <span style = "color: gray;" class = "f14">Reviewed in India on 23 April 2023</span>
+        <span style = "color: gray;" class = "f14">Reviewed in India on {{review.reviewDate | date: 'dd MMMM yyyy' }}</span>
         <br>
         <span style="color : rgb(194, 91, 6); font-weight: bold;" class = "f13">Verified Purchase</span>
         <br>
         <div class = "review-mess">
         <span class = "f14">
-          After lots of interruptions I bought my 1st iPhone. Good looking and performance is very impressive. I’m also trust this is the secure mobile. Some times I’m getting irritated because of the word from AppStore and some applications “Pay to proceed “
-        </span>
+          {{review.reviewMessage}}
+        </span><br>
+        <div style = "color: gray;margin-top: 10px;">
+          <span  class = "f14">{{review?.countHelpful?.count}} people found this helpful</span>
+        </div>
+        <button class = "btn" style ="  height : 30px; margin-top: 10px;
+        font-size : 14px;box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; display: flex; 
+        justify-content: center; align-items: center;" (click) = "addHelpFull(review.reviewId)">Helpful</button>
 
       </div>
-      <span style = "color: gray;margin-top: 10px;" class = "f14">3 people found this helpful
-      </span>
       </div>
 
-      <button class = "btn" style ="  height : 30px; margin-top: 10px;
-       font-size : 14px;box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; display: flex; 
-       justify-content: center; align-items: center;">Helpful</button>
+
     </div>
 
   </div>

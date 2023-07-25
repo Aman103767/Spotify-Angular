@@ -53,8 +53,8 @@
         </div>
       </div>
       <div class="buttons">
-        <button routerLink = "/review"[queryParams]="{productId: product.productId, type: 'ADMIN' }" class="btn btn1">Leave seller feedback</button>
-        <button routerLink = "/review" [queryParams]="{productId: product.productId, type: 'PRODUCT' }"class="btn btn1">Write a product review</button>
+        <button routerLink = "/review"[queryParams]="{orderId : order.orderId, productId: product.productId, type: 'ADMIN' }" class="btn btn1">Leave seller feedback</button>
+        <button routerLink = "/review" [queryParams]="{orderId : order.orderId,productId: product.productId, type: 'PRODUCT' }"class="btn btn1">Write a product review</button>
       </div>
     </div>
 

@@ -5,6 +5,7 @@ body {
     background-position: center center; /* or any other position */
     background-attachment: fixed; /* ensures the background image stays in place */
     height: 60px;
+    position: relative;
   }
   .cartProducts{
   position: absolute;
@@ -16,3 +17,26 @@ body {
   .cartImg{
     position: relative;
   }
+  .product-item{
+    display:flex;
+    gap: 20px
+  }
+  .image-box {
+    height : 50px;
+  }
+  .image-box > img{
+    height: 100%;
+  }
+   .product-item > p{
+    font-size: 12px;
+    margin-top: 5px;
+   }
+   .searchbox{
+    border: 1px  solid red;
+    width:45%;
+    margin-left:23%;
+    position: absolute;
+    top: 55px;
+    z-index: 2;
+    background-color: white;
+   }

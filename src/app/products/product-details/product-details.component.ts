@@ -7,6 +7,7 @@ import { NgxImageZoomComponent } from 'ngx-image-zoom/public-api';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from '../product.service';
 import { ActivatedRoute } from '@angular/router';
+import { Review } from 'src/app/models/review.model';
 
 @Component({
   selector: 'app-product-details',
@@ -18,6 +19,7 @@ export class ProductDetailsComponent implements OnInit{
   id : number;
   viewImage : string;
   dayOfDelivery : string;
+  reviews : Review [] = [];
 
 
   ngOnInit(): void {
@@ -30,7 +32,13 @@ export class ProductDetailsComponent implements OnInit{
       this.dayOfDelivery =this.getFutureDate( this.product.inDeliveryDays);
       console.log("admin",response.admin)
     })
-
+    this.getAllReviews();
+  }
+  getAllReviews(){
+    this.productService.getAllReviews(this.id).subscribe(response =>{
+      this.reviews = response;
+      console.log(this.reviews)
+    })
   }
   getFutureDate(daysToAdd: number): string {
     const future = new Date();
@@ -56,6 +64,8 @@ export class ProductDetailsComponent implements OnInit{
     // Convert the difference to hours and minutes
     this.hours = Math.floor(diff / (1000 * 60 * 60));
     this.minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+
   }
 
   location = "Deliver to Gunjan - Gwalior 474011‌";
@@ -129,6 +139,13 @@ export class ProductDetailsComponent implements OnInit{
   
   });
  }
-
+ addHelpFull(reviewId){
+  const value = localStorage.getItem('customerId');
+  this.customerId = JSON.parse(value);
+  this.productService.addHelpfullCount(reviewId,this.customerId).subscribe(response =>{
+    console.log(response,"helpfullcount");
+    this.getAllReviews();
+  })
+ }
 
 }

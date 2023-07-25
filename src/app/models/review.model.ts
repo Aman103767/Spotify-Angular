@@ -5,7 +5,12 @@ export class Review {
 	public rating : number;
     public headline : string;
     public reviewMessage : String;
-    public countHelpful : number;
+    public countHelpful : {
+        id : number,
+        count : number,
+        customers : Customer[]
+    }
     public customer : Customer;
+    public reviewDate : Date;
 
 }
