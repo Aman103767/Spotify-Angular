@@ -37,6 +37,8 @@ export class ProductsComponent implements OnInit {
   direction: boolean =false;
   pagination : Pagination = new Pagination();
   pageSize : number=8;
+  min : number;
+  max : number;
   private currentPageSubject = new BehaviorSubject<number>(0);
   
   currentPage$ = this.currentPageSubject.asObservable();
@@ -99,12 +101,12 @@ export class ProductsComponent implements OnInit {
   this.paginationDto.name = this.name;
   this.paginationDto.sortBy = this.field;
   this.paginationDto.direction = this.direction;
+  this.paginationDto.minAmount = this.min;
+  this.paginationDto.maxAmount = this.max
  this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
       this.pagination = data;
       this.products = this.pagination.content;
       console.log(this.pagination);
-    
-     
       })
   }
   
@@ -137,4 +139,18 @@ size(size : number){
   this.pageSize = size;
   this.sortByField();
 }
+sortByprice(direction){
+  this.field = 'discountedPrice';
+  this.direction = direction;
+  this.sortByField();
+}
+onPriceInput(event: Event): void {
+  const inputElement = event.target as HTMLInputElement;
+  if (inputElement.value.length > 0) {
+    inputElement.placeholder = '';
+  } else {
+    inputElement.placeholder = '₹ Min';
+  }
+}
+
 }

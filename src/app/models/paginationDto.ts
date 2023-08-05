@@ -4,6 +4,9 @@ export class PaginationDTO {
  name : string ;
  sortBy : string;
  direction : boolean;
+ minAmount : number;
+ maxAmount : number;
+
  
 
 }

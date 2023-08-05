@@ -45,6 +45,7 @@ import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReviewComponent } from './products/review/review.component';
 import { RatingModule } from 'primeng/rating';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 
 
@@ -91,7 +92,7 @@ const appRoutes: Routes = [
     OrderComponent, OrdersComponent, AddressComponent, OrderDetailsComponent,
     DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent],
   imports: [BrowserModule, FormsModule, TooltipModule, CommonModule, NgxImageZoomModule,
-    HttpClientModule,FormsModule,RatingModule,
+    HttpClientModule,FormsModule,RatingModule,OverlayPanelModule,
     RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule
   ],
   providers: [AuthGuard, DatePipe, ThemeService, ThemeSelectorComponent, ProductService, CartComponent, FordetailsAddtocartComponent, OrderDetailsComponent, ProductsComponent, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorComponent, multi: true }],

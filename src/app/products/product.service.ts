@@ -22,6 +22,7 @@ import { Review } from "../models/review.model";
 export class ProductService {
    productSelected = new EventEmitter<Content>();
    OrderSelected = new EventEmitter<Orders>();
+   baseUrl = "http://localhost:8888";
 
  
 
@@ -29,119 +30,120 @@ constructor(private http: HttpClient) {
  
 }
 getProductList(): Observable<Content[]>{
-  return this.http.get<Content[]>('http://localhost:8888/Customer/getAllProduct');
+  return this.http.get<Content[]>(`${this.baseUrl}/customer/getAllProduct`);
 }
 
 
 getCustomerList(): Observable<Customer[]> {
-  return this.http.get<Customer[]>('http://localhost:8888/admin/viewAll');
+  return this.http.get<Customer[]>(`${this.baseUrl}/admin/viewAll`);
 }
 getCustomerById(id : number) : Observable<Customer> {
-  return this.http.get<Customer>(`http://localhost:8888/admin/viewById/${id}`)
+  return this.http.get<Customer>(`${this.baseUrl}/admin/viewById/${id}`)
 }
 updateCustomer(id: number ,customer : Customer): Observable<Object>{
-  return this.http.put(`http://localhost:8888/Customer/update/${id}`,customer,{responseType : 'text'});
+  return this.http.put(`${this.baseUrl}/customer/update/${id}`,customer,{responseType : `text`});
 
 }
 deleteCustomer(id: number) : Observable<Object> {
-  return this.http.delete(`http://localhost:8888/Customer/delete/${id}`,{responseType : 'text'});
+  return this.http.delete(`${this.baseUrl}/customer/delete/${id}`,{responseType : `text`});
 }
 createProduct(product: Product): Observable<Object>{
-  return this.http.post('http://localhost:8888/product/create',product);
+  return this.http.post(`${this.baseUrl}/product/create`,product);
 }
 getProductById(id : number): Observable<Product>{
-  return this.http.get<Product>(`http://localhost:8888/admin/getProductById/${id}`);
+  return this.http.get<Product>(`${this.baseUrl}/admin/getProductById/${id}`);
 }
 updateProduct(id: number,product: Product): Observable<Object>{
-  return this.http.put(`http://localhost:8888/product/updateProduct/${id}`,product,{responseType : 'text'});
+  return this.http.put(`${this.baseUrl}/product/updateProduct/${id}`,product,{responseType : `text`});
 }
 deleteProduct(id: number) : Observable<Object>{
-  return this.http.delete(`http://localhost:8888/admin/removeProduct/${id}`,{responseType : 'text'});
+  return this.http.delete(`${this.baseUrl}/admin/removeProduct/${id}`,{responseType : `text`});
 }
 getSortedProductList(): Observable<Product[]>{
-  return this.http.get<Product[]>('http://localhost:8888/Customer/getSortedProductByAnyFieldAsc/price');
+  return this.http.get<Product[]>(`${this.baseUrl}/customer/getSortedProductByAnyFieldAsc/price`);
 }
 getSortedProductListDesc(): Observable<Product[]>{
-  return this.http.get<Product[]>('http://localhost:8888/Customer/getSortedProductByAnyFieldDsc/price');
+  return this.http.get<Product[]>(`${this.baseUrl}/customer/getSortedProductByAnyFieldDsc/price`);
 }
 getSortedAnyField(field : string): Observable<Product[]>{
-  return this.http.get<Product[]>(`http://localhost:8888/Customer/getSortedProductByAnyFieldAsc/${field}`);
+  return this.http.get<Product[]>(`${this.baseUrl}/customer/getSortedProductByAnyFieldAsc/${field}`);
 }
 addtocart(customerId : number,productId : number) : Observable<Object>{
-  return this.http.get(`http://localhost:8888/Customer/cart/${customerId}/1/${productId}`,{responseType : 'text'});
+  return this.http.get(`${this.baseUrl}/customer/cart/${customerId}/1/${productId}`,{responseType : `text`});
 }
 getallProductFromCart(customerId : number) : Observable<CartProduct []>{
-  return this.http.get<CartProduct []>(`http://localhost:8888/Customer/getAllProductAddedInCart/${customerId}`);
+  return this.http.get<CartProduct []>(`${this.baseUrl}/customer/getAllProductAddedInCart/${customerId}`);
 }
 updateQuantityCart(productId: number ,quantity : number, customerId : number) : Observable<Object>{
-  return this.http.get<Object>(`http://localhost:8888/Customer/updatingQuantity/${productId}/${quantity}/${customerId}`);
+  return this.http.get<Object>(`${this.baseUrl}/customer/updatingQuantity/${productId}/${quantity}/${customerId}`);
 }
 deleteProductFromCart(productId: number,customerId: number) : Observable<Object>{
-  return this.http.delete(`http://localhost:8888/Customer/removeProductFromCart/${productId}/${customerId}`,{responseType: 'text'});
+  return this.http.delete(`${this.baseUrl}/customer/removeProductFromCart/${productId}/${customerId}`,{responseType: `text`});
 }
 getAllOrder(customerId : number): Observable<Orders []>{
-  return this.http.get<Orders []>(`http://localhost:8888/Customer/getAllOrdersByCustomer/${customerId}`);
+  return this.http.get<Orders []>(`${this.baseUrl}/customer/getAllOrdersByCustomer/${customerId}`);
 }
 Order(customerId:number): Observable<Object>{
-  return this.http.get(`http://localhost:8888/order/orderProduct/${customerId}`);
+  return this.http.get(`${this.baseUrl}/order/orderProduct/${customerId}`);
 }
 getOrderById(orderId : number) : Observable<Orders>{
-  return this.http.get<Orders>(`http://localhost:8888/order/getOrderById/${orderId}`)
+  return this.http.get<Orders>(`${this.baseUrl}/order/getOrderById/${orderId}`)
   
 }
 getPaginationData(paginationDto : PaginationDTO) : Observable<Pagination> {
-  return this.http.post<Pagination>(`http://localhost:8888/product/pagination`,paginationDto);
+  return this.http.post<Pagination>(`${this.baseUrl}/product/pagination`,paginationDto);
 }
 login(loginForm: LoginForm){
   // const headers = new HttpHeaders({
-  //   'Content-Type': 'application/json'
+  //   `Content-Type`: `application/json`
   // })
 
-  return this.http.post<any>('http://localhost:8888/login',loginForm);
+  return this.http.post<any>(`${this.baseUrl}/login`,loginForm);
 }
 // currentUser(): Observable<Customer> {
-//   return this.http.get<Customer>('http://localhost:8888/current-user');
+//   return this.http.get<Customer>(`${this.baseUrl}/current-user`);
 // }
 currentUser(jwtResponse : JwtResponse): Observable<Customer>{
-  return this.http.post<Customer>('http://localhost:8888/current-user',jwtResponse);
+  return this.http.post<Customer>(`${this.baseUrl}/current-user`,jwtResponse);
 }
 logout(): Observable<string>{
-  return this.http.get<string>('http://localhost:8888/logout');
+  return this.http.get<string>(`${this.baseUrl}/logout`);
 }
 checkCurrentUser(): Observable<Customer>{
-  return this.http.get<Customer>('http://localhost:8888/current-user');
+  return this.http.get<Customer>(`${this.baseUrl}/current-user`);
 }
 addAddresss(authAddress : AuthAddress) : Observable<Object>{
-  return this.http.post('http://localhost:8888/address/add',authAddress,{responseType: 'text'});
+  return this.http.post(`${this.baseUrl}/address/add`,authAddress,{responseType: `text`});
 }
 getAllAddress(customerId) : Observable<Address []>{
-  return this.http.get<Address []>(`http://localhost:8888/address/getAllAddress/${customerId}`);
+  return this.http.get<Address []>(`${this.baseUrl}/address/getAllAddress/${customerId}`);
 } 
 getAddressById(addressId) : Observable<Address>{
-  return this.http.get<Address>(`http://localhost:8888/address/getById/${addressId}`);
+  return this.http.get<Address>(`${this.baseUrl}/address/getById/${addressId}`);
 }
 deleteAddressById(customerId,addressId) : Observable<Object>{
-  return this.http.delete(`http://localhost:8888/address/deleteById/${customerId}/${addressId}`,{responseType: 'text'});
+  return this.http.delete(`${this.baseUrl}/address/deleteById/${customerId}/${addressId}`,{responseType: `text`});
 }
 setDefaultAddress(customerId, addressId) : Observable<Object>{
-  return this.http.get(`http://localhost:8888/address/setDefault/${customerId}/${addressId}`,{responseType: 'text'});
+  return this.http.get(`${this.baseUrl}/address/setDefault/${customerId}/${addressId}`,{responseType: `text`});
 }
 addReviewToAdmin(customerId, productId, orderId, review : Review) : Observable<Object>{
-  return this.http.post(`http://localhost:8888/Customer/review/${customerId}/${productId}/${orderId}`,review);
+  return this.http.post(`${this.baseUrl}/customer/review/${customerId}/${productId}/${orderId}`,review);
 }
 addReviewToProduct(customerId, productId, orderId, review : Review) : Observable<Object>{
-  return this.http.post(`http://localhost:8888/product/review/${customerId}/${productId}/${orderId}`,review);
+  return this.http.post(`${this.baseUrl}/product/review/${customerId}/${productId}/${orderId}`,review);
 }
 getReviewOfProduct(customerId, productId, orderId): Observable<Review>{
-  return this.http.get<Review>(`http://localhost:8888/product/review/${customerId}/${productId}/${orderId}`);
+  return this.http.get<Review>(`${this.baseUrl}/product/review/${customerId}/${productId}/${orderId}`);
 }
 getReviewOfAdmin(customerId, productId, orderId): Observable<Review>{
-  return this.http.get<Review>(`http://localhost:8888/Customer/review/${customerId}/${productId}/${orderId}`);
+  return this.http.get<Review>(`${this.baseUrl}/c
+  ustomer/review/${customerId}/${productId}/${orderId}`);
 }
 getAllReviews(productId): Observable<Review[]>{
-  return this.http.get<Review[]>(`http://localhost:8888/product/getAllReview/${productId}`)
+  return this.http.get<Review[]>(`${this.baseUrl}/product/getAllReview/${productId}`)
 }
 addHelpfullCount(reviewId, customerId): Observable<Review>{
-  return this.http.get<Review>(`http://localhost:8888/product/addReviewCount/${reviewId}/${customerId}`);
+  return this.http.get<Review>(`${this.baseUrl}/product/addReviewCount/${reviewId}/${customerId}`);
 }
 }

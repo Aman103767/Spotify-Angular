@@ -14,6 +14,8 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   padding: 0px;
   cursor: pointer;
+  border-radius: 3px;
+  margin-bottom: 10px;
 }
 .img-box{
   width: 23%;
@@ -41,6 +43,8 @@
     gap:5px;
     font-size: 14px;
     margin-top: -25px;
+    align-items: center;
+    width: 100px;
 }
 .price{
   font-size: 22px;
@@ -69,4 +73,9 @@ svg{
 .p-details{
   display: flex;
   align-items: center;
+}
+.reviewCount{
+  color:#007185;
+  font-size: 12px;
+  margin-left: -3px;
 }

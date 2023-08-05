@@ -25,13 +25,13 @@
   </div> 
 </div> -->
 
-<div class = "container" routerLink = "/product-details/{{product.productId}}">
-  <div class = "img-box">
+<div class = "container" >
+  <div class = "img-box" routerLink = "/product-details/{{product.productId}}">
      <img style = "height: 100%"src = "{{product.mainImg}}">
   </div>
   <div class = "content-box">
-    <div class = "productTitle">{{product.productName}}</div><br>
-    <div class="cont-ratings" >
+    <div class = "productTitle" routerLink = "/product-details/{{product.productId}}">{{product.productName}}</div><br>
+    <div class="cont-ratings" (click)="op.toggle($event)"  style="border: 1px solid red" >
       <div class="d-flex justify-content-between align-items-center">
         <div class="ratings">
           <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
@@ -46,29 +46,17 @@
             </ng-container>
           </ng-container>
         </div>
-      </div>
-      <!-- Example single danger button -->
-      <div class="btn-group">
-        <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Action
-        </button> -->
-        <!-- <div class="avgRating dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{product.review.avgRating}}</div> -->
-        <ul class="dropdown-menu">
-          <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li> -->
-        </ul>
-      </div>
+      </div> 
+      <p-overlayPanel #op [style]="{'width': '300px'}" [showCloseIcon]="true">
+        <ng-template pTemplate="content">
+        </ng-template>
+    </p-overlayPanel>
+      <span class = "reviewCount">{{product.review?.length ? product.review?.length : 0 }}</span>
       <!-- <span class="pur-color">{{product.review.reviews.length}} rating</span> -->
       
     </div>
     <div style = "display: flex; align-items: center;">
-    <span class="price">
+    <span class="price" routerLink = "/product-details/{{product.productId}}">
       <span>
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" style = "margin-right: -6px; margin-top: -10px;" 
           class="bi bi-currency-rupee rupee" viewBox="0 0 16 16">
@@ -78,7 +66,7 @@
       </span>
       {{ +product.price - (+product.price * ((+product.discountPercentage) / 100)) | currency:'':'' }}
     </span>
-    <div class = "p-details">
+    <div class = "p-details" routerLink = "/product-details/{{product.productId}}">
       <span class = "f12">M.R.P: 
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" style = "margin-right: -5px"
         class="bi bi-currency-rupee full-rupee" viewBox="0 0 16 16">
@@ -86,7 +74,7 @@
           d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z" />
       </svg>
         {{product.price}} </span>
-      <span class = "f13">(35% off)</span><br>
+      <span class = "f13">({{product?.discountPercentage}}% off)</span><br>
     </div>
   </div>
   <div class ="pd">
