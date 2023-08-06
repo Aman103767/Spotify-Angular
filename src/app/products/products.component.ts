@@ -8,6 +8,7 @@ import { PaginationDTO } from '../models/paginationDto';
 import { ProductService } from './product.service';
 import { ThemeService } from '../theme/theme-service';
 import { LocalStorageService } from '../shared/localstor.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 Injectable()
 @Component({
   selector: 'app-products',
@@ -45,18 +46,14 @@ export class ProductsComponent implements OnInit {
   paginationDto : PaginationDTO = new PaginationDTO();
   normalTheme = false;
 
- constructor(public productService : ProductService,public  themeService : ThemeService, localStroage : LocalStorageService){
+ constructor(public productService : ProductService,public  themeService : ThemeService, localStroage : LocalStorageService
+  , private route:ActivatedRoute){
 
  }
 
  
  ngOnInit(): void {
-  this.pagination.totalPages= 10;
-  this.field = "productName"
-  this.paginationDto.pageNumber = 0;
-  this.paginationDto.pageSize = 8;
-  this.paginationDto.sortBy = this.field;
-  this.paginationDto.direction = false;;
+    this.dataReset();
    this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
      this.pagination = data;
      this.products = data.content;
@@ -70,7 +67,15 @@ export class ProductsComponent implements OnInit {
   }else {
     this.normalTheme = false;
   }
-  
+  this.onAction()
+}
+dataReset(){
+  this.pagination.totalPages= 10;
+  this.field = "productName"
+  this.paginationDto.pageNumber = 0;
+  this.paginationDto.pageSize = 8;
+  this.paginationDto.sortBy = this.field;
+  this.paginationDto.direction = false;;
 }
  goToPage(name? : string , pageNumber : number = 0) {
    this.paginationDto.pageNumber = pageNumber;
@@ -151,6 +156,20 @@ onPriceInput(event: Event): void {
   } else {
     inputElement.placeholder = '₹ Min';
   }
+}
+
+onAction(event?){
+  if(event){
+    this.name = event;
+    this.filter()
+  } else {
+    setTimeout(() => {
+      this.name = this.route.snapshot.params['id'];
+      this.filter()
+    }, 0);
+
+  }
+
 }
 
 }

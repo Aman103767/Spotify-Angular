@@ -56,8 +56,8 @@
 
         <div class="margin-left-right" style="flex: 1 1 auto; ">
           <form class="d-flex" style="width: auto;">
-            <input class="form-control me-2 flex-fill op" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline bi bi-search s-color" type="submit"></button>
+            <input class="form-control me-2 flex-fill op" [(ngModel)] = "searchName" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+            <button routerLink = "/products/{{searchName}}"class="btn btn-outline bi bi-search s-color" type="submit" (click) = "search()"></button>
 
           </form>
         </div>

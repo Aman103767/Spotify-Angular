@@ -8,6 +8,7 @@ import { Product } from 'src/app/models/product.model';
 import { ProductService } from '../product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Review } from 'src/app/models/review.model';
+import { StarNumber } from '../product/product.component';
 
 @Component({
   selector: 'app-product-details',
@@ -20,6 +21,13 @@ export class ProductDetailsComponent implements OnInit{
   viewImage : string;
   dayOfDelivery : string;
   reviews : Review [] = [];
+  totalRating : number;
+  totalEachStar : StarNumber = new StarNumber();
+  onePer: number;
+  twoPer: number;
+  threePer : number;
+  fourPer : number = 0;
+  fivePer : number;
 
 
   ngOnInit(): void {
@@ -35,10 +43,54 @@ export class ProductDetailsComponent implements OnInit{
     this.getAllReviews();
   }
   getAllReviews(){
-    this.productService.getAllReviews(this.id).subscribe(response =>{
-      this.reviews = response;
-      console.log(this.reviews)
-    })
+      this.totalRating = 0;
+    let totalReviewCount = 0;
+      this.productService.getAllReviews(this.id).subscribe(response =>{
+        this.reviews = response;
+        this.product.review = response;
+        this.reviews.forEach(review =>{
+          this.totalRating  += review.rating;
+          totalReviewCount++;
+          switch(review.rating){
+            case 5:
+              this.totalEachStar.fiveStar++;
+              break;
+            case 4:
+              this.totalEachStar.fourStar++;
+              break;
+            case 3:
+              this.totalEachStar.threeStar++;
+              break;
+            case 2:
+              this.totalEachStar.twoStar++;
+              break;
+            case 1:
+              this.totalEachStar.oneStar++;
+               break;
+          }
+          console.log(this.totalEachStar,"totalStar");
+        })
+        if(this.totalRating != 0 && totalReviewCount != 0){
+        let rating = this.totalRating/totalReviewCount;
+        this.totalRating = rating;
+        let singleStars = Math.floor(rating);
+        let pointedStar = rating - singleStars;
+        let halfStar 
+        pointedStar >= 0.5 ? halfStar = 1 : halfStar = 0;
+        let emptyStar = 5-singleStars;
+        this.avgRate.emptyStar = emptyStar;
+        this.avgRate.halfStars = halfStar;
+        this.avgRate.singleStars = singleStars;
+        }
+        this.progessBar();
+      })
+  }
+  progessBar() {
+    this.onePer = (this.totalEachStar.oneStar * 100) / this.product.review?.length;
+    this.twoPer = (this.totalEachStar.twoStar * 100) / this.product.review?.length;
+    this.threePer = (this.totalEachStar.threeStar * 100) / this.product.review?.length;
+    this.fourPer = (this.totalEachStar.fourStar * 100) / this.product.review?.length;
+    this.onePer = (this.totalEachStar.fiveStar * 100) / this.product.review?.length;
   }
   getFutureDate(daysToAdd: number): string {
     const future = new Date();
