@@ -45,6 +45,7 @@ export class ProductsComponent implements OnInit {
   currentPage$ = this.currentPageSubject.asObservable();
   paginationDto : PaginationDTO = new PaginationDTO();
   normalTheme = false;
+  blurFlag : boolean = false;
 
  constructor(public productService : ProductService,public  themeService : ThemeService, localStroage : LocalStorageService
   , private route:ActivatedRoute){
@@ -169,7 +170,15 @@ onAction(event?){
     }, 0);
 
   }
+  if(!event || event == "")
+    this.blurFlag = false;
 
+}
+blur(event){
+  if(!event || event == "")
+     this.blurFlag = false;
+  else 
+    this.blurFlag = true;
 }
 
 }

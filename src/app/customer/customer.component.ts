@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Customer } from '../models/customer.model';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  styleUrls: ['./customer.component.css'],
+  providers: [MessageService]
 })
 export class CustomerComponent {
   title = 'E-Commerce';
@@ -14,14 +16,14 @@ export class CustomerComponent {
   isAdmin  = false;
   customer : Customer = new Customer();
 
-  constructor(private http: HttpClient,private router: Router) {}
+  constructor(private http: HttpClient,private router: Router, public messageSevice : MessageService) {}
 
   
-  onCreatePost(cust : Customer) {
-    console.log(cust)
-    this.http.post('http://localhost:8888/Customer/create',cust).subscribe(response => {
+  onCreatePost() {
+    console.log(this.customer,"Customer")
+    this.http.post('http://localhost:8888/customer/create',this.customer).subscribe(response => {
       console.log(response);
-    this.goToCustomerList();
+    // this.goToCustomerList();
   
   });
   }
@@ -33,12 +35,7 @@ export class CustomerComponent {
  }
  onSubmit(event){
 console.log(event)
-if(event.submitter.innerText === 'Admin'){
   this.customer.role = 'ADMIN';
-  this.onCreatePost(this.customer);
-}else{
-  this.customer.role = 'USER';
-  this.onCreatePost(this.customer);
-}
+  this.onCreatePost();
  }
 }

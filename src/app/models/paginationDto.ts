@@ -6,6 +6,7 @@ export class PaginationDTO {
  direction : boolean;
  minAmount : number;
  maxAmount : number;
+ search : boolean;
 
  
 

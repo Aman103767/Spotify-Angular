@@ -1,4 +1,4 @@
-import { Component, Injectable, Input,Output,EventEmitter, OnInit } from '@angular/core';
+import { Component, Injectable, Input,Output,EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { CartComponent } from '../cart/cart.component';
 import { FordetailsAddtocartComponent } from '../cart/fordetails-addtocart/fordetails-addtocart.component';
 import { FetchCustomerListComponent } from '../customer/fetch-customer-list/fetch-customer-list.component';
@@ -17,7 +17,7 @@ import { PaginationDTO } from '../models/paginationDto';
   styleUrls: ['./header.component.css','../home-page/home-page.component.css',"../theme/normal-theme.css"],
   providers: [ProductsComponent,FetchCustomerListComponent]
 })
-export class HeaderComponent  implements OnInit{
+export class HeaderComponent  implements OnInit, AfterViewInit {
 
   @Input() normalTheme = false; 
   @Input() cartProducts : number =0;
@@ -32,9 +32,16 @@ export class HeaderComponent  implements OnInit{
   max : number;
   paginationDto : PaginationDTO = new PaginationDTO();
   @Output() onAction: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
+
   searchName : string;
+  @ViewChild('searchInput', { static: true }) searchInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('contentDiv', { static: true }) contentDiv!: ElementRef<HTMLDivElement>;
+  customerId : number;
+  searchFlag : boolean = false;
 
   ngOnInit(): void {
+    this.field = "productName"
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
     this.getAllProductFromCart(this.customerId);
@@ -44,7 +51,23 @@ export class HeaderComponent  implements OnInit{
     ,public fordetailsCart : FordetailsAddtocartComponent,public cart : CartComponent,private router : Router,private themeService:ThemeService){
 
   }
-  customerId : number;
+  ngAfterViewInit() {
+    // Get the computed width of the input element
+    const inputWidth = getComputedStyle(this.searchInput.nativeElement).width;
+
+    // Apply the width to the content element
+    this.contentDiv.nativeElement.style.width = inputWidth;
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updateContentWidth();
+  }
+  updateContentWidth(){
+    const inputWidth = getComputedStyle(this.searchInput.nativeElement).width;
+    // Apply the width to the content element
+    this.contentDiv.nativeElement.style.width = inputWidth;
+  }
+
   getItem(){
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
@@ -67,19 +90,31 @@ export class HeaderComponent  implements OnInit{
  filter(){
   this.paginationDto.pageNumber = this.pageNumber;
   this.paginationDto.pageSize = this.pageSize;
-  this.paginationDto.name = this.name;
+  if(!this.searchName){
+    this.searchName = '';
+  }
+  this.paginationDto.name = this.searchName;
   this.paginationDto.sortBy = this.field;
   this.paginationDto.direction = this.direction;
   this.paginationDto.minAmount = this.min;
   this.paginationDto.maxAmount = this.max
+  this.paginationDto.search = true;
  this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
       this.pagination = data;
       this.products = this.pagination.content;
-      console.log(this.pagination);
+      console.log(this.pagination,"header");
       })
   }
 search(){
   console.log(this.searchName,"searchname")
   this.onAction.emit(this.searchName);
+  this.searchName = null;
+}
+blur(){
+  this.onBlur.emit(this.searchName);
+  this.searchFlag = true;
+}
+resetData(){
+ this.products = []
 }
 }

@@ -56,10 +56,27 @@
 
         <div class="margin-left-right" style="flex: 1 1 auto; ">
           <form class="d-flex" style="width: auto;">
-            <input class="form-control me-2 flex-fill op" [(ngModel)] = "searchName" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2 flex-fill op" #searchInput (input) = "blur(); searchName ? filter() : resetData()" [(ngModel)] = "searchName" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
             <button routerLink = "/products/{{searchName}}"class="btn btn-outline bi bi-search s-color" type="submit" (click) = "search()"></button>
-
-          </form>
+            <div class="searchbox" #contentDiv>
+              <div *ngIf="searchFlag">
+                <div *ngFor="let product of products">
+                  <div class="product-item" routerLink = "/product-details/{{product.productId}}">
+                    <div class="image-box">
+                      <img src="{{product.mainImg}}">
+                    </div>
+                    <div class="nameprice">
+                      <p>{{product.productName}}</p>
+                      <p>₹{{product.price | currency:'':''}}</p>
+                    </div>
+                  </div>
+                  <hr style="margin-top: 0px; margin-bottom: 1px;">
+                  <!-- <div style = "color: red;border: 1px solid red"></div> -->
+                </div>
+              </div>
+            </div>
+            </form>
+          
         </div>
 
         <div class="shift-right">
@@ -134,12 +151,4 @@
 </nav>
 </body>
 
-<!-- <div class = "searchbox">
-  <div class = "product-item">
-    <div class = "image-box">
-      <img src = "https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_UY327_FMwebp_QL65_.jpg">
-    </div>
-    <p>Apple iPhone 14 (128 GB) - Blue</p>
-  </div>
 
-</div> -->

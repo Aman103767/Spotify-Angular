@@ -1,26 +1,4 @@
-<!-- <div class = "col-md-4 offset-md-10">
-    <h3>Login Customer</h3>
-    
-    <form action = ""(ngSubmit) = "onSubmit()">
 
-        <div class = "from-group">
-            <label for = "">User Name</label>
-            <input type = "text" class = "form-control" id = "username"
-            [(ngModel)] = "loginForm.username" name = "username">
-        </div>
-        <div class = "from-group">
-            <label for = "">Password</label>
-            <input type = "text" class = "form-control" id = "password"
-            [(ngModel)] = "loginForm.password" name = "password">
-        </div>
-        <button class="btn btn-success" type="submit" style="margin-top: 20px;">Login</button>
-        <button class="btn btn-success" routerLink="/customer" style="margin-left : 20px ;margin-top: 20px;" >Sign Up</button>
-    </form> -->
-
-     <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
-    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>  -->
-    <!------ Include the above in your HEAD tag ---------->
     <!DOCTYPE html>
     <html>
     <head>
@@ -33,6 +11,7 @@
             <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="companylogo-1" alt="" 
               width="40" height="36" class="d-inline-block align-text-top"><span style="font-weight: bolder;">indGo</span></a>
       </div>
+      <p-toast></p-toast>
       <div class="container">
         <div class="row">
           <div class="col-md-4 offset-md-4">
@@ -41,21 +20,24 @@
                 <form method="POST" action="#" role="form">
                   <div class="mb-3">
                     <h3  class="text-center">Sign in</h3>
+                    <p-messages  [(value)]="errorArray" [enableService]="false"></p-messages>
                   </div>
                   <div class="mb-3">
                     <label for="signinEmail" class="form-label">Email or mobile phone number</label>
-                    <input id="signinEmail" [(ngModel)] = "loginForm.username" [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
+                    <input id="signinEmail" [class]="userEmpty ? 'error': null" [(ngModel)] = "loginForm.username" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
+                    <small id="username-help" *ngIf = "userEmpty" class="p-error">Required</small>
                   </div>
                   <div class="mb-3">
                     <label for="signinPassword" class="form-label">Password</label>
                     <span class="float-end f14"><a href="#">Forgot your password?</a></span>
-                    <input id="signinPassword"[(ngModel)] = "loginForm.password"  [ngModelOptions]="{standalone: true}" type="password" maxlength="25" class="form-control">
+                    <input id="signinPassword"  [class]="passwordEmpty ? 'error': null"[(ngModel)] = "loginForm.password"  [ngModelOptions]="{standalone: true}" type="password" maxlength="25" class="form-control">
+                    <small id="username-help" *ngIf = "passwordEmpty" class="p-error">Required</small>
                   </div>
                   <div class="mb-3">
                     <button id="signinSubmit" type="submit" (click) = "onSubmit()" class="btn btn-success btn-block" style = "width: 100%">Sign in</button>
                   </div>
                   <div class="mb-3">
-                    <p class="form-group"><a href="#" class="btn btn-info btn-block"  style = "width: 100%">Create an account</a></p>
+                    <p class="form-group" routerLink = "/signup"><a class="btn btn-info btn-block"  style = "width: 100%; color: white;">Create an account</a></p>
                     <p class="form-group f14">By signing in, you are agreeing to our <a href="#">Terms of Use</a> and our <a href="#">Privacy Policy</a>.</p>
                   </div>
                 </form>

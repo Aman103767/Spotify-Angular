@@ -1,6 +1,7 @@
 
 <!-- here start new project work -->
-<app-header [normalTheme]="normalTheme" (onAction) = "onAction($event)"></app-header>
+<app-header [normalTheme]="normalTheme" (onAction) = "onAction($event)" (onBlur) = "blur($event)"></app-header>
+<body [class] = "blurFlag ? 'blur-content' : null">
 <div class="sortDiv">
   <div class="parentDiv">
     <div class="totalProduct">
@@ -20,7 +21,7 @@
     </div>
   </div>
 </div>
-<div class='big-container'>
+<div class='big-container' [class] = "blurFlag ? 'blur-content' : null">
   <div class="side-div">
     <h6>Filter</h6>
     <div class="form-gap">
@@ -35,3 +36,4 @@
     </app-product>
   </div>
 </div>
+</body>

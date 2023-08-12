@@ -6,6 +6,7 @@ import { Product } from '../models/product.model';
 import { ProductService } from '../products/product.service';
 import { LocalStorageService } from '../shared/localstor.service';
 import { JwtResponse } from '../models/jwtReponse.model';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -14,26 +15,42 @@ import { JwtResponse } from '../models/jwtReponse.model';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [MessageService]
 })
 export class LoginComponent {
   
   username : string;
   password : string;
-   loginForm : LoginForm = new LoginForm();
-   constructor(private router : Router ,private localStorage: LocalStorageService, private http: HttpClient,private productService : ProductService){
+  loginForm : LoginForm = new LoginForm();
+  userEmpty = false;
+  passwordEmpty = false;
+  errorArray: any []=  [];
+   constructor(private messageService: MessageService,private router : Router ,private localStorage: LocalStorageService, private http: HttpClient,private productService : ProductService){
 
    }
+   addMessages() {
+    this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService'});
+  } 
    onSubmit(){
-
+    this.validate();
+    if(!this.userEmpty && !this.passwordEmpty){
     this.productService.login(this.loginForm).subscribe(response => {
     //  const sessionId = response.headers.get('Set-Cookie').split(';')[0].split('=')[1];
     console.log(response);
     localStorage.setItem("token",response.token);
      this.currentUser(response);
+     this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Login Successfully' });
+     setTimeout(() => {
+      this.router.navigate(['/'])
+     }, 1000);
+
     },error => {
       console.log(error);
+      this.errorArray = [{ severity: 'error', summary: 'Error', detail: error.error.message }]
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.message });
     })
+  }
    }
 
    currentUser(jwtReponse : JwtResponse){
@@ -44,5 +61,19 @@ export class LoginComponent {
     },error => {
       console.log(error);
     })
+   }
+  
+
+   validate(){
+    if(!this.loginForm.username){
+      this.userEmpty = true;
+    }else {
+      this.userEmpty = false;
+    }
+    if(!this.loginForm.password){
+      this.passwordEmpty = true;
+    }else {
+      this.passwordEmpty = false;
+    }
    }
 }
