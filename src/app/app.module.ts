@@ -49,6 +49,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
+import { AccountComponent } from './account/account.component';
 
 
 
@@ -75,6 +76,7 @@ const appRoutes: Routes = [
   { path: 'address/add', component: AddEditAddressComponent },
   { path: 'address/edit/:id', component: AddEditAddressComponent },
   { path: 'review', component: ReviewComponent}, 
+  { path: 'account', component: AccountComponent}
 
 ];
 
@@ -93,7 +95,7 @@ const appRoutes: Routes = [
     ProductListComponent, UpdateProductComponent,
     FordetailsAddtocartComponent,
     OrderComponent, OrdersComponent, AddressComponent, OrderDetailsComponent,
-    DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent],
+    DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent, AccountComponent],
   imports: [BrowserModule, FormsModule, TooltipModule, CommonModule, NgxImageZoomModule,
     HttpClientModule,FormsModule,RatingModule,OverlayPanelModule,ProgressBarModule,ToastModule,MessagesModule,
     RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule

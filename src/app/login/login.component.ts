@@ -36,11 +36,11 @@ export class LoginComponent {
     this.validate();
     if(!this.userEmpty && !this.passwordEmpty){
     this.productService.login(this.loginForm).subscribe(response => {
-    //  const sessionId = response.headers.get('Set-Cookie').split(';')[0].split('=')[1];
     console.log(response);
     localStorage.setItem("token",response.token);
      this.currentUser(response);
-     this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Login Successfully' });
+     this.errorArray = []
+     this.messageService.add({ severity: 'success', summary: 'Sign in', detail: 'Login Successfully' });
      setTimeout(() => {
       this.router.navigate(['/'])
      }, 1000);

@@ -49,27 +49,34 @@
             <form method="POST" action="#" role="form">
               <div class="mb-3">
                 <h3  class="text-center">Sign up</h3>
-                <!-- <p-messages  [(value)]="errorArray" [enableService]="false"></p-messages> -->
+                <p-messages  [(value)]="errorArray" [enableService]="false"></p-messages>
               </div>
               <div class="mb-3">
                 <label for="signinEmail" class="form-label">Name</label>
-                <input id="signinEmail" [(ngModel)] = "customer.username" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
-                <!-- <small id="username-help" *ngIf = "userEmpty" class="p-error">Required</small> -->
+                <input id="signinEmail" [class]  = "userEmpty ? 'error': null" [(ngModel)] = "customer.username" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
+                <small id="username-help" *ngIf = "userEmpty" class="p-error">Required</small>
               </div>
               <div class="mb-3">
                 <label for="signinEmail" class="form-label">Mobile number</label>
-                <input id="signinEmail" [(ngModel)] = "customer.mobileNumber" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
-                <!-- <small id="username-help" *ngIf = "userEmpty" class="p-error">Required</small> -->
+                <input id="signinEmail" [class]  = "mobileNumberEmpty ? 'error': null" [(ngModel)] = "customer.mobileNumber" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
+                <small id="username-help" *ngIf = "mobileNumberEmpty" class="p-error">Required</small>
               </div>
               <div class="mb-3">
                 <label for="signinEmail" class="form-label">Email</label>
-                <input id="signinEmail" [(ngModel)] = "customer.email" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
-                <!-- <small id="username-help" *ngIf = "userEmpty" class="p-error">Required</small> -->
+                <input id="signinEmail" [class]  = "emailEmpty ? 'error': null" [(ngModel)] = "customer.email" pInputText class="ng-invalid ng-dirty"  [ngModelOptions]="{standalone: true}" type="email" maxlength="50" class="form-control">
+                <small id="username-help" *ngIf = "emailEmpty" class="p-error">Required</small>
               </div>
               <div class="mb-3">
                 <label for="signinPassword" class="form-label">Password</label>
-                <input id="signinPassword"[(ngModel)] = "customer.password"  [ngModelOptions]="{standalone: true}" type="password" maxlength="25" class="form-control">
-                <!-- <small id="username-help" *ngIf = "passwordEmpty" class="p-error">Required</small> -->
+                <input id="signinPassword" 
+                  pTooltip="
+                  It should contain at least one capital letter (A-Z).
+                  It should contain at least one small letter (a-z).
+                  It should contain at least one special character (!@#$%^&*()_+{}
+                  :;<>,.?~\/-)."
+                 tooltipPosition="right" [class]  = "passwordEmpty || passwordAuthFlag ? 'error': null" [(ngModel)] = "customer.password"  [ngModelOptions]="{standalone: true}" type="password" maxlength="25" class="form-control">
+                <small id="username-help" *ngIf = "passwordEmpty" class="p-error">Required</small>
+                <small id="username-help" *ngIf = "passwordAuthFlag" class="p-error">Invalid fullfill the requirement</small>
               </div>
               <div class="mb-3">
                 <button id="signinSubmit" type="submit" (click) = "onSubmit($event)" class="btn btn-success btn-block" style = "width: 100%">Sign Up</button>

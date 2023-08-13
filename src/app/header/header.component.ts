@@ -10,6 +10,8 @@ import { ThemeService } from '../theme/theme-service';
 import { Pagination } from '../models/pagination.model';
 import { Content } from '../models/content.model';
 import { PaginationDTO } from '../models/paginationDto';
+import { JwtResponse } from '../models/jwtReponse.model';
+import { Customer } from '../models/customer.model';
 @Injectable()
 @Component({
   selector: 'app-header',
@@ -31,6 +33,7 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
   min : number;
   max : number;
   paginationDto : PaginationDTO = new PaginationDTO();
+  user : Customer = new Customer();
   @Output() onAction: EventEmitter<any> = new EventEmitter<any>();
   @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
 
@@ -45,6 +48,7 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
     this.getAllProductFromCart(this.customerId);
+    this.currentUser();
   }
   collapsed = true;
   constructor(private productsComponent: ProductsComponent,private fetchCust : FetchCustomerListComponent,private productService : ProductService
@@ -58,6 +62,16 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
     // Apply the width to the content element
     this.contentDiv.nativeElement.style.width = inputWidth;
   }
+  currentUser(){
+    let jwt : JwtResponse = new JwtResponse();
+    jwt.token = localStorage.getItem("token");
+     this.productService.currentUser(jwt).subscribe(response=>{
+        this.user = response;
+        console.log("user",this.user)
+     },error => {
+       console.log(error);
+     })
+    }
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.updateContentWidth();
