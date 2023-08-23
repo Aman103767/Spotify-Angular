@@ -80,8 +80,8 @@ updateQuantityCart(productId: number ,quantity : number, customerId : number) : 
 deleteProductFromCart(productId: number,customerId: number) : Observable<Object>{
   return this.http.delete(`${this.baseUrl}/customer/removeProductFromCart/${productId}/${customerId}`,{responseType: `text`});
 }
-getAllOrder(customerId : number): Observable<Orders []>{
-  return this.http.get<Orders []>(`${this.baseUrl}/customer/getAllOrdersByCustomer/${customerId}`);
+getAllOrder(customerId : number, paginationDto): Observable<Pagination>{
+  return this.http.post<Pagination>(`${this.baseUrl}/customer/getAllOrdersByCustomer/${customerId}`,paginationDto);
 }
 Order(customerId:number): Observable<Object>{
   return this.http.get(`${this.baseUrl}/order/orderProduct/${customerId}`);

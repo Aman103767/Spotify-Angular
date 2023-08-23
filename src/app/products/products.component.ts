@@ -51,6 +51,12 @@ export class ProductsComponent implements OnInit {
   , private route:ActivatedRoute){
 
  }
+ onPageChange(event){
+  console.log(event,"event");
+  this.pageSize = event.rows;
+  this.pageNumber = event.page;
+  this.filter();
+ }
 
  
  ngOnInit(): void {

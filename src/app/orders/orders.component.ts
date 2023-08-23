@@ -5,59 +5,62 @@ import { ProductService } from '../products/product.service';
 import { ProductDto } from '../models/productDto.model';
 import { Address } from '../models/address.model';
 import { CartProduct } from '../models/cartProduct.model';
+import { PaginationDTO } from '../models/paginationDto';
+import { Pagination } from '../models/pagination.model';
+import { error } from 'jquery';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
-export class OrdersComponent implements OnInit{
-orders : Orders [] 
-// = [{
-//   orderId : 1,
-//   orderDate: new Date(),
-//   customer : new Customer(),
-//   products : new ProductDto [
+export class OrdersComponent implements OnInit {
+  orders: Orders[]
+  customerId: number;
+  field: string;
+  name: string;
+  pageNumber: number = 0;
+  direction: boolean = false;
+  pageSize: number = 2;
+  pagination : Pagination = new Pagination();
+  paginationDto: PaginationDTO = new PaginationDTO();
 
-//   ],
-//   address : new Address(),
-//   orderStatus : "Confirmed",
-// }
-// ];
-customerId : number;
+  constructor(private productService: ProductService) {
 
-products : CartProduct [] = [
-
-  {
-id : 12,
-
-    productId : 1,
-    imagePath: 
-      "https://m.media-amazon.com/images/I/61bK6PMOC3L._SX679_.jpg",
-    productName: "Apple iPhone 14 (128 GB) - Blue",
-    price : 89900,
-    quantity: 50,
-dimension : 23,
-manufacturer: "NOkia",
-discountPercentage : 5
-}
-]
-constructor(private productService : ProductService){
-
-}
-ngOnInit(): void {
-  this.getAllOrders();
-}
-getAllOrders(){
- 
+  }
+  ngOnInit(): void {
+    this.filter()
+  }
+  getAllOrders() {
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
-    //console.log(this.customerId);
-       this.productService.getAllOrder(this.customerId).subscribe(data=>{
-       console.log(data);
-       this.orders = data;
-       })
-}
+    this.productService.getAllOrder(this.customerId, this.paginationDto).subscribe(data => {
+      console.log(data);
+      this.orders = data.content;
+      this.pagination = data;
+      this.pagination.totalPages = this.pagination?.totalPages +1;
+    },error => console.log(error,"orders"))
+  }
+  dataReset(){
+    this.pagination.totalPages= 10;
+    this.field = "orderDate";
+    this.paginationDto.pageNumber = this.pageNumber;
+    this.paginationDto.pageSize = this.pageSize
+    this.paginationDto.sortBy = this.field;
+    this.paginationDto.direction = false;
+  }
+  filter(){
+    this.dataReset()
+    this.paginationDto.direction = this.direction;
+    this.getAllOrders();
+  }
+  onPageChange(event){
+    console.log(event,"event");
+    this.pageSize = event.rows;
+    this.pageNumber = event.page;
+    this.filter();
+   }
+  
 
 
 }

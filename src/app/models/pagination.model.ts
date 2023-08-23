@@ -3,7 +3,7 @@ import { Pageable } from "./pageable.model";
 import { Sort } from "./sort.model";
 
 export class Pagination{
-    content : Content [] = [];
+    content : any = [];
     pageable : Pageable;
     last : boolean;
     totalElements : number;

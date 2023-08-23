@@ -37,3 +37,6 @@
   </div>
 </div>
 </body>
+<div class="flex justify-content-center">
+  <p-paginator (onPageChange)="onPageChange($event)" [first]="pagination?.pageable?.pageNumber" [rows]="pagination?.size" [totalRecords]="pagination?.totalPages" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+</div>
