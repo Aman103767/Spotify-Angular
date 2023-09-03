@@ -29,7 +29,7 @@ export class CustomerComponent {
   
   onCreatePost() {
     console.log(this.customer,"Customer")
-    this.http.post('http://localhost:8888/customer/create',this.customer).subscribe(response => {
+    this.http.post('http://ec2-54-167-193-160.compute-1.amazonaws.com:8888/customer/create',this.customer).subscribe(response => {
       console.log(response);
     // this.goToCustomerList();
     this.errorArray = [];
