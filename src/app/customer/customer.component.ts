@@ -29,7 +29,9 @@ export class CustomerComponent {
   
   onCreatePost() {
     console.log(this.customer,"Customer")
-    this.http.post('http://ec2-54-167-193-160.compute-1.amazonaws.com:8888/customer/create',this.customer).subscribe(response => {
+    // let baseUrl = "http://ec2-54-167-193-160.compute-1.amazonaws.com:8888"
+    let baseUrl = "https://bindgo-deployed-railway-production.up.railway.app"
+    this.http.post(`${baseUrl}/customer/create`,this.customer).subscribe(response => {
       console.log(response);
     // this.goToCustomerList();
     this.errorArray = [];

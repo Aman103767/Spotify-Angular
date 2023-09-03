@@ -1,4 +1,10 @@
-
+body {  
+    background-size: cover; /* or "contain" */
+    background-position: center center; /* or any other position */
+    background-attachment: fixed; /* ensures the background image stays in place */
+    height: 60px;
+    position: relative;
+  }
   .cartProducts{
   position: absolute;
   top: 5px;
