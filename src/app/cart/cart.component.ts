@@ -5,6 +5,7 @@ import { Product } from '../models/product.model';
 import { ProductService } from '../products/product.service';
 import { Address } from '../models/address.model';
 import { error } from 'jquery';
+import { SharedService } from '../shared.service';
 @Injectable()
 @Component({
   selector: 'app-cart',
@@ -23,7 +24,7 @@ export class CartComponent implements OnInit{
   total : number =0;
   quantity: number;
   customerId : number;
-  constructor(private productService: ProductService,private router : Router){
+  constructor(private sharedService: SharedService ,private productService: ProductService,private router : Router){
 
   }
   ngOnInit(){
@@ -48,6 +49,7 @@ export class CartComponent implements OnInit{
     })
   }
  getAllProductFromCart(id: number){
+  this.sharedService.setLoaderState(true);
   this.productService.getallProductFromCart(id).subscribe(data =>{
     this.products=data;
     this.total = 0;
@@ -60,9 +62,12 @@ export class CartComponent implements OnInit{
       this.discountTotal +=(product.price * ((product.discountPercentage) / 100))*product.quantity;
       this.getProduct(product.productId,product);
     }
+    this.sharedService.setLoaderState(false);
     console.log(this.products)
     //console.log(this.products);
-},error => console.log(error));
+},error => {
+  this.sharedService.setLoaderState(false);
+});
  }
 
  onInput(product: CartProduct){

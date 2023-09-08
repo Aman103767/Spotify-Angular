@@ -9,6 +9,7 @@ import { ProductService } from '../product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Review } from 'src/app/models/review.model';
 import { StarNumber } from '../product/product.component';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-product-details',
@@ -28,17 +29,27 @@ export class ProductDetailsComponent implements OnInit{
   threePer : number;
   fourPer : number = 0;
   fivePer : number;
+  index : number = 0;
+  avgRate = {
+    singleStars: 0,
+    halfStars:0,
+    emptyStar: 0,
+  };
 
 
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
     console.log(this.id);
+    this.sharedService.setLoaderState(true);
     this.productService.getProductById(this.id).subscribe(response =>{
       this.product = response;
      this.viewImage =  this.product.imagePath[0]
       console.log(this.product);
       this.dayOfDelivery =this.getFutureDate( this.product.inDeliveryDays);
       console.log("admin",response.admin)
+      this.sharedService.setLoaderState(false);
+    },error =>{
+      this.sharedService.setLoaderState(false);
     })
     this.getAllReviews();
   }
@@ -103,7 +114,7 @@ export class ProductDetailsComponent implements OnInit{
     
     
   }
-  constructor(private datePipe: DatePipe,private productService : ProductService,private router : ActivatedRoute) {
+  constructor(private sharedService : SharedService, private datePipe: DatePipe,private productService : ProductService,private router : ActivatedRoute) {
 
 
     // Set tomorrow's date by adding one day to the current date
@@ -122,10 +133,6 @@ export class ProductDetailsComponent implements OnInit{
 
   location = "Deliver to Gunjan - Gwalior 474011‌";
   product  = new Product();
-    avgRate  = { singleStars : 4,
-                 halfStars : 1,
-                 emptyStar: 1
-                  };
     clickImg(event){
       //this.viewImage = event;
       console.log(event);

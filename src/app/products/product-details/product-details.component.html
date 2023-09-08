@@ -5,8 +5,8 @@
 
     <div class="image-container">
       <div>
-        <div class='images-cont' *ngFor="let img of product.imagePath">
-          <div class="image-div" (click)="clickImg(img)">
+        <div class='images-cont' *ngFor="let img of product.imagePath; let i = index">
+          <div [class] = "i === index ? 'image-div viewSI' : 'image-div'" (click)="clickImg(img); index = i">
             <img style="width: 100%;" src="{{img}}">
           </div>
 
@@ -54,7 +54,7 @@
             <li><a class="dropdown-item" href="#">Separated link</a></li> -->
           </ul>
         </div>
-        <!-- <span class="pur-color">{{product.review.reviews.length}} rating</span> -->
+        <span class="reviewCount">{{product.review?.length ? product.review?.length : 0 }}</span>
         <div></div>
       </div>
       <hr class="line">
@@ -480,7 +480,7 @@
 
  
     
-    <div class="review">
+    <div class="review" *ngIf = "reviews.length > 0">
       <h4 style="font-size: 19px;">Top reviews from India</h4>
       <div class = "review-detais" *ngFor = "let review of reviews">
         <span>{{review.customer.username}}</span>

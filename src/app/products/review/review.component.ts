@@ -5,6 +5,8 @@ import { Review } from 'src/app/models/review.model';
 import { Orders } from 'src/app/models/order.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductDto } from 'src/app/models/productDto.model';
+import { SharedService } from 'src/app/shared.service';
+import { error } from 'jquery';
 
 @Component({
   selector: 'app-review',
@@ -20,10 +22,11 @@ export class ReviewComponent {
  product : ProductDto = new ProductDto();
  review = new Review();
  orderId : number;
- constructor(private route: ActivatedRoute, private productService : ProductService) {
+ constructor(private sharedService: SharedService,private route: ActivatedRoute, private productService : ProductService) {
   console.log("value",this.value)
   const value = localStorage.getItem('customerId');
   this.customerId = JSON.parse(value);
+  this.sharedService.setLoaderState(true);
   this.route.queryParams.subscribe(params => {
     this.reviewType  = params['type'];
     this.productId = params['productId'];
@@ -35,6 +38,9 @@ export class ReviewComponent {
           this.product = product;
         }
       })
+      this.sharedService.setLoaderState(false);
+    },error => {
+      this.sharedService.setLoaderState(false);
     })
     if(this.reviewType == "PRODUCT"){
       this.getReviewProduct();
@@ -46,15 +52,24 @@ export class ReviewComponent {
 
 }
 getReviewProduct(){
+  this.sharedService.setLoaderState(true);
   this.productService.getReviewOfProduct(this.customerId,this.productId, this.orderId).subscribe(response =>{
     console.log(response);
     this.review = response; 
+    this.sharedService.setLoaderState(false);
+
+  },error =>{
+    this.sharedService.setLoaderState(false);
   })
 }
 getReviewAdmin(){
+  this.sharedService.setLoaderState(true);
   this.productService.getReviewOfAdmin(this.customerId,this.productId, this.orderId).subscribe(response =>{
     console.log(response);
     this.review = response; 
+    this.sharedService.setLoaderState(false);
+  },error =>{
+    this.sharedService.setLoaderState(false);
   })
 }
 addReview(){

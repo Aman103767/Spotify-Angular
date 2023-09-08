@@ -234,7 +234,8 @@ body {
 }
 
 #img_box>img {
-    height: 140px
+   max-height: 140px;
+   max-width: 140px;
 }
 
 /* here start button minus and plus */

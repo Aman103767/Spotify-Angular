@@ -19,10 +19,17 @@
 }
 .img-box{
   width: 23%;
-  background-color: #f7f6f6;
+  /* background-color: #f7f6f6; */
   display: flex;
   justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   
+}
+.img-box > img {
+  /* width: 80%; */
+  max-width: 90%;
+  max-height: 90%;
 }
 .content-box{
   width: 75%;
@@ -80,7 +87,6 @@ svg{
 }
 .progess-bar{
   margin: auto;
-  border: 1px solid red;
 
 }
 .star-mar{
@@ -92,7 +98,6 @@ svg{
 .panelRating{
   gap: 10px;
   display: flex;
-  border: 1px solid red;
   align-items: center;
   width: 90%;
   margin:auto 
@@ -105,3 +110,4 @@ svg{
   font-size: 15px;
   margin-left : 19px;
 }
+

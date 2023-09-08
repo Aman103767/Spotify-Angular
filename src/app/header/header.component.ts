@@ -88,7 +88,10 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
     this.cart.getAllProductFromCart(this.customerId);
   }
  logout(){
- 
+  localStorage.removeItem("token");      
+  localStorage.removeItem('customerId');
+
+  this.user = new Customer();
  }
  loginAuth(){
  

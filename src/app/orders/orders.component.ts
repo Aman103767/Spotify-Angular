@@ -8,6 +8,7 @@ import { CartProduct } from '../models/cartProduct.model';
 import { PaginationDTO } from '../models/paginationDto';
 import { Pagination } from '../models/pagination.model';
 import { error } from 'jquery';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-orders',
@@ -25,7 +26,7 @@ export class OrdersComponent implements OnInit {
   pagination : Pagination = new Pagination();
   paginationDto: PaginationDTO = new PaginationDTO();
 
-  constructor(private productService: ProductService) {
+  constructor(private sharedService : SharedService,private productService: ProductService) {
 
   }
   ngOnInit(): void {
@@ -34,12 +35,16 @@ export class OrdersComponent implements OnInit {
   getAllOrders() {
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
+    this.sharedService.setLoaderState(true);
     this.productService.getAllOrder(this.customerId, this.paginationDto).subscribe(data => {
       console.log(data);
       this.orders = data.content;
       this.pagination = data;
       this.pagination.totalPages = this.pagination?.totalPages +1;
-    },error => console.log(error,"orders"))
+      this.sharedService.setLoaderState(false);
+    },error => {console.log(error,"orders")
+    this.sharedService.setLoaderState(false);
+  })
   }
   dataReset(){
     this.pagination.totalPages= 10;

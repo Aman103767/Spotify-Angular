@@ -22,8 +22,9 @@ import { Review } from "../models/review.model";
 export class ProductService {
    productSelected = new EventEmitter<Content>();
    OrderSelected = new EventEmitter<Orders>();
+   baseUrl = "http://localhost:8888"
   //  baseUrl = "http://ec2-54-167-193-160.compute-1.amazonaws.com:8888";
-  baseUrl = "https://bindgo-deployed-railway-production.up.railway.app";
+  // baseUrl = "https://bindgo-deployed-railway-production.up.railway.app";
 
  
 

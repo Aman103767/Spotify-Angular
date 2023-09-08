@@ -7,6 +7,8 @@ import { ProductService } from '../products/product.service';
 import { LocalStorageService } from '../shared/localstor.service';
 import { JwtResponse } from '../models/jwtReponse.model';
 import { MessageService } from 'primeng/api';
+import { LoaderComponent } from '../loader/loader.component';
+import { SharedService } from '../shared.service';
 
 
 
@@ -26,7 +28,7 @@ export class LoginComponent {
   userEmpty = false;
   passwordEmpty = false;
   errorArray: any []=  [];
-   constructor(private messageService: MessageService,private router : Router ,private localStorage: LocalStorageService, private http: HttpClient,private productService : ProductService){
+   constructor(private sharedService : SharedService,private messageService: MessageService,private router : Router ,private localStorage: LocalStorageService, private http: HttpClient,private productService : ProductService){
 
    }
    addMessages() {
@@ -35,20 +37,23 @@ export class LoginComponent {
    onSubmit(){
     this.validate();
     if(!this.userEmpty && !this.passwordEmpty){
+      this.sharedService.setLoaderState(true);
     this.productService.login(this.loginForm).subscribe(response => {
     console.log(response);
     localStorage.setItem("token",response.token);
      this.currentUser(response);
      this.errorArray = []
+     this.sharedService.setLoaderState(false);
      this.messageService.add({ severity: 'success', summary: 'Sign in', detail: 'Login Successfully' });
      setTimeout(() => {
       this.router.navigate(['/'])
      }, 1000);
 
     },error => {
-      console.log(error);
-      this.errorArray = [{ severity: 'error', summary: 'Error', detail: error.error.message }]
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.message });
+      // console.log(error);
+      this.sharedService.setLoaderState(false);
+      this.errorArray = [{ severity: 'error', summary: 'Error', detail: error?.error?.message }]
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: error?.error?.message });
     })
   }
    }

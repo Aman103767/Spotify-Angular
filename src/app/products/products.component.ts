@@ -9,6 +9,7 @@ import { ProductService } from './product.service';
 import { ThemeService } from '../theme/theme-service';
 import { LocalStorageService } from '../shared/localstor.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { SharedService } from '../shared.service';
 Injectable()
 @Component({
   selector: 'app-products',
@@ -37,7 +38,7 @@ export class ProductsComponent implements OnInit {
   pageNumber : number = 0;
   direction: boolean =false;
   pagination : Pagination = new Pagination();
-  pageSize : number=8;
+  pageSize : number=10;
   min : number;
   max : number;
   private currentPageSubject = new BehaviorSubject<number>(0);
@@ -47,7 +48,7 @@ export class ProductsComponent implements OnInit {
   normalTheme = false;
   blurFlag : boolean = false;
 
- constructor(public productService : ProductService,public  themeService : ThemeService, localStroage : LocalStorageService
+ constructor(public sharedService : SharedService, public productService : ProductService,public  themeService : ThemeService, localStroage : LocalStorageService
   , private route:ActivatedRoute){
 
  }
@@ -61,11 +62,16 @@ export class ProductsComponent implements OnInit {
  
  ngOnInit(): void {
     this.dataReset();
+    this.sharedService.setLoaderState(true);
    this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
      this.pagination = data;
      this.products = data.content;
      console.log(this.pagination);
-    this.currentPageSubject.next(data.pageable.pageNumber);
+     console.log(data,"data");
+     this.sharedService.setLoaderState(false);
+    // this.currentPageSubject.next(data.pageable.pageNumber);
+     },error =>{
+      this.sharedService.setLoaderState(false);
      })
   
   let theme = localStorage.getItem('Theme');
@@ -80,14 +86,14 @@ dataReset(){
   this.pagination.totalPages= 10;
   this.field = "productName"
   this.paginationDto.pageNumber = 0;
-  this.paginationDto.pageSize = 8;
+  this.paginationDto.pageSize = 10;
   this.paginationDto.sortBy = this.field;
   this.paginationDto.direction = false;;
 }
  goToPage(name? : string , pageNumber : number = 0) {
    this.paginationDto.pageNumber = pageNumber;
    if(this.pageSize <1)
-   this.pageSize = 8;
+   this.pageSize = 10;
       this.paginationDto.name = this.name;
     this.paginationDto.pageSize = this.pageSize;
   this.paginationDto.sortBy = this.field;
@@ -115,10 +121,14 @@ dataReset(){
   this.paginationDto.direction = this.direction;
   this.paginationDto.minAmount = this.min;
   this.paginationDto.maxAmount = this.max
+  this.sharedService.setLoaderState(true);
  this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
       this.pagination = data;
-      this.products = this.pagination.content;
+      this.products = this.pagination.content;  
       console.log(this.pagination);
+      this.sharedService.setLoaderState(false);
+      },error => {
+        this.sharedService.setLoaderState(false);
       })
   }
   

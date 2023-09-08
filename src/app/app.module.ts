@@ -51,6 +51,7 @@ import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { AccountComponent } from './account/account.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -96,7 +97,7 @@ const appRoutes: Routes = [
     ProductListComponent, UpdateProductComponent,
     FordetailsAddtocartComponent,
     OrderComponent, OrdersComponent, AddressComponent, OrderDetailsComponent,
-    DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent, AccountComponent],
+    DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent, AccountComponent, LoaderComponent],
   imports: [BrowserModule, FormsModule, TooltipModule, CommonModule, NgxImageZoomModule,
     HttpClientModule,FormsModule,RatingModule,OverlayPanelModule,ProgressBarModule,ToastModule,MessagesModule,PaginatorModule,
     RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule
