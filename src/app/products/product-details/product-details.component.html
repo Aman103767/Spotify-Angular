@@ -91,9 +91,9 @@
       <div>
 
       </div>
-      <button type="button" class="prevHori" (click)="onPrevClick()" *ngIf="prevbutton">
+      <!-- <button type="button" [class]="product?.productName?.length < 28 ? 'prevHori' : 'prevHori topMargin'" (click)="onPrevClick()" *ngIf="prevbutton">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
+      </button> -->
       <div class="offers" #container>
         <div class="gridscroll">
 
@@ -130,9 +130,9 @@
 
         </div>
       </div>
-      <button type="button" class="nextHori" (click)='onNextClick()' *ngIf="nextbutton">
+      <!-- <button type="button" [class]="product?.productName?.length < 28 ? 'nextHori' : 'nextHori topMargin'" (click)='onNextClick()' *ngIf="nextbutton">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
+      </button> -->
       <hr>
       <div>
         <table class="brand-det">

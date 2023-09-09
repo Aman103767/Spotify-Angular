@@ -1,4 +1,4 @@
-import { Component, Injectable, Injector, OnInit } from '@angular/core';
+import { Component, Injectable, Injector, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Content } from '../models/content.model';
 import { GetProduct } from '../models/getProduct.model';
@@ -17,7 +17,7 @@ Injectable()
   styleUrls: ['./products.component.css','../theme/normal-theme.css'],
   
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
   field : string;
    products : Content []
   //  = [
@@ -52,6 +52,8 @@ export class ProductsComponent implements OnInit {
   , private route:ActivatedRoute){
 
  }
+  ngOnDestroy(): void {
+  }
  onPageChange(event){
   console.log(event,"event");
   this.pageSize = event.rows;

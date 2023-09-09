@@ -228,7 +228,7 @@ td{
   }
   .prevHori{
     position: absolute;
-    top: 280px; 
+    /* top: 280px;  */
     width: 30px;   
     display: flex;
     justify-content: center;
@@ -251,7 +251,7 @@ td{
 
   .nextHori{
     position: absolute; 
-    top: 280px;
+    /* top: 280px; */
     right: 20px; 
     width: 30px;   
     display: flex;
@@ -354,4 +354,7 @@ td{
       }
 .review-detais{
     margin-bottom: 15px;
+}
+.topMargin {
+    top: 260px; 
 }

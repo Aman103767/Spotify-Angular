@@ -1,22 +1,24 @@
 import { DatePipe } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import $ from "jquery";
 import { ButtonModule } from 'primeng/button';
 import 'magnific-popup';
 import { NgxImageZoomComponent } from 'ngx-image-zoom/public-api';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from '../product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Review } from 'src/app/models/review.model';
 import { StarNumber } from '../product/product.component';
 import { SharedService } from 'src/app/shared.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit{
+export class ProductDetailsComponent implements OnInit, OnDestroy{
   @ViewChild('productImage', { static: true }) productImage: ElementRef;
   id : number;
   viewImage : string;
@@ -38,6 +40,11 @@ export class ProductDetailsComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.routerForScroll.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0); // Reset scroll position to the top
+      }
+    });
     this.id = this.router.snapshot.params['id'];
     console.log(this.id);
     this.sharedService.setLoaderState(true);
@@ -114,7 +121,7 @@ export class ProductDetailsComponent implements OnInit{
     
     
   }
-  constructor(private sharedService : SharedService, private datePipe: DatePipe,private productService : ProductService,private router : ActivatedRoute) {
+  constructor(private routerForScroll: Router,private sharedService : SharedService, private datePipe: DatePipe,private productService : ProductService,private router : ActivatedRoute) {
 
 
     // Set tomorrow's date by adding one day to the current date
@@ -129,6 +136,8 @@ export class ProductDetailsComponent implements OnInit{
     this.minutes = Math.floor((diff / (1000 * 60)) % 60);
 
 
+  }
+  ngOnDestroy(): void {
   }
 
   location = "Deliver to Gunjan - Gwalior 474011‌";
