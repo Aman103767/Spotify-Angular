@@ -1,75 +1,4 @@
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    width: 80%;
-  }
-  .cart-item {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-left: 10%;
-  }
-  .cart-item img {
-    max-width: 100px;
-    margin-right: 10px;
-  }
-  .cart-item-info {
-    flex-grow: 1;
-  }
-  .cart-item-info h2 {
-    margin: 0;
-    font-size: 20px;
-  }
-  .cart-item-info p {
-    margin: 5px 0;
-    font-size: 14px;
-  }
-  .cart-item-quantity {
-    display: flex;
-    align-items: center;
-  }
-  .cart-item-quantity label {
-    margin-right: 10px;
-  }
-  .cart-item-quantity input {
-    width: 50px;
-    text-align: center;
-  }
-  .cart-item-total {
-    font-weight: bold;
-    font-size: 18px;
-  }
-  .cart-total {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-  .cart-total p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  .cart-total-amount {
-    font-size: 24px;
-    margin-top: 10px;
-  }
-  .cart-item-actions button {
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  } */
-
-  * {
+* {
    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -342,4 +271,25 @@ body {
   border-radius: 5px;
   margin-top: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+@media (max-width: 480px) {
+  #twocontainer {
+    display: inline;
+  }
+  .item-parent-div{
+    width: 96%;
+    margin: auto;
+  }
+  #total_container{
+    width: 96%;
+  }
+  #mobile-hide{
+    display: none;
+  }
+  #img_box{
+    max-width: 80px;
+  }
+  #img_box > img{
+    max-width: 70px;
+  }
 }

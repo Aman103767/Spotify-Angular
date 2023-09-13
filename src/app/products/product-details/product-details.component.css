@@ -289,7 +289,7 @@ td{
 }
 .review-cont{
     width: 97.5%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     margin:auto;    
@@ -298,13 +298,13 @@ td{
 }
 .reviews-bar{
     width: 35%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: auto;
     padding: 20px;
 }
 .review {
     width: 73%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 1100px;
     padding: 20px;
     
@@ -334,7 +334,7 @@ td{
 }
 .cont{
     width: 97.5%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin:auto;
     padding: 20px;
     margin-top: 20px;
@@ -357,4 +357,47 @@ td{
 }
 .topMargin {
     top: 260px; 
+}
+.pc-hide{
+    display: none;
+}
+
+@media (max-width: 480px) {
+  .pc-hide{
+    display: block;
+  }
+  .big-container{
+    display: block;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  .image-container{
+    width: 96%;
+  }
+  .product-details-container{
+    width: 96%;
+    padding: 0;
+    margin:auto;
+  }
+  .addtoCart{
+    width: 96%;
+    padding: 0;
+    margin: auto;
+    height: auto;
+  }
+  .title{}
+
+  .review-cont{
+    display: inline;
+  }
+  .reviews-bar{
+    width: 96%;
+    margin: auto;
+  }
+  .review{
+    width: 96%;
+    margin: auto;
+  }
+    
 }

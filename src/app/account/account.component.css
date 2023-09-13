@@ -38,3 +38,15 @@
  .text-material{
     line-height: 1.2;
  }
+ @media (max-width: 480px) {
+   .container{
+      width: 96%;
+   }
+   .grid-container > div{
+      display: inline;
+   }
+   .text-material{
+      text-align: center;
+   }
+
+ }

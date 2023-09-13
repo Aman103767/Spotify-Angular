@@ -87,11 +87,11 @@ checkOut(){
   this.router.navigate(['/address']);
 }
 incQuan(product){
-  this.products[0].quantity++;
+  product.quantity++;
   this.onInput(product);
  }
  dscQuan(product){
-  this.products[0].quantity--;
+  product.quantity--;
   this.onInput(product);
   this.inStock = true;
  }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Address } from 'src/app/models/address.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/products/product.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-address',
@@ -14,7 +15,7 @@ export class AddressComponent implements OnInit {
   customerId : number;
   customerAddresses : Address [] = []
   constructor(private productService : ProductService,
-    private router : ActivatedRoute,private routerLink : Router){}
+    private router : ActivatedRoute,private routerLink : Router, private sharedService: SharedService){}
   ngOnInit(): void {
     this.getAllAddress();
   }
@@ -22,6 +23,7 @@ export class AddressComponent implements OnInit {
     this.customerAddresses = [];
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
+    this.sharedService.setLoaderState(true);
     this.productService.getAllAddress(this.customerId).subscribe(response =>{
       let defaultAddress = null;
 
@@ -38,6 +40,9 @@ export class AddressComponent implements OnInit {
         }
       })
       console.log(this.customerAddresses);
+      this.sharedService.setLoaderState(false);
+    },error =>{
+      this.sharedService.setLoaderState(false);
     })
   }
   remove(id){

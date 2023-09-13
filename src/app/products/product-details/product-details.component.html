@@ -4,7 +4,7 @@
   <div class="big-container">
 
     <div class="image-container">
-      <div>
+      <div class = "mobile-hide">
         <div class='images-cont' *ngFor="let img of product.imagePath; let i = index">
           <div [class] = "i === index ? 'image-div viewSI' : 'image-div'" (click)="clickImg(img); index = i">
             <img style="width: 100%;" src="{{img}}">
@@ -12,9 +12,21 @@
 
         </div>
       </div>
-      <div class="view-image">
+      <div class="view-image mobile-hide">
         <img style="width: 100%;" src="{{viewImage}}">
       </div>
+
+      <div class = "pc-hide"style = "width: 100%;">
+      <p-carousel [value]="product.imagePath" [numVisible]="3" [numScroll]="1"  verticalViewPortHeight="360px" [responsiveOptions]="responsiveOptions">
+        <ng-template let-img pTemplate="item">
+                        <img style = "width: 100%;"src="{{img}}"[alt]="product.productName" class="product-image" />
+        </ng-template>
+    </p-carousel>
+  </div>
+    
+      
+
+
     </div>
     <div class='product-details-container'>
       <div class="title">
@@ -219,7 +231,7 @@
     </div>
   </div>
 <hr>
-<div class="cont" >
+<div class="cont mobile-hide" >
   <h4 class="text-start mb-5 fw-bold" >Top Deal's</h4>
   <div class="row" style="margin-top: -30px;">
     <div class="col">
@@ -483,7 +495,10 @@
     <div class="review" *ngIf = "reviews.length > 0">
       <h4 style="font-size: 19px;">Top reviews from India</h4>
       <div class = "review-detais" *ngFor = "let review of reviews">
-        <span>{{review.customer.username}}</span>
+        <div style = "display: flex; gap: 5px">
+          <i class="pi pi-user" style="font-size: 1rem"></i>
+          <span>{{review.customer.username}}</span>
+        </div>
         <div class="ratings">
           <ng-container *ngFor="let i of [1, 2, 3, 4, 5]">
             <ng-container *ngIf="i <= avgRate.singleStars">

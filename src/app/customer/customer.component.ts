@@ -30,7 +30,8 @@ export class CustomerComponent {
   onCreatePost() {
     console.log(this.customer,"Customer")
     // let baseUrl = "http://ec2-54-167-193-160.compute-1.amazonaws.com:8888"
-    let baseUrl = "https://bindgo-deployed-railway-production.up.railway.app"
+    // let baseUrl = "https://bindgo-deployed-railway-production.up.railway.app"
+    let baseUrl = "http://bindgo-env-2.eba-rjcj5zjq.us-east-1.elasticbeanstalk.com"
     this.http.post(`${baseUrl}/customer/create`,this.customer).subscribe(response => {
       console.log(response);
     // this.goToCustomerList();

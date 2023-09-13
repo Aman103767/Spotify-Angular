@@ -54,4 +54,10 @@
   .add-address:hover{
     background-color: rgb(255, 179, 0);
   }
+
+  @media (max-width: 480px) {
+   .container{
+    width:96%;
+   }
+  }
   

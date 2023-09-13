@@ -19,11 +19,11 @@
         <span class="f12">ORDER PLACED </span><br>
         <span class="f14">{{order?.orderDate | date:'dd MMM yyyy'}}</span>
       </div>
-      <div class="total line-hight-header">
+      <div class="total line-hight-header mobile-hide">
         <span class="f12">TOTAL </span><br>
         <span class="f14">{{order?.totalAmount}}</span>
       </div>
-      <div class="ship line-hight-header">
+      <div class="ship line-hight-header mobile-hide">
         <span class="f12">Ship To </span><br>
         <span class="f14">{{order?.customer?.username}} </span>
       </div>

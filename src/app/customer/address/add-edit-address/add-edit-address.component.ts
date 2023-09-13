@@ -4,6 +4,8 @@ import { AuthAddress } from 'src/app/models/AuthAddress.model';
 import { Address } from 'src/app/models/address.model';
 import { ProductService } from 'src/app/products/product.service';
 import { Location } from '@angular/common'
+import { SharedService } from 'src/app/shared.service';
+import { error } from 'jquery';
 
 @Component({
   selector: 'app-add-edit-address',
@@ -17,11 +19,15 @@ export class AddEditAddressComponent implements OnInit{
   
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
+    this.sharedService.setLoaderState(true);
     this.productService.getAddressById(this.id).subscribe(response =>{
       this.address = response;
+      this.sharedService.setLoaderState(false);
+    },error =>{
+      this.sharedService.setLoaderState(false);
     })
   }
-  constructor(private productService : ProductService,private router: ActivatedRoute, private location: Location,private routeer: Router){
+  constructor(private sharedService : SharedService,private productService : ProductService,private router: ActivatedRoute, private location: Location,private routeer: Router){
 
   }
   addAddress(){

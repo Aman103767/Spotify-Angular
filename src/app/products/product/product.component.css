@@ -110,4 +110,21 @@ svg{
   font-size: 15px;
   margin-left : 19px;
 }
+.div_price_mrp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+@media (max-width: 480px) {
+  .img-box{
+    width: 40%;
+  } 
+  .content-box{
+    padding: 0px 5px 5px 10px;
+  }
+  .container{
+    height: auto;
+  }
+}
 

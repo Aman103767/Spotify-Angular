@@ -16,7 +16,7 @@ import { Customer } from '../models/customer.model';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css','../home-page/home-page.component.css',"../theme/normal-theme.css"],
+  styleUrls: ['./header.component.css'],
   providers: [ProductsComponent,FetchCustomerListComponent]
 })
 export class HeaderComponent  implements OnInit, AfterViewInit {

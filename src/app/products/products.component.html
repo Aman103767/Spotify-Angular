@@ -22,7 +22,7 @@
   </div>
 </div>
 <div class='big-container' [class] = "blurFlag ? 'blur-content' : null">
-  <div class="side-div">
+  <div class="side-div hide-mobile">
     <h6>Filter</h6>
     <div class="form-gap">
       <input class="input1" [(ngModel)]="min" placeholder="₹ Min" id="priceInput" (input)="onPriceInput($event)" type="text">
