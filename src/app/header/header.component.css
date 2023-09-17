@@ -237,6 +237,13 @@ right: 0; */
   .index{
     z-index: 10;
   }
+  .searchbox {
+    position: absolute;
+    top: 260px;
+    z-index: 2;
+    background-color: white;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px; */ 
+  }
 
   .cartProducts {}
 
@@ -318,6 +325,14 @@ right: 0; */
   }
   .pad{
     padding: 0px 0px 0px 10px;
+  }
+  .pro-css{
+    height: 33px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    /* display: flex;
+    align-items: center; */
+    overflow: hidden;
   }
 
   .dark-glass {}

@@ -40,6 +40,8 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
   searchName : string;
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef<HTMLInputElement>;
   @ViewChild('contentDiv', { static: true }) contentDiv!: ElementRef<HTMLDivElement>;
+  @ViewChild('msearchInput', { static: true }) msearchInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('mcontentDiv', { static: true }) mcontentDiv!: ElementRef<HTMLDivElement>;
   customerId : number;
   searchFlag : boolean = false;
 
@@ -61,6 +63,11 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
 
     // Apply the width to the content element
     this.contentDiv.nativeElement.style.width = inputWidth;
+    // const minputWidth = getComputedStyle(this.msearchInput.nativeElement).width;
+    const msearchInput = this.msearchInput.nativeElement.offsetWidth;
+
+    // Apply the width to the content element
+    this.mcontentDiv.nativeElement.style.width = '73.5%';
   }
   currentUser(){
     let jwt : JwtResponse = new JwtResponse();
@@ -105,6 +112,9 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
  }
  
  filter(){
+  const msearchInput = this.msearchInput.nativeElement.offsetWidth;
+  this.mcontentDiv.nativeElement.style.width = msearchInput.toString()+'px'
+
   this.paginationDto.pageNumber = this.pageNumber;
   this.paginationDto.pageSize = this.pageSize;
   if(!this.searchName){
@@ -126,12 +136,21 @@ search(){
   console.log(this.searchName,"searchname")
   this.onAction.emit(this.searchName);
   this.searchName = null;
+  this.searchFlag = false;
+  this.onBlur.emit('');
 }
 blur(){
+  if(!this.searchName || this.searchName == ''){
+    this.searchFlag = false;
+  }
   this.onBlur.emit(this.searchName);
   this.searchFlag = true;
 }
 resetData(){
  this.products = []
+}
+searchByName(name){
+  this.searchName = name;
+  this.searchFlag = false;
 }
 }

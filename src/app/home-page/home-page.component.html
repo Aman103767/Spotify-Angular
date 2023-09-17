@@ -2,7 +2,7 @@
 
 <body>
 <app-header [normalTheme] = "normalTheme"></app-header>
-<button class = "btn btn-primary" style = "position: absolute; top: 
+<button class = "mobile-hide btn btn-primary mob" style = "position: absolute; top: 
   100px;z-index: 100;right: 3px; border-radius: 0% 50% 0% 50%;"
   (click) = "getAndSetTheme(); setTheme(!getAndSetTheme())">
   Theme {{getAndSetTheme()}}</button>
@@ -36,112 +36,118 @@
     </div>
     <div class="slider-above">
       <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-        <div class="sub-container ">
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-            <p class="p-text">Air conditioners</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-            <p class="p-text">Refrigerators</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-            <p class="p-text">Microwaves</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-            <p class="p-text">Washing machines</p>
-          </div>
-        </div>
-      </div>
-  
-  
-      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Up to 70% off | Styles for men</header>
-        <div class="sub-container ">
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg">
-            <p class="p-text">Air conditioners</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-2-186-116._SY116_CB636110853_.jpg">
-            <p class="p-text">Refrigerators</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-            <p class="p-text">Microwaves</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-            <p class="p-text">Washing machines</p>
-          </div>
-        </div>
-      </div>
-      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <header class = "heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Up to 70% off | Trending new launches</header>
         <div class="sub-container">
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+              src="../../assets/americanTourister.jpg">
+            <p class="p-text">Up to 50% off | American Tourister</p>
+          </div>
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/bikeaccesories.jpg">
+            <p class="p-text">Up to 60% off | Bike Accesories</p>
+          </div>
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/boxing.jpg">
+            <p class="p-text">Starting ₹699 | Punching bags</p>
+          </div>
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/Jewellery.jpg">
+            <p class="p-text">Up to 60% off | Jewellery</p>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header class = "heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Top picks | Luggage, watches & more</header>
+        <div class="sub-container ">
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/Safari.jpg">
+            <p class="p-text">
+              Up to 60% off | Safari</p>
+          </div>
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/tovel.jpg">
+            <p class="p-text">
+              Starting ₹699| Punching bags</p>
+          </div>
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/watches_smartwatches.jpg">
+            <p class="p-text">
+              Up to 60% off | Watches & smartwatches</p>
+          </div>
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/baby_essentials.jpg">
+            <p class="p-text">
+              Up to 70% off | Baby essentials</p>
+          </div>
+        </div>
+      </div>
+      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
+        <header class = "heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Home appliances | Up to 55% off</header>
+        <div class="sub-container">
+          <div class="child-div" routerLink = "/products">
+            <img style="width: 100%; height: auto"
+            src="../../assets/air_conditions.jpg">            
             <p class="p-text">Air conditioners</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+            src="../../assets/refrigerators.jpg">            
             <p class="p-text">Refrigerators</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+            src="../../assets/microwaves.jpg">            
             <p class="p-text">Microwaves</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+            src="../../assets/washing_machines.jpg">            
             <p class="p-text">Washing machines</p>
           </div>
         </div>
       </div>
   
       <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <header class = "heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Starting ₹99 | All your home improvement needs</header>
         <div class="sub-container">
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-            <p class="p-text">Air conditioners</p>
+            src="../../assets/bathroomhandware.jpg">            
+            <p class="p-text">Bathroom handware & accessories</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-            <p class="p-text">Refrigerators</p>
+            src="../../assets/spinwipts.jpg">            
+            <p class="p-text">Spin impos, wipes & more
+            </p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-            <p class="p-text">Microwaves</p>
+            src="../../assets/hammers_screwdrivers.jpg">            
+            <p class="p-text">Hammers, screwdrivers & more</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-            <p class="p-text">Washing machines</p>
+            src="../../assets/extension_boards.jpg">            
+            <p class="p-text">Extension boards, plugs & more
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="big-container m-adj">
+    <div class="big-container m-adj mobile-hide">
       <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <header class="heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Home appliances | Up to 55% off</header>
         <div>
           <img style="width:100%;"
             src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg">
@@ -149,24 +155,24 @@
   
       </div>
       <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <header class="heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Home appliances | Up to 55% off</header>
         <div class="sub-container">
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
             <p class="p-text">Air conditioners</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
             <p class="p-text">Refrigerators</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
             <p class="p-text">Microwaves</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
             <p class="p-text">Washing machines</p>
@@ -174,24 +180,24 @@
         </div>
       </div>
       <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <header class="heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Home appliances | Up to 55% off</header>
         <div class="sub-container">
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
             <p class="p-text">Air conditioners</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
             <p class="p-text">Refrigerators</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
             <p class="p-text">Microwaves</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
             <p class="p-text">Washing machines</p>
@@ -199,316 +205,50 @@
         </div>
       </div>
       <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
+        <header class="heading" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;" style="font-size: 16px;">Home appliances | Up to 55% off</header>
         <div class="sub-container">
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
             <p class="p-text">Air conditioners</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
             <p class="p-text">Refrigerators</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
             <p class="p-text">Microwaves</p>
           </div>
-          <div class="child-div">
+          <div class="child-div" routerLink = "/products">
             <img style="width: 100%; height: auto"
               src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
             <p class="p-text">Washing machines</p>
           </div>
         </div>
       </div>
-    </div>
-  
-    <div class="cont glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-      <h4 class="text-start mb-5 fw-bold" >Top Deal's</h4>
-      <div class="row" style="margin-top: -30px;">
-        <div class="col">
-          <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="slide-container">
-                  <div class="col-md-3 ">
-                    <div class="card glass-bac" style="height: 250px; width: 230px;">
-                      <div class = "img-box"> 
-                      <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                        alt="Product 1">
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                      </div>
-                    </div> 
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="slide-container">
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                      <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                        alt="Product 1">
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                      </div>
-                    </div> 
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="slide-container">
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                      <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                        alt="Product 1">
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                      </div>
-                    </div> 
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="card" style="height: 250px; width: 230px;">
-                      <div class = "img-box">
-                        <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                          alt="Product 1">
-                        </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-               
-              </div>
-              <a class="carousel-control-prev arr-adj-left" href="#product-carousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </a>
-              <a class="carousel-control-next arr-adj-right" href="#product-carousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="big-container">
-      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-        <div>
-          <img
-            src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg">
-        </div>
-  
-      </div>
-      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-        <div class="sub-container">
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-            <p class="p-text">Air conditioners</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-            <p class="p-text">Refrigerators</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-            <p class="p-text">Microwaves</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-            <p class="p-text">Washing machines</p>
-          </div>
-        </div>
-      </div>
-      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-        <div class="sub-container">
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-            <p class="p-text">Air conditioners</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-            <p class="p-text">Refrigerators</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-            <p class="p-text">Microwaves</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-            <p class="p-text">Washing machines</p>
-          </div>
-        </div>
-      </div>
-      <div class="container glass-bac" [ngClass] = "{'theme-container': getAndSetTheme()}">
-        <header style="padding: 10px; font-weight: 600;">Home appliances | Up to 55% off</header>
-        <div class="sub-container">
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
-            <p class="p-text">Air conditioners</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
-            <p class="p-text">Refrigerators</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
-            <p class="p-text">Microwaves</p>
-          </div>
-          <div class="child-div">
-            <img style="width: 100%; height: auto"
-              src="https://images-eu.ssl-images-amazon.com/images/W/IMAGERENDERING_521856-T2/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
-            <p class="p-text">Washing machines</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+    </div> 
 
+    <div class = "cru-container">
+    <p-carousel [value]="products" [numVisible]="4" [numScroll]="4" [circular]="false" [responsiveOptions]="responsiveOptions">
+      
+      <ng-template let-product pTemplate="item">
+          <div class="text-center whole-card" routerLink = "product-details/{{product.productId}}">
+              <div class="mb-3 cru-img-box">
+                  <img style="height: 100px;" src="{{product.mainImg}}" [alt]="product.name" class="w-6 shadow-2" />
+              </div>
+              <div>
+                  <p class="mb-1 f12">{{ product.productName }}</p>
+                  <p class="mt-0 mb-3 f12">{{ '₹' + product.price }}</p>
+                  <div class="car-buttons mt-5">
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </p-carousel>
+</div>
     <app-footer></app-footer>
   
     

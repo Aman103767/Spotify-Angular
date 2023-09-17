@@ -34,7 +34,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   //   category : undefined
   // }
   // ];
-  name : string;
+  name : string = '';
   pageNumber : number = 0;
   direction: boolean =false;
   pagination : Pagination = new Pagination();
@@ -63,8 +63,12 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
  
  ngOnInit(): void {
-    this.dataReset();
+  this.dataReset();
+  this.name = this.route.snapshot.params['id'];
+  if(!this.name)
+    this.name = '';
     this.sharedService.setLoaderState(true);
+   this.paginationDto.name = this.name;
    this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
      this.pagination = data;
      this.products = data.content;
@@ -82,7 +86,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }else {
     this.normalTheme = false;
   }
-  this.onAction()
+  // this.onAction()
 }
 dataReset(){
   this.pagination.totalPages= 10;
@@ -90,7 +94,8 @@ dataReset(){
   this.paginationDto.pageNumber = 0;
   this.paginationDto.pageSize = 10;
   this.paginationDto.sortBy = this.field;
-  this.paginationDto.direction = false;;
+  this.paginationDto.direction = false;
+  this.name = '';
 }
  goToPage(name? : string , pageNumber : number = 0) {
    this.paginationDto.pageNumber = pageNumber;
@@ -126,7 +131,7 @@ dataReset(){
   this.sharedService.setLoaderState(true);
  this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
       this.pagination = data;
-      this.products = this.pagination.content;  
+      this.products = data.content;  
       console.log(this.pagination);
       this.sharedService.setLoaderState(false);
       },error => {
@@ -179,10 +184,12 @@ onPriceInput(event: Event): void {
 
 onAction(event?){
   if(event){
+    this.dataReset();
     this.name = event;
     this.filter()
   } else {
     setTimeout(() => {
+      this.dataReset();
       this.name = this.route.snapshot.params['id'];
       this.filter()
     }, 0);

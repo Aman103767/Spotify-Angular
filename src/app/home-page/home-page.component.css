@@ -33,21 +33,7 @@ body {
   position: relative;
   margin-top:3px;
 }
-.big-container{
-  width: 97.5%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  
-  gap:20px;
-  margin: auto;
-  /* position: absolute;s
-  top:46%;
-  left:15px; */
-  margin-top: 20px;
- 
 
-}
 .m-adj{
   margin-top: 128px;
   
@@ -55,7 +41,7 @@ body {
 .slider-above{
   width: 97.5%;
   display: grid;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   
@@ -67,29 +53,27 @@ body {
 }
 
 .sub-container{
-width: 100%;
+/* width: 100%; */
 display: grid;
-border: 1px solid red;
 grid-template-columns: 1fr 1fr ;
 
 margin: auto;
 }
 
 .container{
-  border: 1px solid red;
-  height: 380px;
-  width: 100%;
+  height: auto;
+  /* width: 100%; */
   padding: 10px;
+
 }
 .child-div{
-  border: 1px solid red;
-  height: 122px;
   margin:auto;
-  width: 122px;
+  width: 90%;
+  height: 90%;
 }
 .p-text{
   font-size: 12px;
-  color : white;
+  color : gray;
   
 }
 
@@ -361,6 +345,55 @@ line-height: 35px;
 margin-right: 3px;
 margin-bottom: 5px;
 }
+.cru-img-box{
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.cru-img-box > img {
+  max-height: 100%;
+  max-width: 90%;
+  padding: 20px 0px 20px 0px;
+}
+.whole-card{
+  width: 93%;
+  background-color: white;
+  padding: 10px;
+  height: auto;
+}
+.cru-container{
+  margin-top: 20px;
+}
+.f12{
+  font-size: 12px;
+}
+.big-container{
+  width: 97.5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  
+  gap:20px;
+  margin: auto;
+  /* position: absolute;s
+  top:46%;
+  left:15px; */
+  /* margin-top: 20px; */
+ margin-top: 81px;
+
+}
+@media (max-width:  1301px) {
+  .big-container{
+    margin-top: 0px;
+    margin-top: 110px;
+
+  }
+}
+
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
@@ -434,7 +467,7 @@ background-color: rgba(0, 0, 0, 0.1);
 
 }
 .glass-bac{
-color: white;
+color:gray;
 /* From https://css.glass */
 background: rgba(255, 255, 255, 0.2);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -466,5 +499,43 @@ color: white;
 .op{
 color : white;
 }
+@media(max-width : 480px){
+  .big-container{
+    display: block;
+  }
+  .slider-above{
+    display: block;
+    width: 96%;
+    /* display: grid; */
+    /* border: 1px solid red; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto; */
+    
+    gap:20px;
+    margin: auto;
+    position: static;
+    margin-top: -80px;
 
+  }
+  .mobile-hide{
+    display: none;
+  }
+  .mobile-head{
+    font-size: 12px;
+  }
+  .heading{
+    font-size: 12px;
+  }
+  .carCustom{
+    margin-top: -11px;
+  }
+  .container{
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+  body{
+    background-color: white;
+  }
+  
+}
 

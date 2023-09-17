@@ -15,7 +15,7 @@
     <h3 class = "heading">Orders</h3>
     <app-order *ngFor = "let order of orders" [order] ="order"></app-order>
     <div class="flex justify-content-center">
-      <p-paginator (onPageChange)="onPageChange($event)" [first]="pagination?.pageable?.pageNumber" [rows]="pagination?.size" [totalRecords]="pagination?.totalElements" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+      <p-paginator (onPageChange)="onPageChange($event)" [rows]="pagination?.size" [totalRecords]="pagination?.totalElements" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
     </div>  
   </div>
 </body>

@@ -11,8 +11,6 @@ import { Review } from 'src/app/models/review.model';
 import { StarNumber } from '../product/product.component';
 import { SharedService } from 'src/app/shared.service';
 import { Router } from '@angular/router';
-import * as bootstrap from 'bootstrap';
-
 
 @Component({
   selector: 'app-product-details',
@@ -42,8 +40,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy{
 
 
   ngOnInit(): void {
-    const myCarousel = document.getElementById('carouselExampleSlidesOnly');
-    console.log('Carousel element found.');
     
     this.responsiveOptions = [
       {
@@ -62,11 +58,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy{
           numScroll: 1
       }
   ];
-//     if (myCarousel) {
-//       const carousel = new bootstrap.Carousel(myCarousel);
-//       console.log('Carousel initialized.'); 
-
-// }
     this.routerForScroll.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         window.scrollTo(0, 0); // Reset scroll position to the top

@@ -20,7 +20,7 @@
         </div>
         <div class="margin-left-right" style="flex: 1 1 auto; ">
           <form class="d-flex" style="width: auto;">
-            <input class="form-control me-2 flex-fill op" #searchInput (input) = "blur(); searchName ? filter() : resetData()" [(ngModel)] = "searchName" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2 flex-fill op" #searchInput (input) = "blur(); searchName ? filter() : resetData()" (blur)="searchFlag = false" [(ngModel)] = "searchName" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
             <button routerLink = "/products/{{searchName}}"class="btn btn-outline bi bi-search s-color" type="submit" (click) = "search()"></button>
             <div class="searchbox" #contentDiv>
               <div *ngIf="searchFlag">
@@ -104,8 +104,17 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2 glass" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline glass"  routerLink = "/products"  type="submit">Search</button>
+        <input class="form-control me-2 glass" #msearchInput (blur)="searchFlag = false" (input) = "blur(); searchName ? filter() : resetData()" [(ngModel)] = "searchName" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search" aria-label="Search">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="btn btn-outline glass blur" #searchButton routerLink = "/products" (click) = "search()" type="submit">Search</button>
+        <div class="searchbox" #mcontentDiv>
+          <div *ngIf="searchFlag">
+            <div class = "pro-css"
+             *ngFor="let product of products">
+              <p class = "overflow" (click) = "searchByName(product.productName)">{{product.productName}}</p>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>

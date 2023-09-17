@@ -22,7 +22,7 @@ export class OrdersComponent implements OnInit {
   name: string;
   pageNumber: number = 0;
   direction: boolean = false;
-  pageSize: number = 2;
+  pageSize: number = 10;
   pagination : Pagination = new Pagination();
   paginationDto: PaginationDTO = new PaginationDTO();
 
@@ -40,7 +40,6 @@ export class OrdersComponent implements OnInit {
       console.log(data);
       this.orders = data.content;
       this.pagination = data;
-      this.pagination.totalPages = this.pagination?.totalPages +1;
       this.sharedService.setLoaderState(false);
     },error => {console.log(error,"orders")
     this.sharedService.setLoaderState(false);
