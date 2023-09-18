@@ -24,8 +24,8 @@ export class ProductService {
    OrderSelected = new EventEmitter<Orders>();
   //  baseUrl = "http://localhost:8888"
   //  baseUrl = "http://ec2-54-167-193-160.compute-1.amazonaws.com:8888";
-  baseUrl = "https://bindgo-deployed-railway-production.up.railway.app";
-  // baseUrl = "http://bindgo-env-2.eba-rjcj5zjq.us-east-1.elasticbeanstalk.com"
+  // baseUrl = "https://bindgo-deployed-railway-production.up.railway.app";
+  baseUrl = "http://bindgo-env-2.eba-rjcj5zjq.us-east-1.elasticbeanstalk.com"
 
  
 

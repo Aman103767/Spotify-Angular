@@ -119,6 +119,7 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
   this.paginationDto.pageSize = this.pageSize;
   if(!this.searchName){
     this.searchName = '';
+    this.searchFlag = false;
   }
   this.paginationDto.name = this.searchName;
   this.paginationDto.sortBy = this.field;
@@ -149,8 +150,11 @@ blur(){
 resetData(){
  this.products = []
 }
-searchByName(name){
-  this.searchName = name;
-  this.searchFlag = false;
+searchByName(name?){
+  if(name){
+    this.searchName = name;
+    this.searchFlag = false;
+  }
+  else this.searchFlag = false;
 }
 }
