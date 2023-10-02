@@ -1,6 +1,5 @@
 import { Component, Injectable, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FordetailsAddtocartComponent } from 'src/app/cart/fordetails-addtocart/fordetails-addtocart.component';
 import { Content } from 'src/app/models/content.model';
 import { Product } from 'src/app/models/product.model';
 import { LocalStorageService } from 'src/app/shared/localstor.service';
@@ -14,7 +13,7 @@ Injectable()
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
-  providers: [ProductService, FordetailsAddtocartComponent]
+  providers: [ProductService]
 })
 export class ProductComponent implements OnInit {
   @Input() product: Content;
@@ -33,7 +32,7 @@ export class ProductComponent implements OnInit {
     halfStars:0,
     emptyStar: 0,
   };
-  constructor(private localStor: LocalStorageService, public productService: ProductService, private router: ActivatedRoute, private fordetialsCart: FordetailsAddtocartComponent) {
+  constructor(private localStor: LocalStorageService, public productService: ProductService, private router: ActivatedRoute) {
 
   }
   ngOnInit(): void {

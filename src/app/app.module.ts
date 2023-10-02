@@ -19,7 +19,6 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { CreateProductComponent } from './products/create-product/create-product.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { UpdateProductComponent } from './products/update-product/update-product.component';
-import { FordetailsAddtocartComponent } from './cart/fordetails-addtocart/fordetails-addtocart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderComponent } from './orders/order/order.component';
 import { AddressComponent } from './customer/address/address.component';
@@ -53,6 +52,7 @@ import { AccountComponent } from './account/account.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { LoaderComponent } from './loader/loader.component';
 import { CarouselModule } from 'primeng/carousel';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 
@@ -70,7 +70,6 @@ const appRoutes: Routes = [
   { path: 'createProduct', component: CreateProductComponent, canActivate: [AuthGuard] },
   { path: 'productList', component: ProductListComponent, canActivate: [AuthGuard] },
   { path: 'updateProduct/:id', component: UpdateProductComponent, canActivate: [AuthGuard] },
-  { path: 'forCartDetails/:id', component: FordetailsAddtocartComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] },
   { path: 'address', component: AddressComponent, canActivate: [AuthGuard] },
@@ -96,14 +95,13 @@ const appRoutes: Routes = [
     CustomerDetailsComponent,
     CreateProductComponent,
     ProductListComponent, UpdateProductComponent,
-    FordetailsAddtocartComponent,
     OrderComponent, OrdersComponent, AddressComponent, OrderDetailsComponent,
     DropdownDirective, LoginComponent, AuthInterceptorComponent, HomePageComponent, FooterComponent, ProductDetailsComponent, ThemeSelectorComponent, AddEditAddressComponent, ReviewComponent, AccountComponent, LoaderComponent],
   imports: [BrowserModule, FormsModule, TooltipModule, CommonModule, NgxImageZoomModule,CarouselModule,
     HttpClientModule,FormsModule,RatingModule,OverlayPanelModule,ProgressBarModule,ToastModule,MessagesModule,PaginatorModule,
-    RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule
+    RouterModule.forRoot(appRoutes), CoreModule, ButtonModule, DialogModule,BrowserAnimationsModule,ConfirmDialogModule
   ],
-  providers: [AuthGuard, DatePipe, ThemeService, ThemeSelectorComponent, ProductService, CartComponent, FordetailsAddtocartComponent, OrderDetailsComponent, ProductsComponent, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorComponent, multi: true }],
+  providers: [AuthGuard, DatePipe, ThemeService, ThemeSelectorComponent, ProductService, OrderDetailsComponent, ProductsComponent, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorComponent, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

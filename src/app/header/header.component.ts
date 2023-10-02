@@ -1,6 +1,4 @@
 import { Component, Injectable, Input,Output,EventEmitter, OnInit, AfterViewInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { CartComponent } from '../cart/cart.component';
-import { FordetailsAddtocartComponent } from '../cart/fordetails-addtocart/fordetails-addtocart.component';
 import { FetchCustomerListComponent } from '../customer/fetch-customer-list/fetch-customer-list.component';
 import { ProductService } from '../products/product.service';
 import { ProductComponent } from '../products/product/product.component';
@@ -53,8 +51,8 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
     this.currentUser();
   }
   collapsed = true;
-  constructor(private productsComponent: ProductsComponent,private fetchCust : FetchCustomerListComponent,private productService : ProductService
-    ,public fordetailsCart : FordetailsAddtocartComponent,public cart : CartComponent,private router : Router,private themeService:ThemeService){
+  constructor(private productsComponent: ProductsComponent,private fetchCust : FetchCustomerListComponent,private productService : ProductService,
+    private router : Router,private themeService:ThemeService){
 
   }
   ngAfterViewInit() {
@@ -92,7 +90,7 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
   getItem(){
     const value = localStorage.getItem('customerId');
     this.customerId = JSON.parse(value);
-    this.cart.getAllProductFromCart(this.customerId);
+    // this.cart.getAllProductFromCart(this.customerId);
   }
  logout(){
   localStorage.removeItem("token");      

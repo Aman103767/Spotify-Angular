@@ -272,6 +272,34 @@ body {
   margin-top: 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
+.btnn{
+    height: 30px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    background-color: rgb(255, 217, 4); 
+    padding: 10px;
+  }
+  .chn-btnn{
+    height: 30px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    background-color: rgb(255, 217, 4); 
+    padding: 10px;
+  }
+  .btnn:hover{
+    background-color: rgb(255, 217, 4); 
+  }
+  .buttons{
+    display: flex;
+    justify-content:end ;
+  }
+  .mobile-hide{
+    display: none;
+}
 @media (max-width: 480px) {
   #twocontainer {
     display: inline;
@@ -292,4 +320,10 @@ body {
   #img_box > img{
     max-width: 70px;
   }
+  .pc-hide{
+    display: none;
+}
+.mobile-hide{
+    display: inline;
+}
 }

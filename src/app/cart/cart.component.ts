@@ -7,12 +7,13 @@ import { Address } from '../models/address.model';
 import { error } from 'jquery';
 import { SharedService } from '../shared.service';
 import { HeaderComponent } from '../header/header.component';
+import {ConfirmationService, MessageService } from 'primeng/api';
 @Injectable()
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
-
+  styleUrls: ['./cart.component.css'],
+  providers: [ConfirmationService, MessageService]
 })
 export class CartComponent implements OnInit{
   products : CartProduct [] = []
@@ -27,7 +28,7 @@ export class CartComponent implements OnInit{
   customerId : number;
   @ViewChild('navbar', { static: true }) navbar: HeaderComponent;
 
-  constructor(private sharedService: SharedService ,private productService: ProductService,private router : Router){
+  constructor(private confirmationService: ConfirmationService,private messageService : MessageService,private sharedService: SharedService ,private productService: ProductService,private router : Router){
 
   }
   ngOnInit(){
@@ -109,7 +110,7 @@ incQuan(product){
     }else{
       this.getAllProductFromCart(this.customerId);
     }
-    this.navbar.ngOnInit();
+    this.navbar.ngOnInit(); 
     
     
      console.log(data);
@@ -143,11 +144,27 @@ showDialog() {
   this.visible = true;
 }
 order(){
-  const value = localStorage.getItem('customerId');
-  this.customerId = JSON.parse(value);
-  this.productService.Order(this.customerId).subscribe(response =>{
-    console.log(response,"responseOrder");
-  })
+  this.visible = false;
+  this.confirmationService.confirm({
+    message: 'Are you sure that you want to proceed?',
+    header: 'Confirmation',
+    icon: 'pi pi-exclamation-triangle',
+    accept: () => {
+      const value = localStorage.getItem('customerId');
+      this.customerId = JSON.parse(value);
+      this.productService.Order(this.customerId).subscribe(response =>{
+        console.log(response,"responseOrder");
+        this.messageService.add({ severity: 'success', summary: 'Order', detail: 'Your Order is Successfully Placed' });
+      },error =>{
+        this.messageService.add({ severity: 'error', summary: 'Order', detail: error.error?.message });
+      })
+
+    },
+    reject: (type) => {
+    }
+});
+
+
 }
 
 }

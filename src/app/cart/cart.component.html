@@ -118,7 +118,7 @@
   </div>
   <app-footer class = "mobile-hide"></app-footer>
 </body>
-<p-dialog [(visible)]="visible" [style]="{ 'width': '30vw', 'padding': '0px'}" [modal]="true" [baseZIndex]="10000" [resizable]="true" [draggable]="true" [closeOnEscape]="true">
+<p-dialog [(visible)]="visible" [modal]="true" [baseZIndex]="10000" [resizable]="true" [draggable]="true" [closeOnEscape]="true">
   <ng-template pTemplate="header">
     <div class="custom-dialog-header p-header">
       <h4>Your Default Address</h4>
@@ -139,9 +139,13 @@
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    <div class="custom-dialog-footer">
-      <button type="button" class="p-button p-button-primary" routerLink = "/address">Change Address</button>
-      <button type="button" class="p-button p-button-success" (click) = "order()">Processed</button>
+    <div class="custom-dialog-footer buttons">
+      <button type="button" class="btn chn-btnn" routerLink = "/address">Change Address</button>
+      <button type="button" class="btn btnn" (click) = "order()">Processed</button>
     </div>
   </ng-template>
 </p-dialog>
+<p-toast class = "pc-hide"></p-toast>
+<p-toast position="top-center" class = "mobile-hide"></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
