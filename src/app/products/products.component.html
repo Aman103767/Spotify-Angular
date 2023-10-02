@@ -5,7 +5,9 @@
 <div class="sortDiv">
   <div class="parentDiv">
     <div class="totalProduct">
-      1-16 of over 10,000 results for "apple"
+      <div *ngIf  = "name!= null && name != ''">
+      <!-- 1-16 of over {{pagination?.size}} results for {{ this.name }} -->
+    </div>
     </div>
     <div class="sortBy">
       <div class="dropdown">

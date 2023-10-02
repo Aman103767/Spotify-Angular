@@ -9,13 +9,22 @@ body{
   margin-top: 4px;
   margin:auto;
   justify-content: space-between;
+
 }
-.side-div{
-  border: 1px solid red;
-  width: 20%;
-}
+
 .pro-container{
   width:77%;
+  position: relative;
+}
+.side-div{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  width: 20%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  /* position: -webkit-sticky; */
+  position: sticky;
+  top: 80px
 }
 .input1 {
   width: 60px;
@@ -40,6 +49,7 @@ body{
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-left: 20px;
 }
 .go-btn{
   border: 1px solid gray;

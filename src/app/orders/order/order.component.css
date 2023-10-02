@@ -51,14 +51,15 @@ box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px
   
 }
 .img_box{
+  margin-top:20px;
   max-width: 140px;
   max-height: 100px;
   display: flex;
   justify-content: center;
 }
 .img_box > img{
-  max-height: 100%;
-  max-width: 100%;
+  max-width: 120px;
+  max-height: 80px;
 
 }
 .text_box{
@@ -124,4 +125,6 @@ box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px
   .mobile-hide{
     display: none;
   }
+  
+
 }
