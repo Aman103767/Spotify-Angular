@@ -52,6 +52,7 @@ export class LoginComponent {
     },error => {
       // console.log(error);
       this.sharedService.setLoaderState(false);
+      console.log(error,"errors")
       this.errorArray = [{ severity: 'error', summary: 'Error', detail: error?.error?.message }]
       this.messageService.add({ severity: 'error', summary: 'Error', detail: error?.error?.message });
     })

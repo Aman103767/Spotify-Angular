@@ -22,21 +22,22 @@ import { Review } from "../models/review.model";
 export class ProductService {
    productSelected = new EventEmitter<Content>();
    OrderSelected = new EventEmitter<Orders>();
-  //  baseUrl = "http://localhost:8888"
+   baseUrl = "http://localhost:8888"
   //  baseUrl = "http://ec2-54-167-193-160.compute-1.amazonaws.com:8888";
   // baseUrl = "https://bindgo-deployed-railway-production.up.railway.app";
-  baseUrl = "http://bindgo-env-2.eba-rjcj5zjq.us-east-1.elasticbeanstalk.com"
+  // baseUrl = "http://bindgo-env-2.eba-rjcj5zjq.us-east-1.elasticbeanstalk.com"
 
  
 
 constructor(private http: HttpClient) { 
  
 }
+createCustomer(customer : Customer): Observable<Customer>{
+  return this.http.post<Customer>(`${this.baseUrl}/customer/create`, customer);
+}
 getProductList(): Observable<Content[]>{
   return this.http.get<Content[]>(`${this.baseUrl}/customer/getAllProduct`);
 }
-
-
 getCustomerList(): Observable<Customer[]> {
   return this.http.get<Customer[]>(`${this.baseUrl}/admin/viewAll`);
 }
@@ -71,7 +72,7 @@ getSortedProductListDesc(): Observable<Product[]>{
 getSortedAnyField(field : string): Observable<Product[]>{
   return this.http.get<Product[]>(`${this.baseUrl}/customer/getSortedProductByAnyFieldAsc/${field}`);
 }
-addtocart(customerId : number,productId : number) : Observable<Object>{
+addtocart(customerId : number,productId : number) : Observable<string>{
   return this.http.get(`${this.baseUrl}/customer/cart/${customerId}/1/${productId}`,{responseType : `text`});
 }
 getallProductFromCart(customerId : number) : Observable<CartProduct []>{

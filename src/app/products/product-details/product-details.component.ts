@@ -11,14 +11,18 @@ import { Review } from 'src/app/models/review.model';
 import { StarNumber } from '../product/product.component';
 import { SharedService } from 'src/app/shared.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { HeaderComponent } from 'src/app/header/header.component';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  styleUrls: ['./product-details.component.css'],
+  providers: [MessageService]
 })
 export class ProductDetailsComponent implements OnInit, OnDestroy{
   @ViewChild('productImage', { static: true }) productImage: ElementRef;
+  @ViewChild('navbar', { static: true }) navbar: HeaderComponent;
   id : number;
   viewImage : string;
   dayOfDelivery : string;
@@ -139,7 +143,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy{
     
     
   }
-  constructor(private routerForScroll: Router,private sharedService : SharedService, private datePipe: DatePipe,private productService : ProductService,private router : ActivatedRoute) {
+  constructor(private messageService: MessageService, private routerForScroll: Router,private sharedService : SharedService, private datePipe: DatePipe,private productService : ProductService,private router : ActivatedRoute) {
 
 
     // Set tomorrow's date by adding one day to the current date
@@ -218,10 +222,16 @@ export class ProductDetailsComponent implements OnInit, OnDestroy{
   this.customerId = JSON.parse(value);
   this.productService.addtocart(this.customerId,productId).subscribe(data =>{
      console.log(data);
-    alert(data);
+     this.navbar.ngOnInit();
+    // alert(data);
+    if(data == "Product is already added to the cart")
+      this.messageService.add({ severity: 'warn', summary: 'Cart', detail: data });
+    else 
+    this.messageService.add({ severity: 'success', summary: 'Cart', detail: data });
+
   },error =>{
-   
-   console.log(error);
+    this.messageService.add({ severity: 'error', summary: 'Cart', detail: error.error?.message  })
+   console.log(error,"error");
   
   });
  }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Review } from 'src/app/models/review.model';
@@ -13,7 +13,7 @@ import { error } from 'jquery';
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.css']
 })
-export class ReviewComponent {
+export class ReviewComponent implements OnInit{
  value : number ;
  reviewType : string;
  customerId : number;
@@ -51,6 +51,9 @@ export class ReviewComponent {
 
 
 }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 getReviewProduct(){
   this.sharedService.setLoaderState(true);
   this.productService.getReviewOfProduct(this.customerId,this.productId, this.orderId).subscribe(response =>{
@@ -88,7 +91,6 @@ addReview(){
       this.productService.addReviewToProduct(this.customerId,this.productId, this.orderId,this.review).subscribe(response => {
         console.log(response,"response");
         this.getReviewProduct();
-
       })
     }
 }

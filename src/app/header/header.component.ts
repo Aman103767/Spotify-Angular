@@ -108,6 +108,7 @@ export class HeaderComponent  implements OnInit, AfterViewInit {
     this.cartProducts = data.length;
 },error => {
   console.log(error)
+  this.cartProducts = 0;
 } );
  }
  

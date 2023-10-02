@@ -1,33 +1,3 @@
-<!-- 
-<div class = "col-md-4 offset-md-10">
-  <h3>Update Customer</h3>
-  <form action = ""(ngSubmit) = "onSubmit($event)">
-
-      <div class = "from-group">
-          <label for = "">Name</label>
-          <input type = "text" class = "form-control" id = "username"
-          [(ngModel)] = "customer.username" name = "username">
-      </div>
-      <div class = "from-group">
-          <label for = "">email</label>
-          <input type = "text" class = "form-control" id = "email"
-          [(ngModel)] = "customer.email" name = "email">
-      </div>
-      <div class = "from-group">
-          <label for = "">Mobile Number</label>
-          <input type = "text" class = "form-control" id = "mobileNumber"
-          [(ngModel)] = "customer.mobileNumber" name = "mobileNumber">
-      </div>
-      <div class = "from-group">
-        <label for = "">Password</label>
-        <input type = "text" class = "form-control" id = "password"
-        [(ngModel)] = "customer.password" name = "password">
-    </div>
-      <button class="btn btn-success" type="submit">User</button>
-      <button class="btn btn-success" type="submit">Admin</button>
-  </form>
-</div> -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +10,8 @@
         <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="companylogo-1" alt="" 
           width="40" height="36" class="d-inline-block align-text-top"><span style="font-weight: bolder;">indGo</span></a>
   </div>
-  <p-toast></p-toast>
+  <p-toast class = "pc-hide"></p-toast>
+  <p-toast position="top-center" class = "mobile-hide"></p-toast>
   <div class="container">
     <div class="row">
       <div class="col-md-4 offset-md-4">

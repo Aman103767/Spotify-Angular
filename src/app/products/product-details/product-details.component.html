@@ -1,8 +1,9 @@
-<app-header></app-header>
+<app-header #navbar ></app-header>
 
 <body>
+  <p-toast class = "mobile-hide"></p-toast>
+  <p-toast class = "pc-hide" position="top-center"></p-toast>
   <div class="big-container">
-
     <div class="image-container">
       <div class = "mobile-hide">
         <div class='images-cont' *ngFor="let img of product.imagePath; let i = index">

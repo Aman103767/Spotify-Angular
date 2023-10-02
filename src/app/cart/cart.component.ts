@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { CartProduct } from '../models/cartProduct.model';
 import { Product } from '../models/product.model';
@@ -6,6 +6,7 @@ import { ProductService } from '../products/product.service';
 import { Address } from '../models/address.model';
 import { error } from 'jquery';
 import { SharedService } from '../shared.service';
+import { HeaderComponent } from '../header/header.component';
 @Injectable()
 @Component({
   selector: 'app-cart',
@@ -24,6 +25,8 @@ export class CartComponent implements OnInit{
   total : number =0;
   quantity: number;
   customerId : number;
+  @ViewChild('navbar', { static: true }) navbar: HeaderComponent;
+
   constructor(private sharedService: SharedService ,private productService: ProductService,private router : Router){
 
   }
@@ -106,6 +109,7 @@ incQuan(product){
     }else{
       this.getAllProductFromCart(this.customerId);
     }
+    this.navbar.ngOnInit();
     
     
      console.log(data);
