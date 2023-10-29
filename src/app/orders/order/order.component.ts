@@ -15,23 +15,6 @@ export class OrderComponent implements OnInit {
   @Input() order : Orders;
   id : number;
 
-  products : CartProduct [] = [
-
-    {
-  id : 12,
-  
-      productId : 1,
-      imagePath: 
-        "https://m.media-amazon.com/images/I/61bK6PMOC3L._SX679_.jpg",
-      productName: "Apple iPhone 14 (128 GB) - Blue",
-      price : 89900,
-      quantity: 50,
-  dimension : 23,
-  manufacturer: "NOkia",
-  discountPercentage: 5
-
-  }
-  ]
   ngOnInit(){
 
   }

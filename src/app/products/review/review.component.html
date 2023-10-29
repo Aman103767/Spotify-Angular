@@ -10,7 +10,8 @@
 <hr>
 <h5>Overall rating</h5>
 
-<p-rating [(ngModel)]="review.rating" [cancel]="false" class="custom-rating"></p-rating>
+<p-rating [(ngModel)]="review.rating" [cancel]="false" class="custom-rate"  
+iconCancelClass="pi pi-times" ></p-rating>
 <hr>
 <h5>Add a headline</h5>
 <input pInputText class = "review" type="text" placeholder="What's most important to know?" [(ngModel)]="review.headline" />

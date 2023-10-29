@@ -36,13 +36,13 @@
 }
 .image-div{
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    height: 55px;
-    width:  40px;
+    max-height: 55px;
+    max-width:  40px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding: 10px 5px 10px 5px;
     border-radius: 5px;
 }
 .viewSI{
@@ -362,6 +362,34 @@ td{
     display: none;
 }
 
+.cru-img-box{
+    height: 170px;
+    /* width: 100%; */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+  .cru-img-box > img {
+    /* max-height: 100%; */
+    /* max-width: 90%; */
+    max-width: 90%;
+    max-height: 90%;
+    padding: 20px 0px 20px 0px;
+  }
+  .whole-card{
+    width: 93%;
+    background-color: white;
+    padding: 10px;
+    height: auto;
+  }
+  .cru-container{
+    margin-top: 20px;
+  }
+  .f12{
+    font-size: 12px;
+  }
 @media (max-width: 480px) {
   .pc-hide{
     display: block;
@@ -398,6 +426,13 @@ td{
   .review{
     width: 96%;
     margin: auto;
+  }
+  .cur-div-css {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
     
 }

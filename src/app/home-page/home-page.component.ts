@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit{
       this.normalTheme = false;
     }
     this.dataReset();
+    this.sharedService.setLoaderState(true);
     this.productService.getPaginationData(this.paginationDto).subscribe(data =>{
       this.products = data.content;
       console.log(data,"data");

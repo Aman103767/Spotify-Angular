@@ -8,5 +8,6 @@ dimension : number;
 manufacturer: string;
 quantity: number;
 discountPercentage : number;
+inStock: boolean = true;
 
 }

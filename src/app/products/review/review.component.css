@@ -1,7 +1,4 @@
-.custom-rating ::ng-deep .ui-rating-star {
-    font-size: 50px; /* Adjust the font-size value to increase or decrease the size of the stars */
 
-  }
 .container{
     width: 70%;
 }
@@ -49,3 +46,19 @@
         margin-left: 0%;
       }
 }
+
+:host ::ng-deep  
+    .p-rating-icon:not(.p-rating-cancel), 
+:host ::ng-deep  
+    .p-rating-icon:not(.p-rating-cancel):hover { 
+    color: rgb(231, 192, 96) !important;
+    height: 40px;
+    width: 40px;
+}
+
+:host ::ng-deep .custom-rate .p-rating-icon { 
+    /* margin-top: 30px;  */
+    border-color: gray;
+    font-size: 40px;
+    
+} 

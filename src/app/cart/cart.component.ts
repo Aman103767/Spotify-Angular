@@ -34,6 +34,7 @@ export class CartComponent implements OnInit{
   ngOnInit(){
     // for(let product of this.products){
     //   this.total+= product.price;
+    
     console.log("ng")
     this.getAllAddress();
     // }
@@ -61,6 +62,7 @@ export class CartComponent implements OnInit{
     this.totalWithDiscount =0;
     console.log("aman",this.products)
     for(let product of this.products){
+      product.inStock = true;
       this.totalWithDiscount += (product.price - (product.price * ((product.discountPercentage) / 100)))*product.quantity;
       this.total += product.price*product.quantity;
       this.discountTotal +=(product.price * ((product.discountPercentage) / 100))*product.quantity;
@@ -85,6 +87,11 @@ export class CartComponent implements OnInit{
      this.productService.updateQuantityCart(product.productId,product.quantity,this.customerId).subscribe(data=>{
       this.getAllProductFromCart(this.customerId);
      console.log(data);
+     }, error => {
+      // if(error.message == 'product out of Stock'){
+      //   product.inStock = true;
+      // }
+      this.getAllProductFromCart(this.customerId);
      })
  }
 checkOut(){
@@ -97,7 +104,7 @@ incQuan(product){
  dscQuan(product){
   product.quantity--;
   this.onInput(product);
-  this.inStock = true;
+  product.inStock = true;
  }
  deleteProduct(productId : number){
   const value = localStorage.getItem('customerId');
@@ -121,7 +128,9 @@ incQuan(product){
 getProduct(id,product: CartProduct){
   this.productService.getProductById(id).subscribe(response =>{
     if(product.quantity == response.quantity){
-      this.inStock = false;
+      product.inStock = false;
+    } else {
+      product.inStock = true;
     }
   })
 }

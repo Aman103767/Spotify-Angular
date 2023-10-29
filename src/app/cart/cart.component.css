@@ -221,6 +221,7 @@ body {
     margin-bottom: 100px;
 
     height: auto;
+    margin-top: 15px;
 }
 
 #last_box>h3>span {
@@ -300,6 +301,15 @@ body {
   .mobile-hide{
     display: none;
 }
+.product-name{
+  max-height: 85px; 
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit the number of lines to 1 */
+  -webkit-box-orient: vertical; /* Set the content to flow vertically */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; 
+  width: 90%;
+}
 @media (max-width: 480px) {
   #twocontainer {
     display: inline;
@@ -326,4 +336,5 @@ body {
 .mobile-hide{
     display: inline;
 }
+
 }

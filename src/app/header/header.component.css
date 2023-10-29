@@ -26,6 +26,8 @@ body {
   gap: 15px;
   cursor: pointer;
   padding: 0px 0px 0px 10px;
+  height: 50px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 
 }
 
@@ -35,6 +37,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 5px;
+  margin-top: 5px;
 
 }
 
@@ -55,9 +61,17 @@ body {
   background-color: white;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
+.productName-css {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limit the number of lines to 1 */
+  -webkit-box-orient: vertical; /* Set the content to flow vertically */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; 
+  margin-top: -5px;
+}
 
 .nameprice {
-  line-height: 0.1;
+  /* line-height: 0.1; */
   font-size: 12px;
   margin-top: 10px;
 }
@@ -115,7 +129,7 @@ body {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.37);
-  z-index: 2;
+  z-index: 10;
   height: 60px;
 }
 
@@ -221,6 +235,10 @@ right: 0; */
 
 .hide-on-large-screen{
   display: none;
+}
+
+.product-productName {
+  overflow: hidden;
 }
 
 @media (max-width: 480px) {

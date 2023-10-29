@@ -19,8 +19,10 @@
 
       <div class = "pc-hide"style = "width: 100%;">
       <p-carousel [value]="product.imagePath" [numVisible]="3" [numScroll]="1"  verticalViewPortHeight="360px" [responsiveOptions]="responsiveOptions">
-        <ng-template let-img pTemplate="item">
-                        <img style = "width: 100%;"src="{{img}}"[alt]="product.productName" class="product-image" />
+        <ng-template let-img pTemplate="item" style="display: flex; justify-content: center;">
+          <div class = "cur-div-css">
+                        <img style = "max-width: 100%; max-height: 350px;"src="{{img}}"[alt]="product.productName" class="product-image" />
+                      </div>
         </ng-template>
     </p-carousel>
   </div>
@@ -180,9 +182,6 @@
       </div>
 
 
-
-
-
     </div>
     <div class='addtoCart'>
       <h6>Without Exchange</h6>
@@ -232,201 +231,26 @@
     </div>
   </div>
 <hr>
-<div class="cont mobile-hide" >
+<div class="cont" >
   <h4 class="text-start mb-5 fw-bold" >Top Deal's</h4>
-  <div class="row" style="margin-top: -30px;">
-    <div class="col">
-      <div id="product-carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="slide-container">
-              <div class="col-md-3 ">
-                <div class="card glass-bac" style="height: 250px; width: 230px;">
-                  <div class = "img-box"> 
-                  <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                    alt="Product 1">
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 1</h5>
-                  </div>
-                </div> 
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 2</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
+  <div class="cru-container">
+    <p-carousel [value]="products" [numVisible]="4" [numScroll]="4" [circular]="false"
+      [responsiveOptions]="responsiveOptions1">
+
+      <ng-template let-product pTemplate="item">
+        <div class="text-center whole-card" routerLink="product-details/{{product.productId}}">
+          <div class="mb-3 cru-img-box">
+            <img src="{{product.mainImg}}" [alt]="product.name" class="w-6 shadow-2" />
+          </div>
+          <div>
+            <p class="mb-1 f12">{{ product.productName }}</p>
+            <p class="mt-0 mb-3 f12">{{ '₹' + product.price }}</p>
+            <div class="car-buttons mt-5">
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="slide-container">
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                  <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                    alt="Product 1">
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 1</h5>
-                  </div>
-                </div> 
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 2</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="slide-container">
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                  <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                    alt="Product 1">
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 1</h5>
-                  </div>
-                </div> 
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 2</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card" style="height: 250px; width: 230px;">
-                  <div class = "img-box">
-                    <img  style = "width: 150px"src="https://m.media-amazon.com/images/I/41YYQ+tFwCL._AC_SY200_.jpg" class="card-img-top"
-                      alt="Product 1">
-                    </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Product 3</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-          <a class="carousel-control-prev arr-adj-left" href="#product-carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a class="carousel-control-next arr-adj-right" href="#product-carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
         </div>
-      </div>
-    </div>
+      </ng-template>
+    </p-carousel>
   </div>
 </div>
 
