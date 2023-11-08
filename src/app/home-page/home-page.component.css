@@ -357,6 +357,13 @@ color : white;
   right: 10px;
   border-radius: 50%;
 }
+.overflowtext  {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit the number of lines to 1 */
+  -webkit-box-orient: vertical; /* Set the content to flow vertically */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; 
+}
 
 
 

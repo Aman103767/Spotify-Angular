@@ -200,7 +200,7 @@
   </div>
 
   <div class="cru-container">
-    <p-carousel [value]="products" [numVisible]="4" [numScroll]="4" [circular]="false"
+    <p-carousel [value]="products" [numVisible]="4" [numScroll]="4" [circular]="true"
       [responsiveOptions]="responsiveOptions">
 
       <ng-template let-product pTemplate="item">
@@ -209,7 +209,7 @@
             <img src="{{product.mainImg}}" [alt]="product.name" class="w-6 shadow-2" />
           </div>
           <div>
-            <p class="mb-1 f12">{{ product.productName }}</p>
+            <p class="mb-1 f12 overflowtext">{{ product.productName }}</p>
             <p class="mt-0 mb-3 f12">{{ '₹' + product.price }}</p>
             <div class="car-buttons mt-5">
             </div>

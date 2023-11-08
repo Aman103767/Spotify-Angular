@@ -333,10 +333,9 @@ td{
     margin-top: 8px;
 }
 .cont{
-    width: 97.5%;
+    width: 100%;
     /* border: 1px solid red; */
     margin:auto;
-    padding: 20px;
     margin-top: 20px;
     background-color: white;
     }
@@ -386,10 +385,19 @@ td{
   }
   .cru-container{
     margin-top: 20px;
+    width: 100%;
   }
   .f12{
     font-size: 12px;
   }
+
+.overflowtext  {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit the number of lines to 1 */
+    -webkit-box-orient: vertical; /* Set the content to flow vertically */
+    overflow: hidden; /* Hide any overflowing content */
+    text-overflow: ellipsis; 
+}
 @media (max-width: 480px) {
   .pc-hide{
     display: block;

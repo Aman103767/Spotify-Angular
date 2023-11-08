@@ -18,7 +18,7 @@
       </div>
 
       <div class = "pc-hide"style = "width: 100%;">
-      <p-carousel [value]="product.imagePath" [numVisible]="3" [numScroll]="1"  verticalViewPortHeight="360px" [responsiveOptions]="responsiveOptions">
+      <p-carousel [value]="product.imagePath" [numVisible]="1" [numScroll]="1"  verticalViewPortHeight="360px" [responsiveOptions]="responsiveOptions">
         <ng-template let-img pTemplate="item" style="display: flex; justify-content: center;">
           <div class = "cur-div-css">
                         <img style = "max-width: 100%; max-height: 350px;"src="{{img}}"[alt]="product.productName" class="product-image" />
@@ -231,8 +231,18 @@
     </div>
   </div>
 <hr>
+
+<!-- <div class = "pc-hide"style = "width: 100%;">
+  <p-carousel [value]="product.imagePath" [numVisible]="1" [numScroll]="1"  verticalViewPortHeight="360px" [responsiveOptions]="responsiveOptions">
+    <ng-template let-img pTemplate="item" style="display: flex; justify-content: center;">
+      <div class = "cur-div-css">
+                    <img style = "max-width: 100%; max-height: 350px;"src="{{img}}"[alt]="product.productName" class="product-image" />
+                  </div>
+    </ng-template>
+</p-carousel>
+</div> -->
 <div class="cont" >
-  <h4 class="text-start mb-5 fw-bold" >Top Deal's</h4>
+  <h4 class="text-start mb-5 fw-bold" style="margin-left: 30px;">Top Deal's</h4>
   <div class="cru-container">
     <p-carousel [value]="products" [numVisible]="4" [numScroll]="4" [circular]="false"
       [responsiveOptions]="responsiveOptions1">
@@ -243,7 +253,7 @@
             <img src="{{product.mainImg}}" [alt]="product.name" class="w-6 shadow-2" />
           </div>
           <div>
-            <p class="mb-1 f12">{{ product.productName }}</p>
+            <p class="mb-1 f12 overflowtext">{{ product.productName }}</p>
             <p class="mt-0 mb-3 f12">{{ '₹' + product.price }}</p>
             <div class="car-buttons mt-5">
             </div>
