@@ -20,6 +20,23 @@ export class HomePageComponent implements OnInit{
 
   ngOnInit(): void {
     let theme = localStorage.getItem('Theme');
+    this.responsiveOptions = [
+      {
+          breakpoint: '1199px',
+          numVisible: 1,
+          numScroll: 1
+      },
+      {
+          breakpoint: '991px',
+          numVisible: 2,
+          numScroll: 1
+      },
+      {
+          breakpoint: '767px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ];
     if(theme=== 'true'){
       this.normalTheme = true;
     }else {
@@ -35,24 +52,6 @@ export class HomePageComponent implements OnInit{
       },error =>{
        this.sharedService.setLoaderState(false);
       })
-
-      this.responsiveOptions = [
-        {
-            breakpoint: '1199px',
-            numVisible: 1,
-            numScroll: 1
-        },
-        {
-            breakpoint: '991px',
-            numVisible: 2,
-            numScroll: 1
-        },
-        {
-            breakpoint: '767px',
-            numVisible: 1,
-            numScroll: 1
-        }
-    ];
   }
   dataReset(){
     this.paginationDto.pageNumber = 0;
