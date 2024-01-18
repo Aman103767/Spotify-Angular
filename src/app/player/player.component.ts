@@ -37,7 +37,7 @@ export class PlayerComponent implements OnInit{
     private audioSubscription: Subscription;
 
     isPlaying: boolean = false;
-    volume: number = 70;
+    volume: number = 100;
     prevVol: number;
     progress: number = 0;
   
@@ -87,7 +87,7 @@ export class PlayerComponent implements OnInit{
           this.volume = this.prevV;
         }
       }
-      this.audioService.setVolume(this.volume);
+      this.audioService.setVolume(this.volume ?  this.volume/100 : this.volume);
       this.prevVol = this.volume;
     }
   
@@ -101,14 +101,14 @@ export class PlayerComponent implements OnInit{
       this.progress = 0;
       // this.currentTrack =  this.playableSong;
       this.currentTrack = this.audioService.playlist[(this.audioService.currentTrackIndex + 1) % this.audioService.playlist.length];
-      this.audioService.playNextTrack();
+      this.audioService.playNextTrack(this.isPlaying);
     }
   
     playPreviousTrack(): void {
       this.progress = 0;
       // this.currentTrack =  this.playableSong;
       this.currentTrack = this.audioService.playlist[(this.audioService.currentTrackIndex - 1 + this.audioService.playlist.length) % this.audioService.playlist.length];
-      this.audioService.playPreviousTrack();
+      this.audioService.playPreviousTrack(this.isPlaying);
     }
   
     getPlaylist(): any[] {

@@ -29,7 +29,7 @@
                 <div class="next">
                     <svg (click)="playPreviousTrack()" xmlns="http://www.w3.org/2000/svg" data-encore-id="icon"
                         role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 hoverclass dYnaPI"
-                        style="">
+                        >
                         <path
                             d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6"
                             fill="rgb(215, 213, 213)" />
@@ -76,9 +76,9 @@
                         class="Svg-sc-ytk21e-0 greenLoop dYnaPI">
                         <path
                             d="M0 4.75A3.75 3.75 0 0 1 3.75 1h.75v1.5h-.75A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5zM12.25 2.5h-.75V1h.75A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25z"
-                            fill="rgb(13, 159, 13)" />
+                            fill=" rgb(10, 209, 10)" />
                         <path d="M9.12 8V1H7.787c-.128.72-.76 1.293-1.787 1.313V3.36h1.57V8h1.55z"
-                            fill="rgb(19, 180, 19)" />
+                            fill="rgb(10, 209, 10)" />
                     </svg>
 
                 </div>
@@ -88,7 +88,6 @@
                 <div class="time-indicator1">{{ formatTime(audioService.getCurrentTime())}} </div>
                 <div class="music-player">
                     <p-slider
-                        style="width: 80%; position: absolute; left: 10.8% ; margin-top: 7px ;border-radius: 10px 10px 10px 10px;"
                         [(ngModel)]="progress" [max]="100" (onChange)="seekTo($event.value)"></p-slider>
                 </div>
                 <div class="time-indicator2">{{ formatTime(audioService.getTrackDuration()) }} </div>
@@ -117,7 +116,7 @@
                 </svg>
             </div>
             <div class="sound-slider">
-                <p-slider [(ngModel)]="volume" (onChange)="changeVolume()" [max]="100"></p-slider>
+                <p-slider [(ngModel)]="volume"  (onChange)="changeVolume()" [max]="100"></p-slider>
             </div>
         </div>
     </div>

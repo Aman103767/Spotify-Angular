@@ -12,7 +12,7 @@ export class AudioService {
     {   
       title: 'Guli Mata',
       img : "https://i.scdn.co/image/ab67616d00001e02a7a285251f8615924c9cf287",
-      link: 'https://songaws.s3.amazonaws.com/1705263379257_Guli%20Mata_320%28PagalWorld.com.pe%29.mp3',
+      link: 'https://songaws.s3.amazonaws.com/1705593794357_Guli+Mata_320(PagalWorld.com.pe).mp3',
       artists: ['Saad LamJarred', 'Shreya Ghoshal','Rajat Nagpal'],
       duration: 10  
     },
@@ -20,7 +20,7 @@ export class AudioService {
     {
       title: 'heeriye',
       img : 'https://songimages.s3.amazonaws.com/heeriye.jpg',
-      link: 'https://songaws.s3.amazonaws.com/_Heeriye_320(PagalWorld.com.pe).mp3',
+      link: 'https://songaws.s3.amazonaws.com/1705593855624__Heeriye_320(PagalWorld.com.pe).mp3',
       artists: ['Jasleen Royal', 'Arijit Singh, HarrayKhahanhai'],
       duration: 240
     },
@@ -28,14 +28,14 @@ export class AudioService {
     {
       title: 'kesariya',
       img : 'https://i.scdn.co/image/ab67616d00001e02c08202c50371e234d20caf62',
-      link: 'https://songaws.s3.amazonaws.com/Kesariya_320(PagalWorld.com.pe).mp3',
+      link: 'https://songaws.s3.amazonaws.com/1705593940370_Kesariya_320(PagalWorld.com.pe).mp3',
       artists: ['Pritam','Arijit Singh','Amitabh Bhattacharya'],
       duration: 240
     },
     {
       title: 'tu hai to Mujhe phir kya chahiye',
       img: 'https://i.scdn.co/image/ab67616d00001e02bf8097b2589277bd3d8f7a2d',  
-      link: 'https://songaws.s3.amazonaws.com/Tu+Hai+To+Mujhe+Phir+Aur+Kya+Chahiye_320(PagalWorld.com.pe).mp3',
+      link: 'https://songaws.s3.amazonaws.com/1705593989717_Tu+Hai+To+Mujhe+Phir+Aur+Kya+Chahiye_320(PagalWorld.com.pe).mp3',
       artists: ['Sachin-Jigar',"Arijit Singh, Amitabh Bhattacharya"],
       duration: 240
     },
@@ -43,6 +43,7 @@ export class AudioService {
   ];
   public currentTrackIndex: number = 0;
   private pausedPosition: number = 0;
+  volume : number = 1;
  
   setPlaylist(playlist: any[]): void {
     this.playlist = playlist;
@@ -61,11 +62,11 @@ export class AudioService {
     this.sound = new Howl({
       src: [track.link],
       format: ['mp3'],
-      volume: 1,onend: () => {
+      volume:this.volume,onend: () => {
         if (this.loop) {
           this.playAudio(); // Play the same track again if looping is enabled
         } else {
-          this.playNextTrack(); // Play the next track if not looping
+          this.playNextTrack(true); // Play the next track if not looping
         }
       },
     });
@@ -94,6 +95,7 @@ export class AudioService {
   setVolume(volume: number): void {
     if (this.sound) {
       const isPlaying = this.sound.playing();
+      this.volume = volume;
 
       if (isPlaying) {
         // Gradually change the volume over a short duration
@@ -113,24 +115,28 @@ export class AudioService {
     return this.sound ? this.sound.seek() : 0;
   }
 
-  playNextTrack(): void {
+  playNextTrack(isPlaying): void {
     if (this.sound) {
       this.sound.stop(); // Stop the current track
     }
   
     this.currentTrackIndex = (this.currentTrackIndex + 1) % this.playlist.length;
     this.pausedPosition = 0; // Reset paused position
-    this.playAudio();
+    if(isPlaying){
+      this.playAudio();
+    }  
   }
 
-  playPreviousTrack(): void {
+  playPreviousTrack(isPlaying): void {
     if (this.sound) {
       this.sound.stop(); // Stop the current track
     }
   
     this.currentTrackIndex = (this.currentTrackIndex - 1 + this.playlist.length) % this.playlist.length;
     this.pausedPosition = 0; // Reset paused position
-    this.playAudio();
+    if(isPlaying){
+      this.playAudio();
+    }
   }
 
   seekTo(seconds: number): void {
