@@ -14,6 +14,7 @@ body{
     align-items: center;
     position: absolute;
     bottom: 0;
+    left: 12px;
     /* border : 1px solid red; */
 }
 .img-box {
@@ -26,7 +27,7 @@ body{
     margin-left: 10px;
     border-radius: 5px;
     
-    
+
 }
 .img-box > img {
     max-width: 100%;
@@ -46,6 +47,10 @@ body{
     /* border: 1px solid red; */
     height: 40px;
     line-height:1.39;
+    /* width: 100%; */
+    /* border: 1px solid blue; */
+    width: 70%;
+
 }
 .details-text > .title {
     font-size: 16px;
@@ -55,13 +60,18 @@ body{
 }
 
 .artist-names {
+    /* border: 1px solid red; */
     display: flex;
     font-size: 12.5px;
     color: #d4d4d4;
+    overflow: hidden;   
 }
+
 .artist-names > p {
     margin-right: 2px;
+    white-space: nowrap;  /* Prevent line breaks within artist names */
 }
+
 .player {
     display: flex;
     justify-content: center;
@@ -117,7 +127,7 @@ body{
  
 .hoverclass:hover path {
     fill: white;/* Replace with the desired hover color */
-  }
+  }     
 .greenLoop:hover path {
     fill: rgb(27, 233, 27);
 }

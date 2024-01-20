@@ -1,0 +1,56 @@
+
+.rw {
+    height: 60px;
+    margin-left: 20px;
+
+
+}
+.back-forword {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+.back {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.forword {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.back > svg {
+    height: 15px;
+    width: 15px;
+}
+
+.forword > svg {
+    height: 15px; 
+    width: 15px;
+}
+.heading {
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+.songs {
+    display: flex;
+    width: 100%;
+    /* border: 1px solid red; */
+    flex-wrap: wrap;
+    gap: 20px
+}
+.song {
+    /* margin-left: 20px; */
+}

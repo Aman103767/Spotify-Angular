@@ -9,14 +9,16 @@ import { SliderModule } from 'primeng/slider';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomepageComponent } from './homepage/homepage.component'; // Import the SliderModule
 import { RouterModule, Routes } from '@angular/router';
+import { HomeTabComponent } from './home-tab/home-tab.component';
+import { SongComponent } from './song/song.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
+  { path: 'home', component: HomeTabComponent },
   // Add other routes as needed
 ];
 
 @NgModule({
-  declarations: [AppComponent, PlayerComponent, SidebarComponent, HomepageComponent],
+  declarations: [AppComponent, PlayerComponent, SidebarComponent, HomepageComponent, HomeTabComponent, SongComponent],
   imports: [BrowserModule, FormsModule, CommonModule, SliderModule, RouterModule,     RouterModule.forRoot(routes)  ],
   providers: [],
   bootstrap: [AppComponent] // Add the root component to be bootstrapped

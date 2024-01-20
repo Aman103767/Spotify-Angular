@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
 import { AudioService } from '../audio.service';
+import { SharedService } from '../shared.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { AudioService } from '../audio.service';
 export class PlayerComponent implements OnInit{
 
   play : boolean = false;
-  currentTrack : any;
+  @Input() currentTrack : any;
 
   songDurationInSeconds: number = this.audioService.getTrackDuration(); // Replace with the actual duration of the song in seconds
   timerInterval: any;
@@ -40,12 +41,28 @@ export class PlayerComponent implements OnInit{
     volume: number = 100;
     prevVol: number;
     progress: number = 0;
+    private subscription: Subscription;
+
   
-    constructor(public audioService: AudioService) {
+    constructor(public audioService: AudioService, public sharedService : SharedService) {
       this.audioSubscription = timer(0, 1000).subscribe(() => {
         if (this.isPlaying) {
           this.progress = (this.audioService.getCurrentTime() / this.audioService.getDuration()) * 100;
         }
+      });
+      this.subscription = this.sharedService.songSelected$.subscribe((selectedSong) => {
+        if(selectedSong){
+          this.currentTrack = selectedSong;
+          this.audioService.playlist.forEach((song,i) => {
+              if(song.name == selectedSong.name){
+                this.audioService.currentTrackIndex = i;
+                this.stopAudio();
+                this.playAudio();
+              }
+          })
+
+          }
+          // this.playAudio()
       });
     }
   ngOnInit(): void {
@@ -57,6 +74,8 @@ export class PlayerComponent implements OnInit{
     ngOnDestroy(): void {
       clearInterval(this.timerInterval);
       this.audioSubscription.unsubscribe();
+      this.subscription.unsubscribe();
+
     } 
   
     playAudio(): void {

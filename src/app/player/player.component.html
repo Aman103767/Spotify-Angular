@@ -5,7 +5,7 @@
                 <img [src]="currentTrack.img">
             </div>
             <div class="details-text">
-                <p class="title">{{currentTrack?.title}}</p>
+                <p class="title">{{currentTrack?.name}}</p>
                 <div class="artist-names" *ngIf="currentTrack?.artists?.length">
                     <p *ngFor="let artist of currentTrack.artists; let last = last">
                         {{ artist }}{{ !last ? ',' : '' }} </p>

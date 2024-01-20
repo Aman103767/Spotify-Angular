@@ -1,40 +1,51 @@
-
-body{
-    margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  height: 100vh; /* Set height to 100% of the viewport height */
-  background-color: black;
-  color: white;
+body {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    height: 100vh;
+    /* Set height to 100% of the viewport height */
+    background-color: black;
+    color: white;
 }
+
 .container {
     /* height: 500px; */
-    display: inline-block;
-    width: 23%;
-    height: 100vh; /* Set height to 100% of the viewport height */
+    /* display: inline-block; */
 
 }
+
 .row {
     width: 100%;
     /* border: 1px solid red; */
-    height: 120px;
     border-radius: 10px;
-    margin: auto;   
+    margin: auto;
     margin-top: 10px;
     background-color: #121212;
 }
-.row2 {
-    height: 465px;
+
+.row1 {
+    height: 18vh;
+
 }
+
+.row2 {
+    height: 70vh;
+    padding: 10px 0px 0px 10px;
+}
+
 .home {
     display: flex;
     padding: 15px 0px 0px 25px;
 
 }
-.home > svg {
+
+.home>svg {
     width: 26px;
     height: 32px;
 }
-.home > h6 {
+
+.home>h6 {
     font-size: 17px;
     padding-left: 20px;
     margin-top: 5px;
@@ -46,31 +57,79 @@ body{
     display: flex;
     padding: 25px 0px 0px 25px;
     margin-top: -30px;
- 
+
 
 }
-.search > svg {
+
+.search>svg {
     width: 26px;
     height: 32px;
 }
-.search > h6 {
+
+.search>h6 {
     font-size: 17px;
     padding-left: 20px;
     margin-top: 5px;
     /* letter-spacing: 0px */
 }
+
 .rows {
     display: flex;
     justify-content: space-between;
+    gap: 5px;
 }
+
 .con {
     /* border : 1px solid red; */
-    width: 77%;
+    min-width: 77%;
     border-radius: 10px;
-    height: 595px;
-    margin-right: 10px;
+    height: 95vh;
     margin-top: 10px;
     background-color: #121212;
+    overflow: auto; /* Add scrollbar if child div overflows */
 
+}
 
+.con2 {
+    min-width: 22.4%;
+
+}
+
+.labary {
+    width: 100%;
+    display: flex;
+    height: 35px;
+    align-items: center;
+    gap: 20px;
+    /* padding: 10px 0px 0px 10px; */
+}
+
+.labary-icon {
+    width: 30px;
+}
+
+.labary>h6 {
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.plus-icon {
+    width: 17px;
+    margin-left: 100px;
+}
+
+.icon-white:hover path {
+    fill: white;
+    /* color: white;
+    fill : rgb(215, 213, 213)
+*/
+
+}
+
+.t-icon {
+    color: rgb(182, 180, 180);
+}
+
+.t-icon:hover {
+    color: white;
 }
