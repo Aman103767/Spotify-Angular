@@ -6,32 +6,29 @@
     display: inline-block;
     padding: 12px;
     cursor: pointer;
-    background-color : #191818;
+    background-color: #191818;
     /* border: 1px solid red; */
 }
 
 .container:hover {
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.123);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-    
-    .green-play {
-        height: 43px;
-        width: 43px; 
-        background-color: rgb(81, 232, 81);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        position: absolute;
-        right: 5%;
-        bottom: 5%;    
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.123);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
 
-    }
-
-
+.container:hover .green-play {
+    height: 43px;
+    width: 43px;
+    background-color: rgb(81, 232, 81);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
 }
 
 .img_box {
@@ -39,22 +36,24 @@ backdrop-filter: blur(5px);
     position: relative;
 }
 
-.img_box > img {
+.img_box>img {
     width: 100%;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;}
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
 
-.title > p {
+.title>p {
     font-size: 14px;
     font-weight: bolder;
     padding: 4px;
     margin-top: 5px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; /* Prevent line breaks */
+    white-space: nowrap;
+    /* Prevent line breaks */
     margin-bottom: 0px;
 
-     
+
 }
 
 .artist-names {
@@ -62,12 +61,13 @@ backdrop-filter: blur(5px);
     display: flex;
     font-size: 12.5px;
     color: #aaa7a7;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
-.artist-names > p {
+.artist-names>p {
     margin-right: 2px;
-    white-space: nowrap;  /* Prevent line breaks within artist names */
+    white-space: nowrap;
+    /* Prevent line breaks within artist names */
 }
 
 .song-details {
@@ -75,23 +75,20 @@ backdrop-filter: blur(5px);
 }
 
 .green-play {
-   height: 43px;
-   width: 43px; 
-   background-color: rgb(81, 232, 81);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 50%;
-   position: absolute;
-   right: 5%;
-   bottom: 5%;
-   display: none;
+    height: 43px;
+    width: 43px;
+    background-color: rgb(81, 232, 81);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    display: none;
 }
-.green-play > svg {
+
+.green-play>svg {
     width: 25px;
     height: 25px;
 }
-
-
-
-

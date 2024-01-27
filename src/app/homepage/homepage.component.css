@@ -86,7 +86,8 @@ body {
     height: 95vh;
     margin-top: 10px;
     background-color: #121212;
-    overflow: auto; /* Add scrollbar if child div overflows */
+    overflow: auto;
+    /* Add scrollbar if child div overflows */
 
 }
 
@@ -132,4 +133,16 @@ body {
 
 .t-icon:hover {
     color: white;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.page-white {
+    fill: white;
+}
+
+.icon-white {
+    fill: rgb(215, 213, 213);
 }

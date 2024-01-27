@@ -1,7 +1,7 @@
-<div class="container" (click) = "selectSong()">
+<div class="container" (click)="selectSong()">
     <div class="img_box">
-        <img src="{{song.img}}">
-        <div class = "green-play">
+        <img src="{{song.image}}">
+        <div class="green-play">
             <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
                 viewBox="0 0 24 24" class="Svg-sc-ytk21e-0 bneLcE">
                 <path
@@ -18,7 +18,7 @@
             <p>Various Artists</p>
         </div>
         <div class="artist-names" *ngIf="song.artists?.length == 1">
-            <p>{{song.artists[0]}}</p>
+            <p>{{song.artists[0].name}}</p>
         </div>
     </div>
 

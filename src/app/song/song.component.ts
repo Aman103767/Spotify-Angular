@@ -6,11 +6,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./song.component.css']
 })
 export class SongComponent {
- @Input() song : any;
- @Output() onSongSelect: EventEmitter<Object> = new EventEmitter<Object>();
+  @Input() song: any;
+  @Output() onSongSelect: EventEmitter<Object> = new EventEmitter<Object>();
 
- selectSong(){
-  this.onSongSelect.emit(this.song)
- }
+  selectSong() {
+    this.onSongSelect.emit(this.song)
+  }
 
 }

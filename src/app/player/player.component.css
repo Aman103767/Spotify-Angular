@@ -1,35 +1,37 @@
-
-body{
+body {
     margin: 0px;
     box-sizing: 0px;
     padding: 0px;
-    position: relative; 
+    position: relative;
 }
+
 .con {
     width: 100%;
     height: 95px;
     background-color: black;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     bottom: 0;
     left: 12px;
     /* border : 1px solid red; */
 }
+
 .img-box {
     max-width: 65px;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     /* border: 1px solid red; */
     margin-left: 10px;
     border-radius: 5px;
-    
+
 
 }
-.img-box > img {
+
+.img-box>img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
@@ -43,16 +45,18 @@ body{
     /* border: 1px solid red; */
     width: 25%;
 }
+
 .details-text {
     /* border: 1px solid red; */
     height: 40px;
-    line-height:1.39;
+    line-height: 1.39;
     /* width: 100%; */
     /* border: 1px solid blue; */
     width: 70%;
 
 }
-.details-text > .title {
+
+.details-text>.title {
     font-size: 16px;
     font-weight: 600;
     color: white;
@@ -64,12 +68,13 @@ body{
     display: flex;
     font-size: 12.5px;
     color: #d4d4d4;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
-.artist-names > p {
+.artist-names>p {
     margin-right: 2px;
-    white-space: nowrap;  /* Prevent line breaks within artist names */
+    white-space: nowrap;
+    /* Prevent line breaks within artist names */
 }
 
 .player {
@@ -81,20 +86,24 @@ body{
     margin-bottom: 2.5px;
 
 }
+
 .player-time {
     width: 50%;
     /* border: 1px solid red; */
 }
+
 .sound-others {
     width: 25%;
     /* border: 1px solid red; */
 }
+
 .full-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    gap : 20px;
+    gap: 20px;
 }
+
 .pause {
     width: 35px;
     height: 35px;
@@ -104,11 +113,13 @@ body{
     justify-content: center;
     align-items: center;
 }
-.pause > svg {
+
+.pause>svg {
     max-width: 65%;
     max-height: 65%;
     cursor: pointer;
 }
+
 .next {
     width: 27px;
     height: 27px;
@@ -117,21 +128,24 @@ body{
     align-items: center;
     cursor: pointer;
 
-} 
+}
 
-.next > svg {
+.next>svg {
     max-width: 65%;
     max-height: 65%;
     cursor: pointer;
 }
- 
+
 .hoverclass:hover path {
-    fill: white;/* Replace with the desired hover color */
-  }     
+    fill: white;
+    /* Replace with the desired hover color */
+}
+
 .greenLoop:hover path {
     fill: rgb(27, 233, 27);
 }
-.loop{
+
+.loop {
     width: 27px;
     height: 27px;
     display: flex;
@@ -140,26 +154,28 @@ body{
     cursor: pointer;
 }
 
-.loop > svg {
+.loop>svg {
     max-width: 65%;
     max-height: 65%;
     cursor: pointer;
 }
 
-:host ::ng-deep .p-slider .p-slider-range{ 
-    background: white; 
+:host ::ng-deep .p-slider .p-slider-range {
+    background: white;
 }
+
 :host ::ng-deep .p-slider:hover .p-slider-range {
     background: rgb(12, 236, 12);
 
-  }
-  :host ::ng-deep .p-slider:hover{
+}
+
+:host ::ng-deep .p-slider:hover {
     height: 4.3px;
     position: relative;
     border-radius: 10px 10px 10px 10px;
-  }
+}
 
-  :host ::ng-deep .p-slider::before {
+:host ::ng-deep .p-slider::before {
     content: '';
     position: absolute;
     top: 0;
@@ -168,55 +184,62 @@ body{
     height: 100%;
     background-color: #969494;
     border-radius: 5px;
-  }
+}
 
-:host ::ng-deep .p-slider { 
+:host ::ng-deep .p-slider {
     width: 80%;
     height: 4px;
     position: absolute;
-    left : 10.8%;
+    left: 10.8%;
     margin-top: 7px;
-   border-radius: 10px 10px 10px 10px;
-} 
-  
+    border-radius: 10px 10px 10px 10px;
+}
+
 
 :host ::ng-deep .p-slider .p-slider-handle {
-  display: none;
+    display: none;
 }
 
 :host ::ng-deep .p-slider:hover .p-slider-handle {
     display: block;
     /* border-radius: 5px; */
-    width: 13px; /* Set the width when hovered */
-    height: 13px; /* Set the height when hovered */
+    width: 13px;
+    /* Set the width when hovered */
+    height: 13px;
+    /* Set the height when hovered */
     border: none;
     color: none;
     background-color: white;
     margin-top: -6px;
     cursor: pointer;
-  }
+}
 
-  :host ::ng-deep .p-slider .p-slider-handle:active,
+:host ::ng-deep .p-slider .p-slider-handle:active,
 :host ::ng-deep .p-slider .p-slider-handle:focus {
-    width: 13px; /* Set the width when hovered */
-    height: 13px; /* Set the height during interaction */
+    width: 13px;
+    /* Set the width when hovered */
+    height: 13px;
+    /* Set the height during interaction */
     border: none;
     outline: none;
 }
+
 .songtimer {
     display: flex;
     justify-content: center;
     align-items: center;
     /* border: 1px solid red; */
-    height:  20px;
+    height: 20px;
 }
-    .music-player {
-        width: 100%;
-        position: relative;
-        height: 10px;
-        /* border: 1px solid  red; */
-    }   
-.time-indicator1{
+
+.music-player {
+    width: 100%;
+    position: relative;
+    height: 10px;
+    /* border: 1px solid  red; */
+}
+
+.time-indicator1 {
     font-size: 13px;
     color: rgb(171, 169, 169);
     /* margin-left: px; */
@@ -224,7 +247,8 @@ body{
     margin-top: 7.2px;
 
 }
-.time-indicator2{
+
+.time-indicator2 {
     font-size: 13px;
     color: rgb(171, 169, 169);
     /* margin-left: px; */
@@ -240,19 +264,22 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-left : 50%;
+    margin-left: 50%;
 }
-.sound-icon > svg {
+
+.sound-icon>svg {
     max-width: 65%;
     max-height: 65%;
     cursor: pointer;
 }
-.sound-others{ 
+
+.sound-others {
     /* display: flex;
     justify-content: center;
     align-items: center; */
     position: relative;
 }
+
 .sound-slider {
     width: 30%;
     position: absolute;
@@ -260,5 +287,3 @@ body{
     top: 20%;
     /* border: 1px solid red; */
 }
-  
-
