@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription, timer } from 'rxjs';
-import { AudioService } from '../audio.service';
-import { SharedService } from '../shared.service';
+import { AudioService } from '../shared/audio.service';
+import { SharedService } from '../shared/shared.service';
 
 
 @Component({

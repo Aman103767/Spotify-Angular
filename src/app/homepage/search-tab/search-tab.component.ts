@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-search-tab',

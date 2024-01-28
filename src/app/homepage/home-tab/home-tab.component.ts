@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SharedService } from '../shared.service';
+import { SharedService } from '../../shared/shared.service';
 import { Call } from '@angular/compiler';
-import { ApiCallsService } from '../api-calls.service';
+import { ApiCallsService } from '../../shared/api-calls.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

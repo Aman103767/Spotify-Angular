@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { SharedService } from '../shared.service';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-homepage',
