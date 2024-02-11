@@ -17,4 +17,9 @@ export class ApiCallsService {
   getAllSongs(): Observable<Song[]> {
     return this.http.get<Song[]>(`${this.baseUrl}/music/getAllSong`);
   }
+
+  addSong(data): Observable<Object>{
+    console.log(data,"songdata")
+    return this.http.post<Object>(`${this.baseUrl}/music/addSong`,data);
+  }
 }

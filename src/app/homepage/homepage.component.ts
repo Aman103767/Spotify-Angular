@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SharedService } from '../shared/shared.service';
+import { TieredMenu } from 'primeng/tieredmenu';
 
 @Component({
   selector: 'app-homepage',
@@ -11,10 +12,37 @@ import { SharedService } from '../shared/shared.service';
 export class HomepageComponent implements OnInit {
   currentPage: string;
   currentTrack: any;
-  private subscription: Subscription;
+  private subscription: Subscription; 
+  visible: boolean = false;
+  items:  any [] = [];
+  popupTitle : string;
+  @ViewChild('menu') menu!: TieredMenu; 
+
 
 
   ngOnInit() {
+
+    this.items = [
+      {
+          label: 'Artist',
+          icon: 'pi pi-plus',
+          command: () => this.openModel('Artist')
+      },
+      {
+          label: 'Song',
+          icon: 'pi pi-plus',
+          command: () => this.openModel('Song')
+
+
+      },
+      {
+          label: 'Album',
+          icon: 'pi pi-plus',
+          command: () => this.openModel('Album')
+
+
+      }
+  ]
   }
   constructor(private route: ActivatedRoute,private sharedService : SharedService) { 
 
@@ -29,6 +57,14 @@ export class HomepageComponent implements OnInit {
     this.currentPage = event;
   }
 
+  openModel(title){
+    this.visible = true;
+    this.popupTitle = title;
+  }
+
+  closeModel(){
+    this.visible = false;
+  }
   
 
 

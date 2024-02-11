@@ -1,6 +1,63 @@
-<p-dialog header="Add Song" [(visible)]="visible" [style]="{width: '50vw'}">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+<p-dialog header="Add {{popupTitle}}" [(visible)]="visible" [style]="{width: '50vw'}" (onHide)="closeModel()">
+    <div class="content">
+        <div class="upload-btn-wrapper" *ngIf = "popupTitle == 'Song'">
+            <div class="img_uploadBox">
+                <svg *ngIf="!imgUrl" width="60%" height="60%" class="plusicon" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12H18M12 6V18" stroke="gray" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <img *ngIf="imgUrl" [src]="imgUrl">
+            </div>
+            <input type="file" name="myfile" (change)="uploadSongImg($event)" />
+        </div>
+        <div class="upload-btn-wrapper" *ngIf = "popupTitle == 'Artist'">
+            <div class="img_uploadBox">
+                <svg *ngIf="!imgUrl" width="60%" height="60%" class="plusicon" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12H18M12 6V18" stroke="gray" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <img *ngIf="imgUrl" [src]="imgUrl">
+            </div>
+            <input type="file" name="myfile" (change)="uploadArtistImg($event)" />
+        </div>
+        <div class="upload-btn-wrapper" *ngIf = "popupTitle == 'Album'">
+            <div class="img_uploadBox">
+                <svg *ngIf="!imgUrl" width="60%" height="60%" class="plusicon" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12H18M12 6V18" stroke="gray" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <img *ngIf="imgUrl" [src]="imgUrl">
+            </div>
+            <input type="file" name="myfile" (change)="uploadAlbumImg($event)" />
+        </div>
+        <div class="fields">
+            <span class="p-float-label" *ngIf = "popupTitle == 'Song'">
+                <input pInputText id="Song Name" [(ngModel)]="song.name" />
+                <label for="artistName">Song Name</label>
+            </span>
+            <span class="p-float-label" *ngIf = "popupTitle == 'Album'">
+                <input pInputText id="Album Name" [(ngModel)]="album.name" />
+                <label for="albumName">Album Name</label>
+            </span>
+            <span class="p-float-label" *ngIf = "popupTitle == 'Song'">
+                <input pInputText id="Artist Name" [(ngModel)]="song.artists[0].name" />
+                <label for="artistName">Artist Name</label>
+            </span>
+            <span class="p-float-label" *ngIf = "popupTitle == 'Artist'">
+                <input pInputText id="Artist Name" [(ngModel)]="artist.name" />
+                <label for="artistName">Artist Name</label>
+            </span>
+            <div class="upload-btn-wrapper" *ngIf = "popupTitle == 'Song'" >
+                <button class="btn">{{ uploadTO.songMusic?.name ? 'Song Attached' : 'Upload Song' }}</button>
+                <input type="file" name="myfile" (change)="uploadSong($event)" />
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <p-button (click)="save() ; " label="Save" styleClass="p-button-text save"></p-button>
+        <p-button (click)="visible=false" label="Cancel" styleClass="p-button-text cancel"></p-button>
+    </ng-template>
 </p-dialog>

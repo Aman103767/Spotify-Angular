@@ -1,16 +1,19 @@
+import { Album } from "./Album.model";
+import { Artist } from "./Artist.model";
+import { Playlist } from "./Playlist.model";
+
 export class Song {
     id: number;
     name: string;
     address: string;
-    artistName: string;
     image: string;
     jenre: string;
   
-    artists: { id: number | null, name: string, image: string }[];
+    artists: Artist[] = []
     
-    album: { id: number | null, name: string, categoryName: string, image: string };
+    album: Album;
   
-    playlists: { id: number | null, name: string }[];
+    playlists: Playlist[]=[]
   
     likes: number;
   }

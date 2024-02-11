@@ -117,6 +117,7 @@ body {
 .plus-icon {
     width: 17px;
     margin-left: 100px;
+    cursor: pointer;
 }
 
 .icon-white:hover path {
@@ -124,6 +125,7 @@ body {
     /* color: white;
     fill : rgb(215, 213, 213)
 */
+    cursor: pointer;
 
 }
 
@@ -145,4 +147,23 @@ body {
 
 .icon-white {
     fill: rgb(215, 213, 213);
+}
+
+:host ::ng-deep .p-menuitem {
+    /* From https://css.glass */
+    background: rgba(37, 37, 37, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+:host ::ng-deep .p-tieredmenu .p-menuitem.p-menuitem-active>.p-menuitem-link {
+    background: rgba(37, 37, 37, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+:host ::ng-deep .ng-trigger {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.13);
 }

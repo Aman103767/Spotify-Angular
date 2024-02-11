@@ -17,6 +17,11 @@ import { AddEditSongComponent } from './add-edit-all-forms/add-edit-song/add-edi
 import { SongFormsModule } from './add-edit-all-forms/add-edit-song/add-form.module';
 import { PopupModule } from './shared/popup/popup.module';
 import { DialogModule } from 'primeng/dialog';
+import { SpeedDialModule } from 'primeng/speeddial';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { MenuModule } from 'primeng/menu';
+
+
 
 const routes: Routes = [
   { path: 'home', component: HomeTabComponent },
@@ -29,7 +34,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, PlayerComponent, SidebarComponent, HomepageComponent, HomeTabComponent, SongComponent, SearchTabComponent],
-  imports: [BrowserModule, FormsModule, CommonModule,DialogModule, SliderModule, RouterModule,HttpClientModule,RouterModule.forRoot(routes),SongFormsModule,PopupModule],
+  imports: [BrowserModule, FormsModule, CommonModule,DialogModule, SliderModule, RouterModule,HttpClientModule,RouterModule.forRoot(routes),SongFormsModule,PopupModule, SpeedDialModule, TieredMenuModule, MenuModule],
   providers: [HttpClient],
   bootstrap: [AppComponent] // Add the root component to be bootstrapped
 })

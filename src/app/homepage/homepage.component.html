@@ -48,13 +48,16 @@
                     <h6 class="t-icon">Your Library</h6>
 
                     <div class="plus-icon">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
+                        <!-- <button style = "display: none;">button</button> -->
+                        <div (click) = "menu.toggle($event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-encore-id="icon" role="img" aria-hidden="true"
                             viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 icon-white dYnaPI">
                             <path
                                 d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"
                                 fill="rgb(215, 213, 213)" />
                         </svg>
+                        </div>
+
                     </div>
                 </div>
 
@@ -69,11 +72,6 @@
 
 <app-player></app-player>
 
-<app-add-edit-song-popup [visible]="true"></app-add-edit-song-popup>
+<app-add-edit-song-popup [visible]="visible" [popupTitle] = "popupTitle" (modelEvent) = "closeModel()"></app-add-edit-song-popup>
 
-<p-dialog header="Add Song" [visible]="true" [style]="{width: '50vw'}">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-</p-dialog>
+<p-tieredMenu #menu [model]="items"  [popup]="true" ></p-tieredMenu>
