@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiCallsService {
 
-  baseUrl: string = "http://localhost:8080";
+  // baseUrl: string = "http://localhost:8080";
+  baseUrl: string = "http://ec2-34-227-46-223.compute-1.amazonaws.com:8080";
 
   constructor(private http: HttpClient) {
 

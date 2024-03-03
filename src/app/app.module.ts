@@ -33,7 +33,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, PlayerComponent, SidebarComponent, HomepageComponent, HomeTabComponent, SongComponent, SearchTabComponent],
+  declarations: [AppComponent, PlayerComponent, SidebarComponent, HomepageComponent, SongComponent, SearchTabComponent, HomeTabComponent],
   imports: [BrowserModule, FormsModule, CommonModule,DialogModule, SliderModule, RouterModule,HttpClientModule,RouterModule.forRoot(routes),SongFormsModule,PopupModule, SpeedDialModule, TieredMenuModule, MenuModule],
   providers: [HttpClient],
   bootstrap: [AppComponent] // Add the root component to be bootstrapped
