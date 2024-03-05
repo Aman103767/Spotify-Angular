@@ -36,6 +36,11 @@ export class AddEditSongPopupComponent implements OnInit {
 
   closeModel() {
     this.visible = false;
+    this.song = new Song();
+    this.artist = new Artist();
+    this.album = new Album();
+    this.song.artists.push(new Artist())
+    this.imgUrl = null;
     this.modelEvent.emit(false);
   }
 
@@ -90,8 +95,8 @@ export class AddEditSongPopupComponent implements OnInit {
     base.mimeType = file.type;
     base.name = file.name;
     reader.readAsDataURL(file);
-    reader.onloadend = e => {
-      this.imgUrl = e.target.result;
+    reader.onloadend = e => {   
+      type != 'SONG' ? this.imgUrl = e.target.result : null;
       console.log(this.imgUrl, "img")
       base.encodedString = reader.result + '';
       type == 'SONG_IMG' ? this.uploadTO.songImage = base : (type == 'SONG' ? this.uploadTO.songMusic = base
@@ -108,7 +113,7 @@ export class AddEditSongPopupComponent implements OnInit {
       })
     } else if (this.popupTitle == 'Artist') {
       this.uploadTO.artist = this.artist;
-      this.apiService.addSong(this.uploadTO).subscribe((response) => {
+      this.apiService.addArtist(this.uploadTO).subscribe((response) => {
         console.log(response, "response");
       })
 
@@ -119,6 +124,7 @@ export class AddEditSongPopupComponent implements OnInit {
       })
 
     }
+
 
   }
 

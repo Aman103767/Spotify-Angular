@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class ApiCallsService {
 
   baseUrl: string = "http://localhost:8080";
+  // baseUrl: string = "https://ec2-34-227-46-223.compute-1.amazonaws.com:8080";
 
   constructor(private http: HttpClient) {
 
@@ -19,7 +20,12 @@ export class ApiCallsService {
   }
 
   addSong(data): Observable<Object>{
-    console.log(data,"songdata")
     return this.http.post<Object>(`${this.baseUrl}/music/addSong`,data);
   }
+
+  addArtist(data): Observable<Object>{
+    return this.http.post<Object>(`${this.baseUrl}/music/addArtist`,data);
+  }
+
+
 }
